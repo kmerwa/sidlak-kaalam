@@ -69,7 +69,7 @@ const mobileMenuBtn = document.getElementById('mobileMenuBtn');
 //         headerContainer.innerHTML = html;
 
 //         const header = document.getElementById('header');
-//         const isHomepage = window.location.pathname.endsWith('sidlak.html') || window.location.pathname === '/';
+//         const isHomepage = window.location.pathname.endsWith('index.html') || window.location.pathname === '/';
 
 //         function toggleHeaderBackground() {
 //           const scrollTop = window.scrollY;

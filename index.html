@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="preload" href="./images/bg-image.webp" as="image" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sidlak Kaalam</title>
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+
+  <header id="header">
+   <div class="site-header"> 
+    <div class="header-content">
+      <a href="index.html" class="logo-div">
+        <img src="images/logo.png" alt="logo" style="width: 5rem; height: auto;">
+        <h1>Sidlak Kaalam</h1>
+      </a>
+    </div>
+    <nav class="navbar">
+      <a href="index.html#section1" id="home-link">Home</a>
+      <div class="dropdown">
+        <a href="index.html#section3">Lessons</a>
+        <div class="dropdown-content">
+          <a href="lesson1.html">Lesson 1</a>
+          <a href="lesson2.html">Lesson 2</a>
+          <a href="lesson3.html">Lesson 3</a>
+          <a href="lesson4.html">Lesson 4</a>
+          <a href="lesson5.html">Lesson 5</a>
+        </div>
+      </div>
+      <a href="index.html#section4">FAQ</a>
+      <a href="index.html#section5">About The Innovator</a>
+      <a href="references.html">References</a>
+    </nav>
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </button>
+  </div>
+</header>
+
+<nav class="side-nav" id="sideNav">
+        <a href="index.html#section1" id="home-link-mobile">Home</a>
+        <div class="dropdown" id="lessonsDropdown">
+            <a href="index.html#section3">Lessons</a>
+            <div class="dropdown-content">
+                <a href="lesson1.html">Lesson 1</a>
+                <a href="lesson2.html">Lesson 2</a>
+                <a href="lesson3.html">Lesson 3</a>
+                <a href="lesson4.html">Lesson 4</a>
+                <a href="lesson5.html">Lesson 5</a>
+            </div>
+        </div>
+        <a href="index.html#section4">FAQ</a>
+        <a href="index.html#section5">About The Innovator</a>
+        <a href="references.html">References</a>
+    </nav>
+
+    <div class="overlay" id="overlay"></div>
+
+  <main>
+    <section id="section1" class="intro-section">
+      <div class="intro-ctn animate-on-scroll">
+        <div class="title-ctn">
+          <h1>WELCOME TO<br>SIDLAK KAALAM</h1>
+          <p><strong><em>Your offline learning companion in Earth and Space Science 10.</em></strong></p>
+          <p>Sidlak Kaalam is specially designed to help Grade 10 learners explore and understand the dynamic Earth and the 
+            vastness of space through interactive, accessible, and curriculum-aligned content. Whether you're studying on your 
+            own or guided by a teacher, let Sidlak Kaalam spark your curiosity and light the way to scientific discovery!</p>
+          <button onclick="document.getElementById('section3').scrollIntoView({ behavior: 'smooth' });" class="explore-btn">
+            Start Learning
+            <svg xmlns="http://www.w3.org/2000/svg" height="14" width="12.25" viewBox="0 0 448 512" class="icon">
+              <path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="section2" class="features-section">
+      <div class="features-ctn">
+        <h1 class="section-title animate-on-scroll">What Every Lesson Has For You</h1>
+        <div class="features animate-on-scroll">
+          <div class="feature">
+            <svg xmlns="http://www.w3.org/2000/svg" height="40" width="40" viewBox="0 0 512 512"><path fill="#14b8a6" d="M495.9 166.6c3.2 8.7 .5 18.4-6.4 24.6l-43.3 39.4c1.1 8.3 1.7 16.8 1.7 25.4s-.6 17.1-1.7 25.4l43.3 39.4c6.9 6.2 9.6 15.9 6.4 24.6c-4.4 11.9-9.7 23.3-15.8 34.3l-4.7 8.1c-6.6 11-14 21.4-22.1 31.2c-5.9 7.2-15.7 9.6-24.5 6.8l-55.7-17.7c-13.4 10.3-28.2 18.9-44 25.4l-12.5 57.1c-2 9.1-9 16.3-18.2 17.8c-13.8 2.3-28 3.5-42.5 3.5s-28.7-1.2-42.5-3.5c-9.2-1.5-16.2-8.7-18.2-17.8l-12.5-57.1c-15.8-6.5-30.6-15.1-44-25.4L83.1 425.9c-8.8 2.8-18.6 .3-24.5-6.8c-8.1-9.8-15.5-20.2-22.1-31.2l-4.7-8.1c-6.1-11-11.4-22.4-15.8-34.3c-3.2-8.7-.5-18.4 6.4-24.6l43.3-39.4C64.6 273.1 64 264.6 64 256s.6-17.1 1.7-25.4L22.4 191.2c-6.9-6.2-9.6-15.9-6.4-24.6c4.4-11.9 9.7-23.3 15.8-34.3l4.7-8.1c6.6-11 14-21.4 22.1-31.2c5.9-7.2 15.7-9.6 24.5-6.8l55.7 17.7c13.4-10.3 28.2-18.9 44-25.4l12.5-57.1c2-9.1 9-16.3 18.2-17.8C227.3 1.2 241.5 0 256 0s28.7 1.2 42.5 3.5c9.2 1.5 16.2 8.7 18.2 17.8l12.5 57.1c15.8 6.5 30.6 15.1 44 25.4l55.7-17.7c8.8-2.8 18.6-.3 24.5 6.8c8.1 9.8 15.5 20.2 22.1 31.2l4.7 8.1c6.1 11 11.4 22.4 15.8 34.3zM256 336a80 80 0 1 0 0-160 80 80 0 1 0 0 160z"/></svg>
+            <h3>Gear Up for Learning!</h3>
+            <p>Discover what this lesson is all about. Unpack the Most Essential Learning Competency (MELC) and set your goals with clear learning objectives.</p>
+          </div>
+          <div class="feature">
+            <svg xmlns="http://www.w3.org/2000/svg" height="40" width="40" viewBox="0 0 512 512"><path fill="#14b8a6" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg>
+            <h3>Readiness Check!</h3>
+            <p>Take a quick challenge to activate your prior knowledge. Let’s see what you already know before we dive in!</p>
+          </div>
+          <div class="feature">
+            <svg xmlns="http://www.w3.org/2000/svg" height="40" width="44" viewBox="0 0 576 512"><path fill="#14b8a6" d="M269.5 69.9c11.1-7.9 25.9-7.9 37 0C329 85.4 356.5 96 384 96c26.9 0 55.4-10.8 77.4-26.1c0 0 0 0 0 0c11.9-8.5 28.1-7.8 39.2 1.7c14.4 11.9 32.5 21 50.6 25.2c17.2 4 27.9 21.2 23.9 38.4s-21.2 27.9-38.4 23.9c-24.5-5.7-44.9-16.5-58.2-25C449.5 149.7 417 160 384 160c-31.9 0-60.6-9.9-80.4-18.9c-5.8-2.7-11.1-5.3-15.6-7.7c-4.5 2.4-9.7 5.1-15.6 7.7c-19.8 9-48.5 18.9-80.4 18.9c-33 0-65.5-10.3-94.5-25.8c-13.4 8.4-33.7 19.3-58.2 25c-17.2 4-34.4-6.7-38.4-23.9s6.7-34.4 23.9-38.4C42.8 92.6 61 83.5 75.3 71.6c11.1-9.5 27.3-10.1 39.2-1.7c0 0 0 0 0 0C136.7 85.2 165.1 96 192 96c27.5 0 55-10.6 77.5-26.1zm37 288C329 373.4 356.5 384 384 384c26.9 0 55.4-10.8 77.4-26.1c0 0 0 0 0 0c11.9-8.5 28.1-7.8 39.2 1.7c14.4 11.9 32.5 21 50.6 25.2c17.2 4 27.9 21.2 23.9 38.4s-21.2 27.9-38.4 23.9c-24.5-5.7-44.9-16.5-58.2-25C449.5 437.7 417 448 384 448c-31.9 0-60.6-9.9-80.4-18.9c-5.8-2.7-11.1-5.3-15.6-7.7c-4.5 2.4-9.7 5.1-15.6 7.7c-19.8 9-48.5 18.9-80.4 18.9c-33 0-65.5-10.3-94.5-25.8c-13.4 8.4-33.7 19.3-58.2 25c-17.2 4-34.4-6.7-38.4-23.9s6.7-34.4 23.9-38.4c18.1-4.2 36.2-13.3 50.6-25.2c11.1-9.4 27.3-10.1 39.2-1.7c0 0 0 0 0 0C136.7 373.2 165.1 384 192 384c27.5 0 55-10.6 77.5-26.1c11.1-7.9 25.9-7.9 37 0zm0-144C329 229.4 356.5 240 384 240c26.9 0 55.4-10.8 77.4-26.1c0 0 0 0 0 0c11.9-8.5 28.1-7.8 39.2 1.7c14.4 11.9 32.5 21 50.6 25.2c17.2 4 27.9 21.2 23.9 38.4s-21.2 27.9-38.4 23.9c-24.5-5.7-44.9-16.5-58.2-25C449.5 293.7 417 304 384 304c-31.9 0-60.6-9.9-80.4-18.9c-5.8-2.7-11.1-5.3-15.6-7.7c-4.5 2.4-9.7 5.1-15.6 7.7c-19.8 9-48.5 18.9-80.4 18.9c-33 0-65.5-10.3-94.5-25.8c-13.4 8.4-33.7 19.3-58.2 25c-17.2 4-34.4-6.7-38.4-23.9s6.7-34.4 23.9-38.4c18.1-4.2 36.2-13.3 50.6-25.2c11.1-9.5 27.3-10.1 39.2-1.7c0 0 0 0 0 0C136.7 229.2 165.1 240 192 240c27.5 0 55-10.6 77.5-26.1c11.1-7.9 25.9-7.9 37 0z"/></svg>
+            <h3>Dive In!</h3>
+            <p>Get curious! This fun and engaging activity is designed to spark your interest and connect you to the lesson topic.</p>
+          </div>
+          <div class="feature">
+            <svg xmlns="http://www.w3.org/2000/svg" height="40" width="40" viewBox="0 0 512 512"><path fill="#14b8a6" d="M184 0c30.9 0 56 25.1 56 56l0 400c0 30.9-25.1 56-56 56c-28.9 0-52.7-21.9-55.7-50.1c-5.2 1.4-10.7 2.1-16.3 2.1c-35.3 0-64-28.7-64-64c0-7.4 1.3-14.6 3.6-21.2C21.4 367.4 0 338.2 0 304c0-31.9 18.7-59.5 45.8-72.3C37.1 220.8 32 207 32 192c0-30.7 21.6-56.3 50.4-62.6C80.8 123.9 80 118 80 112c0-29.9 20.6-55.1 48.3-62.1C131.3 21.9 155.1 0 184 0zM328 0c28.9 0 52.6 21.9 55.7 49.9c27.8 7 48.3 32.1 48.3 62.1c0 6-.8 11.9-2.4 17.4c28.8 6.2 50.4 31.9 50.4 62.6c0 15-5.1 28.8-13.8 39.7C493.3 244.5 512 272.1 512 304c0 34.2-21.4 63.4-51.6 74.8c2.3 6.6 3.6 13.8 3.6 21.2c0 35.3-28.7 64-64 64c-5.6 0-11.1-.7-16.3-2.1c-3 28.2-26.8 50.1-55.7 50.1c-30.9 0-56-25.1-56-56l0-400c0-30.9 25.1-56 56-56z"/></svg>
+            <h3>Build Your Knowledge</h3>
+            <p>Explore the heart of the lesson. Learn key concepts explained clearly and simply to help you understand the core ideas.</p>
+          </div>
+          <div class="feature">
+            <svg xmlns="http://www.w3.org/2000/svg" height="40" width="40" viewBox="0 0 512 512"><path fill="#14b8a6" d="M0 96C0 60.7 28.7 32 64 32l384 0c35.3 0 64 28.7 64 64l0 320c0 35.3-28.7 64-64 64L64 480c-35.3 0-64-28.7-64-64L0 96zM48 368l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16zm368-16c-8.8 0-16 7.2-16 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0zM48 240l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16zm368-16c-8.8 0-16 7.2-16 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0zM48 112l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16L64 96c-8.8 0-16 7.2-16 16zM416 96c-8.8 0-16 7.2-16 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0zM160 128l0 64c0 17.7 14.3 32 32 32l128 0c17.7 0 32-14.3 32-32l0-64c0-17.7-14.3-32-32-32L192 96c-17.7 0-32 14.3-32 32zm32 160c-17.7 0-32 14.3-32 32l0 64c0 17.7 14.3 32 32 32l128 0c17.7 0 32-14.3 32-32l0-64c0-17.7-14.3-32-32-32l-128 0z"/></svg>
+            <h3>See It in Action!</h3>
+            <p>Watch and explore! Reinforce what you’ve learned through videos, simulations, or other exciting visual materials.</p>
+          </div>
+          <div class="feature">
+            <svg xmlns="http://www.w3.org/2000/svg" height="40" width="40" viewBox="0 0 512 512"><path fill="#14b8a6" d="M78.6 5C69.1-2.4 55.6-1.5 47 7L7 47c-8.5 8.5-9.4 22-2.1 31.6l80 104c4.5 5.9 11.6 9.4 19 9.4l54.1 0 109 109c-14.7 29-10 65.4 14.3 89.6l112 112c12.5 12.5 32.8 12.5 45.3 0l64-64c12.5-12.5 12.5-32.8 0-45.3l-112-112c-24.2-24.2-60.6-29-89.6-14.3l-109-109 0-54.1c0-7.5-3.5-14.5-9.4-19L78.6 5zM19.9 396.1C7.2 408.8 0 426.1 0 444.1C0 481.6 30.4 512 67.9 512c18 0 35.3-7.2 48-19.9L233.7 374.3c-7.8-20.9-9-43.6-3.6-65.1l-61.7-61.7L19.9 396.1zM512 144c0-10.5-1.1-20.7-3.2-30.5c-2.4-11.2-16.1-14.1-24.2-6l-63.9 63.9c-3 3-7.1 4.7-11.3 4.7L352 176c-8.8 0-16-7.2-16-16l0-57.4c0-4.2 1.7-8.3 4.7-11.3l63.9-63.9c8.1-8.1 5.2-21.8-6-24.2C388.7 1.1 378.5 0 368 0C288.5 0 224 64.5 224 144l0 .8 85.3 85.3c36-9.1 75.8 .5 104 28.7L429 274.5c49-23 83-72.8 83-130.5zM56 432a24 24 0 1 1 48 0 24 24 0 1 1 -48 0z"/></svg>
+            <h3>Power Up Your Skill!</h3>
+            <p>Practice time! Apply what you’ve learned through guided activities that build your confidence and skills.</p>
+          </div>
+          <div class="feature">
+            <svg xmlns="http://www.w3.org/2000/svg" height="40" width="48" viewBox="0 0 640 512"><path fill="#14b8a6" d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+            <h3>Connect the Dots</h3>
+            <p>Make it all come together. Reflect on what you’ve learned and summarize the big ideas of the lesson.</p>
+          </div>
+          <div class="feature">
+            <svg xmlns="http://www.w3.org/2000/svg" height="40" width="40" viewBox="0 0 512 512"><path fill="#14b8a6" d="M448 256A192 192 0 1 0 64 256a192 192 0 1 0 384 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm256 80a80 80 0 1 0 0-160 80 80 0 1 0 0 160zm0-224a144 144 0 1 1 0 288 144 144 0 1 1 0-288zM224 256a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"/></svg>
+            <h3>Mastery Check!</h3>
+            <p>Ready for a challenge? Test your understanding with a short quiz or activity that checks your learning progress.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="section3" class="lessons-section">
+      <div class="lessons-ctn">
+        <h2 class="section-title animate-on-scroll">Lessons</h2>
+        <div class="lessons-grid animate-on-scroll">
+          <div onclick="openModal('modal1')" class="lesson-card">
+            <img src="images/1.png" alt="Lesson 1 image" class="lesson-image">
+            <p class="lesson-title">Lesson 1 - Volcanoes, Earthquakes, and Mountain Ranges</p>
+          </div>
+          <div onclick="openModal('modal2')" class="lesson-card">
+            <img src="images/2.png" alt="Lesson 2 image" class="lesson-image">
+            <p class="lesson-title">Lesson 2 - Plate Boundaries</p>
+          </div>
+          <div onclick="openModal('modal3')" class="lesson-card">
+            <img src="images/3.png" alt="Lesson 3 image" class="lesson-image">
+            <p class="lesson-title">Lesson 3 - Processes and Landforms Along Plate Boundaries</p>
+          </div>
+          <div onclick="openModal('modal4')" class="lesson-card">
+            <img src="images/4.png" alt="Lesson 4 image" class="lesson-image">
+            <p class="lesson-title">Lesson 4 - Earth's Mechanism</p>
+          </div>
+          <div onclick="openModal('modal5')" class="lesson-card">
+            <img src="images/5.png" alt="Lesson 5 image" class="lesson-image">
+            <p class="lesson-title">Lesson 5 - Evidence of Plate Movements</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="section4" class="faq-section">
+      <div class="faq-ctn animate-on-scroll">
+        <h2 class="section-title">FREQUENTLY ASKED QUESTIONS</h2>
+        <p class="animate-on-scroll" style="margin-bottom: 20px;">This section provides quick answers to common questions about SIDLAK KAALAM, an offline HTML-based instructional material for Grade 10 Earth and Space Science. 
+          Whether you're a teacher or student, these FAQs will help you navigate and use the material effectively.</p>
+        <div class="accordion">
+          <div class="accordion-header">
+            <span>What is SIDLAK KAALAM?</span>
+            <span class="arrow">&#9654;</span>
+          </div>
+          <div class="accordion-content">
+            <p>SIDLAK KAALAM is an offline HTML-based instructional material designed for teaching key concepts in Earth and Space Science. It integrates interactive content, visuals, 
+              and activities aligned with the Most Essential Learning Competencies (MELCs) of the K to 12 Science Curriculum.</p>
+          </div>
+        </div>
+
+        <div class="accordion">
+          <div class="accordion-header">
+            <span>Do I need an internet connection to use SIDLAK KAALAM?</span>
+            <span class="arrow">&#9654;</span>
+          </div>
+          <div class="accordion-content">
+            <p>No. SIDLAK KAALAM is designed to work offline. Once copied or installed on your computer or USB device, you can access it through any web browser without an internet connection.</p>
+          </div>
+        </div>
+
+        <div class="accordion">
+          <div class="accordion-header">
+            <span>How do I open the instructional material?</span>
+            <span class="arrow">&#9654;</span>
+          </div>
+          <div class="accordion-content">
+            <p>Simply double-click the file named index.html inside the SIDLAK KAALAM folder. It will open in your default web browser (e.g., Chrome, Firefox, Edge).</p>
+          </div>
+        </div>
+
+        <div class="accordion">
+          <div class="accordion-header">
+            <span>Can I use SIDLAK KAALAM on a mobile device or tablet?</span>
+            <span class="arrow">&#9654;</span>
+          </div>
+          <div class="accordion-content">
+            <p>SIDLAK KAALAM is optimized for desktop and laptop browsers. While some features may work on mobile devices, the best experience is through a computer or laptop.</p>
+          </div>
+        </div>
+
+        <div class="accordion">
+          <div class="accordion-header">
+            <span>What grade level is this material intended for?</span>
+            <span class="arrow">&#9654;</span>
+          </div>
+          <div class="accordion-content">
+            <p>SIDLAK KAALAM is developed for Grade 10 students studying Earth and Space Science during the first quarter of the school year.</p>
+          </div>
+        </div>
+
+        <!-- <div class="more-faqs hidden">
+        <div class="accordion">
+          <div class="accordion-header">
+            <span>Is SIDLAK KAALAM aligned with the DepEd curriculum?</span>
+            <span class="arrow">&#9654;</span>
+          </div>
+          <div class="accordion-content">
+            <p>Yes. The content is strictly aligned with the Most Essential Learning Competencies (MELCs) set by the Department of Education for Grade 10 Science.</p>
+          </div>
+        </div>
+
+        <div class="accordion">
+          <div class="accordion-header">
+            <span>What types of learning activities are included?</span>
+            <span class="arrow">&#9654;</span>
+          </div>
+          <div class="accordion-content">
+            <p>SIDLAK KAALAM includes:
+              <ul style="margin-left: 35px;">
+                <li>Concept animations and diagrams</li>
+                <li>Videos</li>
+                <li>Practice quizzes</li>
+                <li>Guided inquiry tasks</li>
+                <li>Real-life application problems</li>
+                <li>Assessments with answer keys</li>
+              </ul>
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion">
+          <div class="accordion-header">
+            <span>What should I do if the material doesn’t load properly?</span>
+            <span class="arrow">&#9654;</span>
+          </div>
+          <div class="accordion-content">
+            <p>Make sure:
+              <ul style="margin-left: 35px;">
+                <li>You're using a modern web browser (updated Chrome or Firefox)</li>
+                <li>You opened the index.html file from the local folder</li>
+                <li>All folder contents remain intact and in the same directory</li>
+              </ul>
+              If issues persist, contact the developer. 
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion">
+          <div class="accordion-header">
+            <span>Can SIDLAK KAALAM be used for remote or modular learning?</span>
+            <span class="arrow">&#9654;</span>
+          </div>
+          <div class="accordion-content">
+            <p>Yes. Since it works offline, it is suitable for modular learning setups, especially in areas with limited or no internet access. It can be distributed via USB, CD, or offline file-sharing platforms.</p>
+          </div>
+        </div>
+
+        <div class="accordion">
+          <div class="accordion-header">
+            <span>Is the material interactive even if it's offline?</span>
+            <span class="arrow">&#9654;</span>
+          </div>
+          <div class="accordion-content">
+            <p>Yes. SIDLAK KAALAM includes interactive quizzes, animations, and clickable content—all functional without internet as long as it’s accessed through a browser.</p>
+          </div>
+        </div>
+
+        <div class="accordion">
+          <div class="accordion-header">
+            <span>Who developed SIDLAK KAALAM?</span>
+            <span class="arrow">&#9654;</span>
+          </div>
+          <div class="accordion-content">
+            <p>This instructional material was developed by Leomel Amparado as part of a graduate thesis titled “Construction and Validation of Offline Web-based Instructional Material for Teaching Earth and Space Science.”</p>
+          </div>
+        </div>
+
+        <div class="accordion">
+          <div class="accordion-header">
+            <span>How do I check my understanding of the topics? </span>
+            <span class="arrow">&#9654;</span>
+          </div>
+          <div class="accordion-content">
+            <p>Each lesson includes interactive quizzes and self-assessment activities. You can take these after completing a topic to test your knowledge. The results are provided instantly for your feedback.</p>
+          </div>
+        </div>
+
+        <div class="accordion">
+          <div class="accordion-header">
+            <span>Is the information presented here reliable? </span>
+            <span class="arrow">&#9654;</span>
+          </div>
+          <div class="accordion-content">
+            <p>Yes. The content in SIDLAK KAALAM has been compiled and validated from credible academic sources, including textbooks, scientific journals, and reputable educational websites. A list of references is available in the "Reference" section.</p>
+          </div>
+        </div>
+
+        <div class="accordion">
+          <div class="accordion-header">
+            <span>How can teachers integrate SIDLAK KAALAM into their lesson plans?</span>
+            <span class="arrow">&#9654;</span>
+          </div>
+          <div class="accordion-content">
+            <p>Teachers can use SIDLAK KAALAM as a supplementary material during discussions, or assign it for independent learning. The structure follows the MELCs, making it easy to align with daily lesson logs (DLLs) and classroom-based assessments.</p>
+          </div>
+        </div>
+
+        <div class="accordion">
+          <div class="accordion-header">
+            <span>I think I found an error in the content. What should I do? </span>
+            <span class="arrow">&#9654;</span>
+          </div>
+          <div class="accordion-content">
+            <p>We appreciate your feedback! If you find any factual errors or typos, please inform the project developer at main.23002268@cnu.edu.ph. Your input helps in improving the quality of this learning material for everyone</p>
+          </div>
+        </div>
+        </div> -->
+
+        <button id="seeMoreBtn" onclick="location.href='faqs.html'">View more</button>
+      </div>
+    </section>
+
+    <section id="section5" class="innovator-section">
+      <div class="innovator-ctn">
+        <h1 class="section-title animate-on-scroll">About The Innovator</h1>
+        <div class="profile-div animate-on-scroll">
+          <div class="image">
+            <img src="images/about-the-innovator2.jpg" alt="innovator profile" width="100%" height="100%">
+          </div>
+          <h3 class="name">LEOMEL A. AMPARADO, MAEd (cand), LPT.</h3>
+        </div>
+        <div class="info animate-on-scroll">
+          <p>Mr. Leomel A. Amparado is a Licensed Professional Teacher with a Bachelor of Secondary Education degree, 
+          majoring in General Science, from Biliran Province State University (BiPSU). He is currently pursuing a 
+          Master of Arts in Education, major in Science Education, at Cebu Normal University, where he continues to 
+          enhance his knowledge and pedagogical skills in science instruction. <a href="about-the-innovator.html">See more.</a></p>
+        
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    © 2025 Sidlak Kaalam | All rights reserved.
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // 1. Header scroll behavior
+      const header = document.getElementById('header');
+      if (header) {
+          const isHomepage = window.location.pathname.endsWith('index.html') || 
+                            window.location.pathname === '/' || 
+                            window.location.href.endsWith('index.html');
+
+          function toggleHeaderBackground() {
+              const scrollTop = window.scrollY || window.pageYOffset;
+              if (!isHomepage || scrollTop > 50) {
+                  header.classList.add('header-colored');
+              } else {
+                  header.classList.remove('header-colored');
+              }
+          }
+
+          // Initialize and set up scroll listener
+          toggleHeaderBackground();
+          window.addEventListener('scroll', toggleHeaderBackground);
+      }
+
+      // 2. Scroll animations for elements
+      function animateOnScroll() {
+          const elements = document.querySelectorAll('.animate-on-scroll');
+          const windowHeight = window.innerHeight;
+
+          elements.forEach(el => {
+              const elementTop = el.getBoundingClientRect().top;
+              const revealPoint = 150;
+
+              if (elementTop < windowHeight - revealPoint) {
+                  el.classList.add('active');
+              } else {
+                  el.classList.remove('active');
+              }
+          });
+      }
+
+      // Initialize and set up scroll listener
+      animateOnScroll();
+      window.addEventListener('scroll', animateOnScroll);
+
+      // 3. "See More" button functionality
+      const seeMoreBtn = document.getElementById("seeMoreBtn");
+      if (seeMoreBtn) {
+          seeMoreBtn.addEventListener("click", function () {
+              const more = document.querySelector(".more-faqs");
+              if (more) {
+                  if (more.classList.contains("hidden")) {
+                      more.classList.remove("hidden");
+                      this.textContent = "View less";
+                  } else {
+                      more.classList.add("hidden");
+                      this.textContent = "View more";
+                  }
+              }
+          });
+      }
+
+      // 4. Make current nav link active
+      const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+      document.querySelectorAll('.navbar a').forEach(link => {
+          const linkPage = link.getAttribute('href').split('/').pop();
+          if (linkPage === currentPage || 
+              (currentPage === 'index.html' && linkPage === 'index.html')) {
+              link.classList.add('active-nav-link');
+          }
+      });
+  });
+</script>
+</body>
+
+<!-- Lesson 1 Modal -->
+<div id="modal1" class="modal hidden">
+  <div class="modal-content">
+    <button 
+      onclick="closeModal('modal1')" 
+      class="modal-close-btn"
+      aria-label="Close modal"
+    >&times;</button>
+
+    <h3>Lesson 1 - Volcanoes, Earthquakes, and Mountain Ranges</h3>
+
+    <a href="lesson1.html" class="view-lesson-btn">View Entire Lesson</a>
+
+    <ul>
+      <li><a href="lesson1.html#gearUpForLearning">Gear Up for Learning!</a></li>
+      <li><a href="lesson1.html#readinessCheck">Readiness Check! (Pre-Assessment)</a></li>
+      <li><a href="lesson1.html#diveIn">Dive In!</a></li>
+      <li><a href="lesson1.html#buildYourKnowledge">Build Your Knowledge</a></li>
+      <li><a href="lesson1.html#seeItInAction">See It in Action!</a></li>
+      <li><a href="lesson1.html#powerUpYourSkill">Power Up Your Skill!</a></li>
+      <li><a href="lesson1.html#connectTheDots">Connect the Dots</a></li>
+      <li><a href="lesson1.html#masteryCheck">Mastery Check! (Post-Assessment)</a></li>
+    </ul>
+  </div>
+</div>
+
+
+<!-- Lesson 2 Modal -->
+<div id="modal2" class="modal hidden">
+  <div class="modal-content">
+    <button 
+      onclick="closeModal('modal2')" 
+      class="modal-close-btn"
+      aria-label="Close modal"
+    >&times;</button>
+
+    <h3>Lesson 2 - Plate Boundaries</h3>
+
+    <a href="lesson2.html" class="view-lesson-btn">View Entire Lesson</a>
+
+    <ul>
+      <li><a href="lesson2.html#gearUpForLearning">Gear Up for Learning!</a></li>
+      <li><a href="lesson2.html#readinessCheck">Readiness Check! (Pre-Assessment)</a></li>
+      <li><a href="lesson2.html#diveIn">Dive In!</a></li>
+      <li><a href="lesson2.html#buildYourKnowledge">Build Your Knowledge</a></li>
+      <li><a href="lesson2.html#seeItInAction">See It in Action!</a></li>
+      <li><a href="lesson2.html#powerUpYourSkill">Power Up Your Skill!</a></li>
+      <li><a href="lesson2.html#connectTheDots">Connect the Dots</a></li>
+      <li><a href="lesson2.html#masteryCheck">Mastery Check! (Post-Assessment)</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- Lesson 3 Modal -->
+<div id="modal3" class="modal hidden">
+  <div class="modal-content">
+    <button 
+      onclick="closeModal('modal3')" 
+      class="modal-close-btn"
+      aria-label="Close modal"
+    >&times;</button>
+
+    <h3>Lesson 3 - Processes and Landforms Along Plate Boundaries</h3>
+
+    <a href="lesson3.html" class="view-lesson-btn">View Entire Lesson</a>
+
+    <ul>
+      <li><a href="lesson3.html#gearUpForLearning">Gear Up for Learning!</a></li>
+      <li><a href="lesson3.html#readinessCheck">Readiness Check! (Pre-Assessment)</a></li>
+      <li><a href="lesson3.html#diveIn">Dive In!</a></li>
+      <li><a href="lesson3.html#buildYourKnowledge">Build Your Knowledge</a></li>
+      <li><a href="lesson3.html#seeItInAction">See It in Action!</a></li>
+      <li><a href="lesson3.html#powerUpYourSkill">Power Up Your Skill!</a></li>
+      <li><a href="lesson3.html#connectTheDots">Connect the Dots</a></li>
+      <li><a href="lesson3.html#masteryCheck">Mastery Check! (Post-Assessment)</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- Lesson 4 Modal -->
+<div id="modal4" class="modal hidden">
+  <div class="modal-content">
+    <button 
+      onclick="closeModal('modal4')" 
+      class="modal-close-btn"
+      aria-label="Close modal"
+    >&times;</button>
+
+    <h3>Lesson 4 - Earth's Mechanism</h3>
+
+    <a href="lesson4.html" class="view-lesson-btn">View Entire Lesson</a>
+
+    <ul>
+      <li><a href="lesson4.html#gearUpForLearning">Gear Up for Learning!</a></li>
+      <li><a href="lesson4.html#readinessCheck">Readiness Check! (Pre-Assessment)</a></li>
+      <li><a href="lesson4.html#diveIn">Dive In!</a></li>
+      <li><a href="lesson4.html#buildYourKnowledge">Build Your Knowledge</a></li>
+      <li><a href="lesson4.html#seeItInAction">See It in Action!</a></li>
+      <li><a href="lesson4.html#powerUpYourSkill">Power Up Your Skill!</a></li>
+      <li><a href="lesson4.html#connectTheDots">Connect the Dots</a></li>
+      <li><a href="lesson4.html#masteryCheck">Mastery Check! (Post-Assessment)</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- Lesson 5 Modal -->
+<div id="modal5" class="modal hidden">
+  <div class="modal-content">
+    <button 
+      onclick="closeModal('modal5')" 
+      class="modal-close-btn"
+      aria-label="Close modal"
+    >&times;</button>
+
+    <h3>Lesson 5 - Evidence of Plate Movements</h3>
+
+    <a href="lesson5.html" class="view-lesson-btn">View Entire Lesson</a>
+
+    <ul>
+      <li><a href="lesson5.html#gearUpForLearning">Gear Up for Learning!</a></li>
+      <li><a href="lesson5.html#readinessCheck">Readiness Check! (Pre-Assessment)</a></li>
+      <li><a href="lesson5.html#diveIn">Dive In!</a></li>
+      <li><a href="lesson5.html#buildYourKnowledge">Build Your Knowledge</a></li>
+      <li><a href="lesson5.html#seeItInAction">See It in Action!</a></li>
+      <li><a href="lesson5.html#powerUpYourSkill">Power Up Your Skill!</a></li>
+      <li><a href="lesson5.html#connectTheDots">Connect the Dots</a></li>
+      <li><a href="lesson5.html#masteryCheck">Mastery Check! (Post-Assessment)</a></li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  function openModal(id) {
+    const modal = document.getElementById(id);
+    modal.classList.add('show');
+    modal.classList.remove('hidden');
+  }
+
+  function closeModal(id) {
+    const modal = document.getElementById(id);
+    modal.classList.remove('show');
+    setTimeout(() => modal.classList.add('hidden'), 300); 
+  }
+
+  document.querySelectorAll('.accordion-header').forEach(header => {
+    header.addEventListener('click', () => {
+      const accordion = header.parentElement;
+      accordion.classList.toggle('active');
+    });
+  });
+</script>
+
+</html>

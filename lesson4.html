@@ -188,15 +188,15 @@
     <header id="header">
    <div class="site-header"> 
     <div class="header-content">
-      <a href="sidlak.html" class="logo-div">
+      <a href="index.html" class="logo-div">
         <img src="images/logo.png" alt="logo" style="width: 5rem; height: auto;">
         <h1>Sidlak Kaalam</h1>
       </a>
     </div>
     <nav class="navbar">
-      <a href="sidlak.html#section1" id="home-link">Home</a>
+      <a href="index.html#section1" id="home-link">Home</a>
       <div class="dropdown">
-        <a href="sidlak.html#section3">Lessons</a>
+        <a href="index.html#section3">Lessons</a>
         <div class="dropdown-content">
           <a href="lesson1.html">Lesson 1</a>
           <a href="lesson2.html">Lesson 2</a>
@@ -205,8 +205,8 @@
           <a href="lesson5.html">Lesson 5</a>
         </div>
       </div>
-      <a href="sidlak.html#section4">FAQ</a>
-      <a href="sidlak.html#section5">About The Innovator</a>
+      <a href="index.html#section4">FAQ</a>
+      <a href="index.html#section5">About The Innovator</a>
       <a href="references.html">References</a>
     </nav>
     <button class="mobile-menu-btn" id="mobileMenuBtn">
@@ -220,9 +220,9 @@
 </header>
 
 <nav class="side-nav" id="sideNav">
-        <a href="sidlak.html#section1" id="home-link-mobile">Home</a>
+        <a href="index.html#section1" id="home-link-mobile">Home</a>
         <div class="dropdown" id="lessonsDropdown">
-            <a href="sidlak.html#section3">Lessons</a>
+            <a href="index.html#section3">Lessons</a>
             <div class="dropdown-content">
                 <a href="lesson1.html">Lesson 1</a>
                 <a href="lesson2.html">Lesson 2</a>
@@ -231,8 +231,8 @@
                 <a href="lesson5.html">Lesson 5</a>
             </div>
         </div>
-        <a href="sidlak.html#section4">FAQ</a>
-        <a href="sidlak.html#section5">About The Innovator</a>
+        <a href="index.html#section4">FAQ</a>
+        <a href="index.html#section5">About The Innovator</a>
         <a href="references.html">References</a>
     </nav>
 
@@ -501,7 +501,7 @@
       // 1. Header scroll behavior
       const header = document.getElementById('header');
       if (header) {
-          const isHomepage = window.location.pathname.endsWith('sidlak.html') || 
+          const isHomepage = window.location.pathname.endsWith('index.html') || 
                             window.location.pathname === '/' || 
                             window.location.href.endsWith('index.html');
 
@@ -562,7 +562,7 @@
       document.querySelectorAll('.navbar a').forEach(link => {
           const linkPage = link.getAttribute('href').split('/').pop();
           if (linkPage === currentPage || 
-              (currentPage === 'index.html' && linkPage === 'sidlak.html')) {
+              (currentPage === 'index.html' && linkPage === 'index.html')) {
               link.classList.add('active-nav-link');
           }
       });
