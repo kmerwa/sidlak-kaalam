@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sidlak Kaalam | Lesson 4: Earth’s Mechanism</title>
+  <link rel="preload" href="./images/bg-image.webp" as="image" />
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
+</head>
+<style>
+  body{
+    margin-top: 100px;
+    background: linear-gradient(to bottom, #f0f8ff, #eae6f9, #fff4e6);
+  }
+
+  main{
+    display: flex;
+    justify-content: center;
+  }
+
+  p, li{
+    font-size: 18px;
+    text-align: justify;
+    line-height: 25px;
+  }
+
+  .lesson1-ctn{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 1200px;
+    padding: 30px;
+    gap: 15px;
+
+    h2{
+      margin-bottom: 10px;
+    }
+  }
+
+  .title{
+    align-self: center;
+  }
+
+  .card{
+    padding: 20px 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    scroll-margin-top: 100px;
+  }
+
+  .gear-up-for-learning, .power-up-your-skill{
+    background-color: #fef6e4;
+  }
+
+  .readiness-check, .connect-the-dots{
+    background-color: #e0f7fa;
+  }
+
+  .dive-in, .mastery-check{
+    background-color: #fce4ec;
+  }
+
+  .build-knowledge{
+    background-color: #e8f5e9;
+  }
+
+  .see-in-action{
+    background-color: #f3e5f5;
+  }
+
+  img{
+    height: 100%;
+    width: 100%;
+  }
+
+  .image{
+    max-width: 650px;
+    height: auto;
+    align-self: center;
+    border: 1px solid rgba(173, 216, 230, 0.5);
+    margin-top: 10px;
+  }
+
+  .image-desc{
+    align-self: center;
+    font-style: italic;
+    margin-bottom: 10px;
+  }
+
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1em 0;
+    font-family: Arial, sans-serif;
+    text-align: left;
+  }
+
+  .comparison-table caption {
+    font-weight: bold;
+    margin-bottom: 0.5em;
+  }
+
+  .comparison-table th,
+  .comparison-table td {
+    border: 1px solid #333;
+    padding: 8px;
+  }
+
+  .comparison-table thead {
+    background-color: #f2f2f2;
+  }
+
+  .card.highlight {
+    animation: pastelPulse 0.6s ease-in-out;
+  }
+
+  .accordion-card{
+    overflow: hidden;
+  }
+
+  .a-card-header{
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .a-card-content{
+    display: none;
+  }
+
+  .content-div{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .accordion-card.active .a-card-content{
+    display: block;
+  }
+
+  .arrow{
+    transition: transform 0.3s ease;
+  }
+
+  .accordion-card.active .arrow{
+    transform: rotate(180deg);
+  }
+
+  .text-overlay {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .check-list {
+        list-style: none;
+        padding-left: 30px;
+    }
+
+    .check-list li::before {
+        content: "✔";
+        margin-right: 8px;
+    }
+
+  @keyframes pastelPulse {
+    0%   { transform: scale(1); box-shadow: 0 0 0px rgba(173, 216, 230, 0); }
+    50%  { transform: scale(1.02); box-shadow: 0 0 16px rgba(173, 216, 230, 0.5); }
+    100% { transform: scale(1); box-shadow: 0 0 0px rgba(173, 216, 230, 0); }
+  }
+
+</style>
+
+<body>
+    <header id="header">
+   <div class="site-header"> 
+    <div class="header-content">
+      <a href="sidlak.html" class="logo-div">
+        <img src="images/logo.png" alt="logo" style="width: 5rem; height: auto;">
+        <h1>Sidlak Kaalam</h1>
+      </a>
+    </div>
+    <nav class="navbar">
+      <a href="sidlak.html#section1" id="home-link">Home</a>
+      <div class="dropdown">
+        <a href="sidlak.html#section3">Lessons</a>
+        <div class="dropdown-content">
+          <a href="lesson1.html">Lesson 1</a>
+          <a href="lesson2.html">Lesson 2</a>
+          <a href="lesson3.html">Lesson 3</a>
+          <a href="lesson4.html">Lesson 4</a>
+          <a href="lesson5.html">Lesson 5</a>
+        </div>
+      </div>
+      <a href="sidlak.html#section4">FAQ</a>
+      <a href="sidlak.html#section5">About The Innovator</a>
+      <a href="references.html">References</a>
+    </nav>
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </button>
+  </div>
+</header>
+
+<nav class="side-nav" id="sideNav">
+        <a href="sidlak.html#section1" id="home-link-mobile">Home</a>
+        <div class="dropdown" id="lessonsDropdown">
+            <a href="sidlak.html#section3">Lessons</a>
+            <div class="dropdown-content">
+                <a href="lesson1.html">Lesson 1</a>
+                <a href="lesson2.html">Lesson 2</a>
+                <a href="lesson3.html">Lesson 3</a>
+                <a href="lesson4.html">Lesson 4</a>
+                <a href="lesson5.html">Lesson 5</a>
+            </div>
+        </div>
+        <a href="sidlak.html#section4">FAQ</a>
+        <a href="sidlak.html#section5">About The Innovator</a>
+        <a href="references.html">References</a>
+    </nav>
+
+    <div class="overlay" id="overlay"></div>
+  <main>
+    <div class="lesson1-ctn">
+      <h1 class="title">Lesson 4: Earth’s Mechanism</h1>
+      <div id="gearUpForLearning" class="gear-up-for-learning card">
+        <h2 class="lesson-header"><svg xmlns="http://www.w3.org/2000/svg" height="40" width="40" viewBox="0 0 512 512"><path fill="#14b8a6" d="M495.9 166.6c3.2 8.7 .5 18.4-6.4 24.6l-43.3 39.4c1.1 8.3 1.7 16.8 1.7 25.4s-.6 17.1-1.7 25.4l43.3 39.4c6.9 6.2 9.6 15.9 6.4 24.6c-4.4 11.9-9.7 23.3-15.8 34.3l-4.7 8.1c-6.6 11-14 21.4-22.1 31.2c-5.9 7.2-15.7 9.6-24.5 6.8l-55.7-17.7c-13.4 10.3-28.2 18.9-44 25.4l-12.5 57.1c-2 9.1-9 16.3-18.2 17.8c-13.8 2.3-28 3.5-42.5 3.5s-28.7-1.2-42.5-3.5c-9.2-1.5-16.2-8.7-18.2-17.8l-12.5-57.1c-15.8-6.5-30.6-15.1-44-25.4L83.1 425.9c-8.8 2.8-18.6 .3-24.5-6.8c-8.1-9.8-15.5-20.2-22.1-31.2l-4.7-8.1c-6.1-11-11.4-22.4-15.8-34.3c-3.2-8.7-.5-18.4 6.4-24.6l43.3-39.4C64.6 273.1 64 264.6 64 256s.6-17.1 1.7-25.4L22.4 191.2c-6.9-6.2-9.6-15.9-6.4-24.6c4.4-11.9 9.7-23.3 15.8-34.3l4.7-8.1c6.6-11 14-21.4 22.1-31.2c5.9-7.2 15.7-9.6 24.5-6.8l55.7 17.7c13.4-10.3 28.2-18.9 44-25.4l12.5-57.1c2-9.1 9-16.3 18.2-17.8C227.3 1.2 241.5 0 256 0s28.7 1.2 42.5 3.5c9.2 1.5 16.2 8.7 18.2 17.8l12.5 57.1c15.8 6.5 30.6 15.1 44 25.4l55.7-17.7c8.8-2.8 18.6-.3 24.5 6.8c8.1 9.8 15.5 20.2 22.1 31.2l4.7 8.1c6.1 11 11.4 22.4 15.8 34.3zM256 336a80 80 0 1 0 0-160 80 80 0 1 0 0 160z"/></svg>
+          Gear Up for Learning!</h2>
+        <p>To understand how and why the Earth's plates move, it is important to explore the forces and processes happening beneath the surface. This includes learning 
+            about heat transfer within the Earth’s interior, the role of the mantle and its convection currents, and other mechanisms such as slab pull and ridge push. 
+            Grasping these key concepts will help you explain the driving causes of plate movement that shape our planet’s surface.</p>
+        <p>After this lesson, you should be able to <strong><em>describe the possible causes of plate movement (S10ES-Ia-j-36.5).</em></strong></p>
+      </div>
+      <div id="readinessCheck" class="readiness-check card">
+        <h2 class="lesson-header">
+          <svg xmlns="http://www.w3.org/2000/svg" height="40" width="40" viewBox="0 0 512 512"><path fill="#14b8a6" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg>
+          Readiness Check!</h2>
+        <p><strong>Directions:</strong> Read and understand each item carefully and select the letter of the CORRECT answer.
+        </p>
+        <button class="cssbuttons-io-button" onclick="location.href='lesson4-pre-test.html'">
+          Get started
+          <div class="icon">
+            <svg
+              height="24"
+              width="24"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M0 0h24v24H0z" fill="none"></path>
+              <path
+                d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                fill="currentColor"
+              ></path>
+            </svg>
+          </div>
+        </button>
+      </div>
+      <div id="diveIn" class="dive-in card accordion-card">
+        <div class="a-card-header">
+          <h2 style="margin: 0;" class="lesson-header"><svg xmlns="http://www.w3.org/2000/svg" height="40" width="44" viewBox="0 0 576 512"><path fill="#14b8a6" d="M269.5 69.9c11.1-7.9 25.9-7.9 37 0C329 85.4 356.5 96 384 96c26.9 0 55.4-10.8 77.4-26.1c0 0 0 0 0 0c11.9-8.5 28.1-7.8 39.2 1.7c14.4 11.9 32.5 21 50.6 25.2c17.2 4 27.9 21.2 23.9 38.4s-21.2 27.9-38.4 23.9c-24.5-5.7-44.9-16.5-58.2-25C449.5 149.7 417 160 384 160c-31.9 0-60.6-9.9-80.4-18.9c-5.8-2.7-11.1-5.3-15.6-7.7c-4.5 2.4-9.7 5.1-15.6 7.7c-19.8 9-48.5 18.9-80.4 18.9c-33 0-65.5-10.3-94.5-25.8c-13.4 8.4-33.7 19.3-58.2 25c-17.2 4-34.4-6.7-38.4-23.9s6.7-34.4 23.9-38.4C42.8 92.6 61 83.5 75.3 71.6c11.1-9.5 27.3-10.1 39.2-1.7c0 0 0 0 0 0C136.7 85.2 165.1 96 192 96c27.5 0 55-10.6 77.5-26.1zm37 288C329 373.4 356.5 384 384 384c26.9 0 55.4-10.8 77.4-26.1c0 0 0 0 0 0c11.9-8.5 28.1-7.8 39.2 1.7c14.4 11.9 32.5 21 50.6 25.2c17.2 4 27.9 21.2 23.9 38.4s-21.2 27.9-38.4 23.9c-24.5-5.7-44.9-16.5-58.2-25C449.5 437.7 417 448 384 448c-31.9 0-60.6-9.9-80.4-18.9c-5.8-2.7-11.1-5.3-15.6-7.7c-4.5 2.4-9.7 5.1-15.6 7.7c-19.8 9-48.5 18.9-80.4 18.9c-33 0-65.5-10.3-94.5-25.8c-13.4 8.4-33.7 19.3-58.2 25c-17.2 4-34.4-6.7-38.4-23.9s6.7-34.4 23.9-38.4c18.1-4.2 36.2-13.3 50.6-25.2c11.1-9.4 27.3-10.1 39.2-1.7c0 0 0 0 0 0C136.7 373.2 165.1 384 192 384c27.5 0 55-10.6 77.5-26.1c11.1-7.9 25.9-7.9 37 0zm0-144C329 229.4 356.5 240 384 240c26.9 0 55.4-10.8 77.4-26.1c0 0 0 0 0 0c11.9-8.5 28.1-7.8 39.2 1.7c14.4 11.9 32.5 21 50.6 25.2c17.2 4 27.9 21.2 23.9 38.4s-21.2 27.9-38.4 23.9c-24.5-5.7-44.9-16.5-58.2-25C449.5 293.7 417 304 384 304c-31.9 0-60.6-9.9-80.4-18.9c-5.8-2.7-11.1-5.3-15.6-7.7c-4.5 2.4-9.7 5.1-15.6 7.7c-19.8 9-48.5 18.9-80.4 18.9c-33 0-65.5-10.3-94.5-25.8c-13.4 8.4-33.7 19.3-58.2 25c-17.2 4-34.4-6.7-38.4-23.9s6.7-34.4 23.9-38.4c18.1-4.2 36.2-13.3 50.6-25.2c11.1-9.5 27.3-10.1 39.2-1.7c0 0 0 0 0 0C136.7 229.2 165.1 240 192 240c27.5 0 55-10.6 77.5-26.1c11.1-7.9 25.9-7.9 37 0z"/></svg>
+            Dive In!</h2>
+          <span class="arrow">&#9650;</span>
+        </div>
+        <div class="a-card-content">
+          <div class="content-div">
+            <p><strong>Jumble Quest: Earth's Inner Secrets</strong></p>
+            <p>Arrange the scrambled letters to form the word defined in each number.
+            </p>
+            <button class="cssbuttons-io-button" onclick="location.href='lesson4-dive-in.html'">
+              Get started
+              <div class="icon">
+                <svg
+                  height="24"
+                  width="24"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M0 0h24v24H0z" fill="none"></path>
+                  <path
+                    d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div id="buildYourKnowledge" class="build-knowledge card accordion-card">
+        <div class="a-card-header">
+          <h2 style="margin: 0;" class="lesson-header"><svg xmlns="http://www.w3.org/2000/svg" height="40" width="40" viewBox="0 0 512 512"><path fill="#14b8a6" d="M184 0c30.9 0 56 25.1 56 56l0 400c0 30.9-25.1 56-56 56c-28.9 0-52.7-21.9-55.7-50.1c-5.2 1.4-10.7 2.1-16.3 2.1c-35.3 0-64-28.7-64-64c0-7.4 1.3-14.6 3.6-21.2C21.4 367.4 0 338.2 0 304c0-31.9 18.7-59.5 45.8-72.3C37.1 220.8 32 207 32 192c0-30.7 21.6-56.3 50.4-62.6C80.8 123.9 80 118 80 112c0-29.9 20.6-55.1 48.3-62.1C131.3 21.9 155.1 0 184 0zM328 0c28.9 0 52.6 21.9 55.7 49.9c27.8 7 48.3 32.1 48.3 62.1c0 6-.8 11.9-2.4 17.4c28.8 6.2 50.4 31.9 50.4 62.6c0 15-5.1 28.8-13.8 39.7C493.3 244.5 512 272.1 512 304c0 34.2-21.4 63.4-51.6 74.8c2.3 6.6 3.6 13.8 3.6 21.2c0 35.3-28.7 64-64 64c-5.6 0-11.1-.7-16.3-2.1c-3 28.2-26.8 50.1-55.7 50.1c-30.9 0-56-25.1-56-56l0-400c0-30.9 25.1-56 56-56z"/></svg>
+            Build Your Knowledge</h2>
+          <span class="arrow">&#9650;</span>
+        </div>
+        <div class="a-card-content">
+          <div class="content-div">
+            <p><strong><em>Understanding the Causes of Plate Movements</em></strong></p>
+            <p>The movement of the Earth's tectonic plates is a fascinating geological process that shapes our planet’s surface. Earthquakes, volcanic eruptions, 
+                and the formation of mountain ranges all result from these movements. But what causes these massive slabs of rock—the <strong>lithospheric plates</strong>—to move?</p>
+            <p>To understand this, we must look beneath the Earth’s surface, particularly into the <strong>mantle,</strong> where several forces and processes work together to drive plate motion.</p>
+            <p><strong><em>1. The Role of Convection Currents in the Mantle</em></strong></p>
+            <p>At the heart of plate movement is <strong>thermal convection</strong>, a heat transfer process that occurs in fluids and semi-fluids. Convection currents form due 
+                to differences in temperature and density within a material. When part of the material is heated, it becomes <strong>less dense and rises.</strong> As it reaches a 
+                cooler region, <strong>it cools down, becomes denser, and sinks.</strong> This process creates a continuous cycle of movement known as a <strong>convection cell.</strong></p>
+            <p>In the Earth’s mantle—a thick, hot layer located between the crust and the core—convection currents are constantly at work. The <strong>core of the Earth</strong> acts as the heat source. 
+                Heat is generated by the <strong>radioactive decay</strong> of elements like uranium, thorium, and potassium, as well as leftover heat from the planet’s formation.</p>
+            <p>Because of this internal heat, <strong>hot, buoyant rock</strong> from the deeper mantle slowly rises toward the crust. As it nears the surface, it loses heat and sinks back down. These slow-moving 
+                convection currents drag the <strong>overlying lithospheric plates</strong>, causing them to move. This mechanism is referred to as <strong>mantle convection</strong>, and it is considered one of the 
+                primary causes of plate motion.</p>
+            <div class="image">
+              <img src="images/lesson4-images/image001.jpg" alt="Convection current in the mantle">
+            </div>
+            <p class="image-desc">Figure 4.1 Convection current in the mantle</p>
+            <p><strong><em>2. The Structure of the Lithosphere and Asthenosphere</em></strong></p>
+            <p>To better understand how plates move, it's important to recognize the Earth's structure:</p>
+            <ul style="padding-left: 35px;">
+                <li>The <strong>lithosphere</strong> is the rigid outermost layer of the Earth. It includes the crust and the uppermost part of the mantle.</li>
+                <li>Beneath the lithosphere lies the <strong>asthenosphere</strong>, a layer of softer, partially molten rock that behaves like a slow-moving fluid.</li>
+            </ul>
+            <p>Tectonic plates—large segments of the lithosphere—<strong>float and move</strong> on the asthenosphere. Because this layer is not completely solid, it allows the 
+                plates above to shift, slide, and interact with each other.</p>
+            <p><strong><em>3. Types of Plate Boundaries and Their Movement</em></strong></p>
+            <p>Convection currents influence plate movement at different types of boundaries:</p>
+            <ul style="padding-left: 35px;">
+                <li><strong>Divergent Boundaries:</strong> Plates move away from each other as magma rises to the surface and cools, creating new crust. This often occurs at <strong>mid-ocean ridges</strong>, where seafloor spreading happens.</li>
+                <li><strong>Convergent Boundaries:</strong> Plates move toward each other. One plate, usually denser (oceanic), subducts beneath the other, sinking into the mantle.</li>
+                <li><strong>Transform Boundaries:</strong> Plates slide past each other horizontally, leading to intense friction and earthquakes (e.g., the San Andreas Fault).</li>
+            </ul>
+            <p><strong><em>4. Other Driving Forces of Plate Motion</em></strong></p>
+            <p>Aside from mantle convection, geologists have identified <strong>additional forces</strong> that contribute to plate movement. These forces often work in combination with convection:</p>
+            <div class="image">
+              <img src="images/lesson4-images/image003.jpg" alt="Other Driving Forces of Plate Motion">
+            </div>
+            <p class="image-desc">Figure 4.2 Other Driving Forces of Plate Motion</p>
+            <p><strong>a. Slab Pull</strong></p>
+            <p>This is considered the most powerful force driving plate motion. At <strong>convergent boundaries</strong>, when an oceanic plate subducts beneath another plate, it sinks into the mantle due to its higher density. 
+                As it sinks, it <strong>pulls the rest of the plate</strong> with it, much like a heavy object pulling a rope downward. This process is known as <strong>slab pull.</strong></p>
+            <p><strong>b. Ridge Push (Gravitational Sliding)</strong></p>
+            <p>At <strong>divergent boundaries</strong>, magma rises and forms new oceanic crust at mid-ocean ridges. This new crust is <strong>hot and elevated</strong>, while older crust farther from the ridge is <strong>cooler and denser.</strong> Due to gravity, 
+                the elevated ridge pushes the plate downward and away from the ridge. This movement is called <strong>ridge push</strong> or gravitational sliding.</p>
+            <p><strong>c. Basal Drag (Mantle Drag)</strong></p>
+            <p>Although less influential, <strong>basal drag</strong> refers to the friction between the mantle's convection currents and the base of the tectonic plates. As the asthenosphere moves, it drags the lithospheric plates along with it.</p>
+          </div>
+        </div>
+      </div>
+      <div id="seeItInAction" class="see-in-action card accordion-card">
+        <div class="a-card-header">
+          <h2 style="margin: 0;" class="lesson-header"><svg xmlns="http://www.w3.org/2000/svg" height="40" width="40" viewBox="0 0 512 512"><path fill="#14b8a6" d="M0 96C0 60.7 28.7 32 64 32l384 0c35.3 0 64 28.7 64 64l0 320c0 35.3-28.7 64-64 64L64 480c-35.3 0-64-28.7-64-64L0 96zM48 368l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16zm368-16c-8.8 0-16 7.2-16 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0zM48 240l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16zm368-16c-8.8 0-16 7.2-16 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0zM48 112l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16L64 96c-8.8 0-16 7.2-16 16zM416 96c-8.8 0-16 7.2-16 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0zM160 128l0 64c0 17.7 14.3 32 32 32l128 0c17.7 0 32-14.3 32-32l0-64c0-17.7-14.3-32-32-32L192 96c-17.7 0-32 14.3-32 32zm32 160c-17.7 0-32 14.3-32 32l0 64c0 17.7 14.3 32 32 32l128 0c17.7 0 32-14.3 32-32l0-64c0-17.7-14.3-32-32-32l-128 0z"/></svg>
+            See It in Action!</h2>
+          <span class="arrow">&#9650;</span>
+        </div>
+        <div class="a-card-content">
+          <div class="content-div">
+            <!-- <p style="color: #1b4f91; align-self: center;"><strong>Earth’s Mechanism</strong></p>
+            <div style="max-width: 700px; height: auto; align-self: center; margin-bottom: 20px;">
+              <video width="100%" height="auto" controls>
+                <source src="videos/Earth’s_Mechanism.mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div> -->
+            <p style="color: #1b4f91; align-self: center;"><strong>Mechanisms of Plate Movements by Kyle Vasquez</strong></p>
+            <div style="max-width: 700px; height: auto; align-self: center; margin-bottom: 20px;">
+              <video width="100%" height="auto" controls>
+                <source src="videos/Mechanisms_of_Plate_Movements.mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="powerUpYourSkill" class="power-up-your-skill card accordion-card">
+        <div class="a-card-header">
+          <h2 style="margin: 0;" class="lesson-header"><svg xmlns="http://www.w3.org/2000/svg" height="40" width="40" viewBox="0 0 512 512"><path fill="#14b8a6" d="M78.6 5C69.1-2.4 55.6-1.5 47 7L7 47c-8.5 8.5-9.4 22-2.1 31.6l80 104c4.5 5.9 11.6 9.4 19 9.4l54.1 0 109 109c-14.7 29-10 65.4 14.3 89.6l112 112c12.5 12.5 32.8 12.5 45.3 0l64-64c12.5-12.5 12.5-32.8 0-45.3l-112-112c-24.2-24.2-60.6-29-89.6-14.3l-109-109 0-54.1c0-7.5-3.5-14.5-9.4-19L78.6 5zM19.9 396.1C7.2 408.8 0 426.1 0 444.1C0 481.6 30.4 512 67.9 512c18 0 35.3-7.2 48-19.9L233.7 374.3c-7.8-20.9-9-43.6-3.6-65.1l-61.7-61.7L19.9 396.1zM512 144c0-10.5-1.1-20.7-3.2-30.5c-2.4-11.2-16.1-14.1-24.2-6l-63.9 63.9c-3 3-7.1 4.7-11.3 4.7L352 176c-8.8 0-16-7.2-16-16l0-57.4c0-4.2 1.7-8.3 4.7-11.3l63.9-63.9c8.1-8.1 5.2-21.8-6-24.2C388.7 1.1 378.5 0 368 0C288.5 0 224 64.5 224 144l0 .8 85.3 85.3c36-9.1 75.8 .5 104 28.7L429 274.5c49-23 83-72.8 83-130.5zM56 432a24 24 0 1 1 48 0 24 24 0 1 1 -48 0z"/></svg>
+            Power Up Your Skill!</h2>
+          <span class="arrow">&#9650;</span>
+        </div>
+        <div class="a-card-content">
+          <div class="content-div">
+            <p><strong>True or False: Earth’s Mechanism Challenge!</strong></p>
+            <p><strong>Directions:</strong>  Read each statement carefully. Choose whether it is True or False. Immediate feedback will be shown after each selection.
+            </p>
+            <button class="cssbuttons-io-button" onclick="location.href='lesson4-powerup-your-skill.html'">
+              Get started
+              <div class="icon">
+                <svg
+                  height="24"
+                  width="24"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M0 0h24v24H0z" fill="none"></path>
+                  <path
+                    d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div id="connectTheDots" class="connect-the-dots card accordion-card">
+        <div class="a-card-header">
+          <h2 style="margin: 0;" class="lesson-header"><svg xmlns="http://www.w3.org/2000/svg" height="40" width="48" viewBox="0 0 640 512"><path fill="#14b8a6" d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+            Connect the Dots</h2>
+          <span class="arrow">&#9650;</span>
+        </div>
+        <div class="a-card-content">
+          <div class="content-div">
+            <ul class="check-list">
+                <li>The primary driver of tectonic plate movement is <strong>thermal convection</strong> in the Earth's mantle. Heat from the core causes mantle material to rise and fall, 
+                    creating currents that drag the overlying lithospheric plates. </li>
+                <li>Earth's <strong>lithosphere</strong> (the rigid outer layer including the crust and upper mantle) is broken into tectonic plates. These plates float and move on the <strong>asthenosphere</strong>, a softer, partially molten layer beneath. </li>
+                <li>Plate movements lead to different interactions at their boundaries: </li>
+                <ul style="padding-left: 40px;">
+                    <li><strong>Divergent Boundaries:</strong> Plates move apart as magma rises to create new crust.</li>
+                    <li><strong>Convergent Boundaries:</strong> Plates move towards each other, often leading to one plate subducting (sinking) beneath another.</li>
+                    <li><strong>Transform Boundaries:</strong> Plates slide horizontally past each other.</li>
+                </ul>
+                <li>Other significant forces contribute to plate motion: </li>
+                <ul style="padding-left: 40px;">
+                    <li><strong>Slab Pull:</strong> Considered the most powerful force, this occurs when a dense oceanic plate subducts and pulls the rest of the plate along with it.</li>
+                    <li><strong>Ridge Push (Gravitational Sliding):</strong> At mid-ocean ridges, newly formed, elevated crust cools and slides away from the ridge due to gravity, pushing the plate.</li>
+                    <li><strong>Basal Drag (Mantle Drag):</strong> This is the frictional force as the convecting asthenosphere drags the base of the lithospheric plates, though it's considered less influential than slab pull or ridge push.</li>
+                </ul>
+            </ul>
+        </div>
+      </div>
+      </div>
+      <div id="masteryCheck" class="mastery-check card">
+        <h2 class="lesson-header"><svg xmlns="http://www.w3.org/2000/svg" height="40" width="40" viewBox="0 0 512 512"><path fill="#14b8a6" d="M448 256A192 192 0 1 0 64 256a192 192 0 1 0 384 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm256 80a80 80 0 1 0 0-160 80 80 0 1 0 0 160zm0-224a144 144 0 1 1 0 288 144 144 0 1 1 0-288zM224 256a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"/></svg>
+          Mastery Check!</h2>
+        <p><strong>Directions:</strong>Read and understand each item carefully and select the letter of the CORRECT answer.
+        </p>
+        <button class="cssbuttons-io-button" onclick="location.href='lesson4-mastery-check.html'">
+          Get started
+          <div class="icon">
+            <svg
+              height="24"
+              width="24"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M0 0h24v24H0z" fill="none"></path>
+              <path
+                d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                fill="currentColor"
+              ></path>
+            </svg>
+          </div>
+        </button>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer" style="margin-top: 50px;">
+    End of Lesson 4: Earth’s Mechanism
+  </footer>
+
+<script>
+  function highlightCardById(id) {
+      const card = document.getElementById(id);
+      if (card) {
+        card.classList.add('highlight');
+
+        card.scrollIntoView({
+          behavior: 'smooth',
+          block: "start"
+        });
+
+        setTimeout(() => card.classList.remove('highlight'), 1000);
+      }
+    } 
+
+    window.addEventListener('load', () => {
+      const hash = window.location.hash.slice(1); 
+      if (hash) {
+        highlightCardById(hash);
+      }
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      // 1. Header scroll behavior
+      const header = document.getElementById('header');
+      if (header) {
+          const isHomepage = window.location.pathname.endsWith('sidlak.html') || 
+                            window.location.pathname === '/' || 
+                            window.location.href.endsWith('index.html');
+
+          function toggleHeaderBackground() {
+              const scrollTop = window.scrollY || window.pageYOffset;
+              if (!isHomepage || scrollTop > 50) {
+                  header.classList.add('header-colored');
+              } else {
+                  header.classList.remove('header-colored');
+              }
+          }
+
+          // Initialize and set up scroll listener
+          toggleHeaderBackground();
+          window.addEventListener('scroll', toggleHeaderBackground);
+      }
+
+      // 2. Scroll animations for elements
+      function animateOnScroll() {
+          const elements = document.querySelectorAll('.animate-on-scroll');
+          const windowHeight = window.innerHeight;
+
+          elements.forEach(el => {
+              const elementTop = el.getBoundingClientRect().top;
+              const revealPoint = 150;
+
+              if (elementTop < windowHeight - revealPoint) {
+                  el.classList.add('active');
+              } else {
+                  el.classList.remove('active');
+              }
+          });
+      }
+
+      // Initialize and set up scroll listener
+      animateOnScroll();
+      window.addEventListener('scroll', animateOnScroll);
+
+      // 3. "See More" button functionality
+      const seeMoreBtn = document.getElementById("seeMoreBtn");
+      if (seeMoreBtn) {
+          seeMoreBtn.addEventListener("click", function () {
+              const more = document.querySelector(".more-references");
+              if (more) {
+                  if (more.classList.contains("hidden")) {
+                      more.classList.remove("hidden");
+                      this.textContent = "View less";
+                  } else {
+                      more.classList.add("hidden");
+                      this.textContent = "View more";
+                  }
+              }
+          });
+      }
+
+      // 4. Make current nav link active
+      const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+      document.querySelectorAll('.navbar a').forEach(link => {
+          const linkPage = link.getAttribute('href').split('/').pop();
+          if (linkPage === currentPage || 
+              (currentPage === 'index.html' && linkPage === 'sidlak.html')) {
+              link.classList.add('active-nav-link');
+          }
+      });
+  });
+
+  document.querySelectorAll('.a-card-header').forEach(header => {
+    header.addEventListener('click', () => {
+      const accordion = header.parentElement;
+      accordion.classList.toggle('active');
+    });
+  });
+</script>
+</body>
+</html>

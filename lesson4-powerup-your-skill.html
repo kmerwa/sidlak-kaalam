@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 4 | Power Up Your Skill</title>
+    <link rel="stylesheet" href="./styles.css">
+    <style>
+        body {
+            line-height: 1.6;
+            margin: 20px;
+            background-image: linear-gradient(to right top, #f0f8ff, #edf5ff, #ebf2fe, #eaeffd, #e9ebfc, #eee9fb, #f4e8f8, #f9e6f4, #ffe8ee, #ffebe9, #ffefe6, #fff4e6);
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+        }
+        h1, h2 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        .directions {
+            background-color: #e9ecef;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .question-container {
+            background: #fff;
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .question-text {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .button-group button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .button-group button:hover {
+            background-color: #2980b9;
+        }
+        .button-group button:disabled {
+            background-color: #bdc3c7;
+            cursor: not-allowed;
+        }
+        .feedback {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .feedback p {
+            margin: 5px 0;
+        }
+        .feedback strong {
+            color: #333;
+        }
+        .correct-feedback {
+            background-color: #d4edda;
+            border-left: 5px solid #28a745;
+        }
+        .incorrect-feedback {
+            background-color: #f8d7da;
+            border-left: 5px solid #dc3545;
+        }
+        .user-answer-status {
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        .correct-user-answer {
+            color: #28a745;
+        }
+        .incorrect-user-answer {
+            color: #dc3545;
+        }
+        hr {
+            margin-top: 25px;
+            margin-bottom: 25px;
+            border: 0;
+            border-top: 1px solid #eee;
+        }
+        .main-ctn{
+            max-width: 1000px;
+            align-self: center;
+            display: flex;
+            gap: 15px;
+            flex-direction: column;
+            font-size: 18px;
+        }
+        .exit-btn{
+            background-color: #e74c3c;
+            display: block;
+            padding: 10px 30px;
+            font-size: 16px;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            align-self: center;
+            width: fit-content;
+        }
+        .exit-btn:hover{
+            background-color: #c0392b;
+        }
+        .score-container {
+            background-color: #f8f9fa;
+            /* border: 2px solid #dee2e6; */
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+            margin: 20px 0;
+            display: none;
+        }
+        .score-text {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-ctn">
+        <h1>Lesson 4: Earth's Mechanism</h1>
+        <h3>Power Up Your Skill!</h3>
+        <h3>True or False: Earth's Mechanism Challenge!</h3>
+        <div class="container">
+
+            <div class="directions">
+                <p><strong>Directions:</strong> Read each statement carefully. Choose whether it is True or False. Immediate feedback will be shown after each selection.</p>
+            </div>
+
+
+
+            <div id="quiz-container"></div>
+
+            <div class="score-container" id="score-container">
+                <div class="score-text" id="score-text">You got 0 out of 10.</div>
+            </div>
+
+            <button type="button" class="exit-btn" onclick="window.location.href='lesson4.html#powerUpYourSkill'">Exit</button>
+        </div>
+    </div>
+
+    <script>
+        const questionsData = [
+            {
+                id: 'q1',
+                text: "The movement of Earth's tectonic plates is primarily caused by weather patterns on the surface.",
+                correctAnswer: false,
+                rationale: "Tectonic plate movement is primarily driven by internal geological processes within the Earth, such as mantle convection.",
+            },
+            {
+                id: 'q2',
+                text: "Thermal convection is a heat transfer process that occurs in solids only.",
+                correctAnswer: false,
+                rationale: "Thermal convection is a heat transfer process that occurs in fluids and semi-fluids, driven by temperature and density differences.",
+            },
+            {
+                id: 'q3',
+                text: "The Earth's core acts as the primary heat source for mantle convection.",
+                correctAnswer: true,
+                rationale: "The Earth's core, along with radioactive decay within the mantle, provides the heat energy that drives convection currents.",
+            },
+            {
+                id: 'q4',
+                text: "The lithosphere is a soft, partially molten layer that allows tectonic plates to move.",
+                correctAnswer: false,
+                rationale: "The lithosphere is the rigid outermost layer of the Earth, while the asthenosphere is the soft, partially molten layer beneath it.",
+            },
+            {
+                id: 'q5',
+                text: "Tectonic plates float and move on the asthenosphere.",
+                correctAnswer: true,
+                rationale: "The asthenosphere's semi-fluid nature allows the rigid lithospheric plates to move across its surface.",
+            },
+            {
+                id: 'q6',
+                text: "At divergent boundaries, plates slide past each other horizontally.",
+                correctAnswer: false,
+                rationale: "At divergent boundaries, plates move away from each other as new crust is created. Sliding past each other occurs at transform boundaries.",
+            },
+            {
+                id: 'q7',
+                text: "Slab pull is considered the most powerful force driving plate motion.",
+                correctAnswer: true,
+                rationale: "Slab pull, caused by the sinking of a dense oceanic plate into the mantle, is a significant driving force.",
+            },
+            {
+                id: 'q8',
+                text: "Ridge push occurs at convergent boundaries.",
+                correctAnswer: false,
+                rationale: "Ridge push, also known as gravitational sliding, happens at mid-ocean ridges, which are divergent boundaries.",
+            },
+            {
+                id: 'q9',
+                text: "Basal drag refers to the friction between the Earth's crust and the base of the tectonic plates.",
+                correctAnswer: false,
+                rationale: "Basal drag is the friction between the asthenosphere's convection currents and the base of the lithospheric plates.",
+            },
+            {
+                id: 'q10',
+                text: "Earthquakes, volcanic eruptions, and the formation of mountain ranges are all results of plate movements.",
+                correctAnswer: true,
+                rationale: "These geological phenomena are direct consequences of the interactions and movements of tectonic plates.",
+            }
+        ];
+
+        const quizContainer = document.getElementById('quiz-container');
+        let correctAnswers = 0;
+        let totalAnswered = 0;
+        const totalQuestions = questionsData.length;
+
+        questionsData.forEach((questionData, index) => {
+            const questionElement = document.createElement('div');
+            questionElement.classList.add('question-container');
+            questionElement.id = `${questionData.id}-container`;
+
+            questionElement.innerHTML = `
+                <p class="question-text">${index + 1}. ${questionData.text}</p>
+                <div class="button-group">
+                    <button id="true-${questionData.id}" onclick="checkAnswer('${questionData.id}', true)">True</button>
+                    <button id="false-${questionData.id}" onclick="checkAnswer('${questionData.id}', false)">False</button>
+                </div>
+                <div id="feedback-${questionData.id}" class="feedback" style="display:none;">
+                    <p class="user-answer-status" id="status-${questionData.id}"></p>
+                    <p><strong>Correct Answer:</strong> <span id="correct-answer-${questionData.id}"></span></p>
+                    <p><strong>Rationale:</strong> ${questionData.rationale}</p>
+                </div>
+            `;
+            if (index < questionsData.length - 1) {
+                const hr = document.createElement('hr');
+                questionElement.appendChild(hr);
+            }
+            quizContainer.appendChild(questionElement);
+        });
+
+        function updateProgress() {
+        }
+
+        function showFinalScore() {
+            const scoreContainer = document.getElementById('score-container');
+            const scoreText = document.getElementById('score-text');
+            
+            scoreText.textContent = `You got ${correctAnswers} out of ${totalQuestions}`;
+            
+            scoreContainer.style.display = 'block';
+            scoreContainer.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function checkAnswer(questionId, userAnswer) {
+            const question = questionsData.find(q => q.id === questionId);
+            if (!question) return;
+
+            const feedbackDiv = document.getElementById(`feedback-${questionId}`);
+            const statusP = document.getElementById(`status-${questionId}`);
+            const correctAnswerSpan = document.getElementById(`correct-answer-${questionId}`);
+
+            const trueButton = document.getElementById(`true-${questionId}`);
+            const falseButton = document.getElementById(`false-${questionId}`);
+
+            if (trueButton.disabled || falseButton.disabled) {
+                return;
+            }
+
+            totalAnswered++;
+
+            if (userAnswer === question.correctAnswer) {
+                correctAnswers++;
+                statusP.textContent = "Correct! 👍";
+                statusP.className = 'user-answer-status correct-user-answer';
+                feedbackDiv.className = 'feedback correct-feedback';
+            } else {
+                statusP.textContent = "Incorrect. 🙁";
+                statusP.className = 'user-answer-status incorrect-user-answer';
+                feedbackDiv.className = 'feedback incorrect-feedback';
+            }
+
+            correctAnswerSpan.textContent = question.correctAnswer ? "True" : "False";
+            feedbackDiv.style.display = 'block';
+
+            trueButton.disabled = true;
+            falseButton.disabled = true;
+
+            if (totalAnswered === totalQuestions) {
+                setTimeout(showFinalScore, 500);
+            }
+        }
+    </script>
+
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 4 | Power Up Your Skill</title>
+    <link rel="stylesheet" href="./styles.css">
+    <style>
+        body {
+            line-height: 1.6;
+            margin: 20px;
+            background-image: linear-gradient(to right top, #f0f8ff, #edf5ff, #ebf2fe, #eaeffd, #e9ebfc, #eee9fb, #f4e8f8, #f9e6f4, #ffe8ee, #ffebe9, #ffefe6, #fff4e6);
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+        }
+        h1, h2 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        .directions {
+            background-color: #e9ecef;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .question-container {
+            background: #fff;
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .question-text {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .button-group button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .button-group button:hover {
+            background-color: #2980b9;
+        }
+        .button-group button:disabled {
+            background-color: #bdc3c7;
+            cursor: not-allowed;
+        }
+        .feedback {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .feedback p {
+            margin: 5px 0;
+        }
+        .feedback strong {
+            color: #333;
+        }
+        .correct-feedback {
+            background-color: #d4edda;
+            border-left: 5px solid #28a745;
+        }
+        .incorrect-feedback {
+            background-color: #f8d7da;
+            border-left: 5px solid #dc3545;
+        }
+        .user-answer-status {
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        .correct-user-answer {
+            color: #28a745;
+        }
+        .incorrect-user-answer {
+            color: #dc3545;
+        }
+        hr {
+            margin-top: 25px;
+            margin-bottom: 25px;
+            border: 0;
+            border-top: 1px solid #eee;
+        }
+        .main-ctn{
+            max-width: 1000px;
+            align-self: center;
+            display: flex;
+            gap: 15px;
+            flex-direction: column;
+            font-size: 18px;
+        }
+         .exit-btn{
+            background-color: #e74c3c;
+            display: block;
+            padding: 10px 30px;
+            font-size: 16px;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            align-self: center;
+            width: fit-content;
+        }
+        .exit-btn:hover{
+            background-color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-ctn">
+        <h1>Lesson 4: Earth’s Mechanism</h1>
+        <h3>Power Up Your Skill!</h3>
+        <h3>True or False: Earth’s Mechanism Challenge!</h3>
+        <div class="container">
+
+            <div class="directions">
+                <p><strong>Directions:</strong> Read each statement carefully. Choose whether it is True or False. Immediate feedback will be shown after each selection.</p>
+            </div>
+
+            <div id="quiz-container"></div>
+            <button type="button" class="exit-btn" onclick="window.location.href='lesson4.html#powerUpYourSkill'">Exit</button>
+        </div>
+    </div>
+
+    <script>
+        const questionsData = [
+            {
+                id: 'q1',
+                text: "The movement of Earth's tectonic plates is primarily caused by weather patterns on the surface.",
+                correctAnswer: false,
+                rationale: "Tectonic plate movement is primarily driven by internal geological processes within the Earth, such as mantle convection.",
+            },
+            {
+                id: 'q2',
+                text: "Thermal convection is a heat transfer process that occurs in solids only.",
+                correctAnswer: false,
+                rationale: "Thermal convection is a heat transfer process that occurs in fluids and semi-fluids, driven by temperature and density differences.",
+            },
+            {
+                id: 'q3',
+                text: "The Earth's core acts as the primary heat source for mantle convection.",
+                correctAnswer: true,
+                rationale: "The Earth's core, along with radioactive decay within the mantle, provides the heat energy that drives convection currents.",
+            },
+            {
+                id: 'q4',
+                text: "The lithosphere is a soft, partially molten layer that allows tectonic plates to move.",
+                correctAnswer: false,
+                rationale: "The lithosphere is the rigid outermost layer of the Earth, while the asthenosphere is the soft, partially molten layer beneath it.",
+            },
+            {
+                id: 'q5',
+                text: "Tectonic plates float and move on the asthenosphere.",
+                correctAnswer: true,
+                rationale: "The asthenosphere's semi-fluid nature allows the rigid lithospheric plates to move across its surface.",
+            },
+            {
+                id: 'q6',
+                text: "At divergent boundaries, plates slide past each other horizontally.",
+                correctAnswer: false,
+                rationale: "At divergent boundaries, plates move away from each other as new crust is created. Sliding past each other occurs at transform boundaries.",
+            },
+            {
+                id: 'q7',
+                text: "Slab pull is considered the most powerful force driving plate motion.",
+                correctAnswer: true,
+                rationale: "Slab pull, caused by the sinking of a dense oceanic plate into the mantle, is a significant driving force.",
+            },
+            {
+                id: 'q8',
+                text: "Ridge push occurs at convergent boundaries.",
+                correctAnswer: false,
+                rationale: "Ridge push, also known as gravitational sliding, happens at mid-ocean ridges, which are divergent boundaries.",
+            },
+            {
+                id: 'q9',
+                text: "Basal drag refers to the friction between the Earth's crust and the base of the tectonic plates.",
+                correctAnswer: false,
+                rationale: "Basal drag is the friction between the asthenosphere's convection currents and the base of the lithospheric plates.",
+            },
+            {
+                id: 'q10',
+                text: "Earthquakes, volcanic eruptions, and the formation of mountain ranges are all results of plate movements.",
+                correctAnswer: true,
+                rationale: "These geological phenomena are direct consequences of the interactions and movements of tectonic plates.",
+            }
+        ];
+
+        const quizContainer = document.getElementById('quiz-container');
+
+        questionsData.forEach((questionData, index) => {
+            const questionElement = document.createElement('div');
+            questionElement.classList.add('question-container');
+            questionElement.id = `${questionData.id}-container`;
+
+            questionElement.innerHTML = `
+                <p class="question-text">${index + 1}. ${questionData.text}</p>
+                <div class="button-group">
+                    <button id="true-${questionData.id}" onclick="checkAnswer('${questionData.id}', true)">True</button>
+                    <button id="false-${questionData.id}" onclick="checkAnswer('${questionData.id}', false)">False</button>
+                </div>
+                <div id="feedback-${questionData.id}" class="feedback" style="display:none;">
+                    <p class="user-answer-status" id="status-${questionData.id}"></p>
+                    <p><strong>Correct Answer:</strong> <span id="correct-answer-${questionData.id}"></span></p>
+                    <p><strong>Rationale:</strong> ${questionData.rationale}</p>
+                </div>
+            `;
+            if (index < questionsData.length - 1) {
+                const hr = document.createElement('hr');
+                questionElement.appendChild(hr);
+            }
+            quizContainer.appendChild(questionElement);
+        });
+
+        function checkAnswer(questionId, userAnswer) {
+            const question = questionsData.find(q => q.id === questionId);
+            if (!question) return;
+
+            const feedbackDiv = document.getElementById(`feedback-${questionId}`);
+            const statusP = document.getElementById(`status-${questionId}`);
+            const correctAnswerSpan = document.getElementById(`correct-answer-${questionId}`);
+
+            const trueButton = document.getElementById(`true-${questionId}`);
+            const falseButton = document.getElementById(`false-${questionId}`);
+
+            if (userAnswer === question.correctAnswer) {
+                statusP.textContent = "Correct! 👍";
+                statusP.className = 'user-answer-status correct-user-answer';
+                feedbackDiv.className = 'feedback correct-feedback';
+            } else {
+                statusP.textContent = "Incorrect. 🙁";
+                statusP.className = 'user-answer-status incorrect-user-answer';
+                feedbackDiv.className = 'feedback incorrect-feedback';
+            }
+
+            correctAnswerSpan.textContent = question.correctAnswer ? "True" : "False";
+            feedbackDiv.style.display = 'block';
+
+            // Disable buttons after answering
+            trueButton.disabled = true;
+            falseButton.disabled = true;
+        }
+    </script>
+
+</body>
+</html> -->

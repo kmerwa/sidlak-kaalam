@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 4 | Post-Assessment</title>
+    <script src="./app.js" defer></script>
+    <link rel="stylesheet" href="./styles.css">
+    <style>
+        body {
+            line-height: 1.6;
+            margin: 0;
+            color: #333;
+            background-image: linear-gradient(to right top, #f0f8ff, #edf5ff, #ebf2fe, #eaeffd, #e9ebfc, #eee9fb, #f4e8f8, #f9e6f4, #ffe8ee, #ffebe9, #ffefe6, #fff4e6);
+        }
+        
+        .container {
+            max-width: 800px;
+            width: 100%;
+            margin: 30px auto;
+            background-color: #FFF;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1, h2 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 5px;
+        }
+        
+        .btn:hover {
+            background: #2980b9;
+        }
+        
+        .btn-exit {
+            background: #e74c3c;
+        }
+        
+        .btn-exit:hover {
+            background: #c0392b;
+        }
+        
+        .btn-skip {
+            background: #f39c12;
+        }
+        
+        .btn-skip:hover {
+            background: #d35400;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .question {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #ecf0f1;
+            border-radius: 5px;
+        }
+        
+        .options label {
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
+            margin: 8px 0;
+            padding: 8px;
+            background: white;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .options label:hover {
+            background: #dfe6e9;
+        }
+        
+        .options label.selected {
+            background: #b8d8f8;
+            border-left: 4px solid #3498db;
+        }
+        
+        .timer {
+            text-align: center;
+            font-size: 24px;
+            margin: 20px 0;
+            color: #e74c3c;
+        }
+        
+        .progress {
+            height: 10px;
+            background: #ecf0f1;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            background: #2ecc71;
+            border-radius: 5px;
+            width: 0%;
+            transition: width 0.3s;
+        }
+        
+        .results {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .score {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2ecc71;
+        }
+        
+        .pre-post-info {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #e8f4f8;
+            border-radius: 5px;
+        }
+        
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        
+        .option-letter {
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        .exit-modal {
+            position: fixed;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .exit-modal-content {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            transform: scale(0.95);
+            transition: transform 0.3s ease;
+            max-width: 90%;
+            text-align: center;
+            width: 19rem;
+            height: 6rem;
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .exit-modal.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .exit-modal.show .exit-modal-content {
+            transform: scale(1);
+        }
+
+        .exit-modal-buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .confirm-btn,
+        .cancel-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .confirm-btn {
+            background-color: #e74c3c;
+            color: white;
+        }
+
+        .cancel-btn {
+            background-color: #bdc3c7;
+            color: #333;
+        }
+
+        .underline-space {
+            display: inline-block;
+            border-bottom: 2px solid #000;
+            width: 100px;
+            height: 1em;
+            vertical-align: bottom;
+            margin: 0 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- <div id="header-container"></div> -->
+    <div class="container">
+        <!-- Pre-Test Section -->
+        <div id="pre-test">
+            <h1>Lesson 4: Earth’s Mechanism</h1>
+            <div class="pre-post-info">
+                <p>This post-test consists of 15 multiple-choice questions about Earth’s mechanism. You will have 20 minutes to complete it.</p>
+                <p>The quiz will evaluate your understanding and learning progress after completing the lesson.</p>
+                <p>You can skip questions and return to them later.</p>
+                <p>Your score will be displayed at the end of the quiz.</p>
+            </div>
+            <button id="start-quiz" class="btn">Start Quiz</button>
+            <button id="exit-quiz" class="btn btn-exit">Exit</button>
+        </div>
+        
+        <!-- Quiz Section -->
+        <div id="quiz" class="hidden">
+            <h1>Lesson 4: Earth’s Mechanism</h1>
+            <div class="timer" id="timer">20:00</div>
+            <div class="progress">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
+            <div id="questions-container"></div>
+            <div class="nav-buttons">
+                <button id="exit-during-quiz" class="btn btn-exit">Exit Quiz</button>
+                <div>
+                    <button id="skip-question" class="btn btn-skip">Skip Question</button>
+                    <button id="submit-quiz" class="btn">Submit Quiz</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Post-Test Section -->
+        <div id="post-test" class="hidden">
+            <h1>Quiz Results</h1>
+            <div class="results">
+                <p>Your score:</p>
+                <p class="score" id="score">0/15</p>
+                <p id="result-message"></p>
+                <div class="pre-post-info" id="answers-review"></div>
+                <button id="retake-quiz" class="btn">Retake Quiz</button>
+                <button id="exit-after-quiz" class="btn btn-exit">Exit</button>
+            </div>
+        </div>
+
+        <!-- Exit Modal -->
+         <div id="exitModal" class="exit-modal hidden">
+            <div class="exit-modal-content">
+                <p>Are you sure you want to exit the quiz?</p>
+                <div class="exit-modal-buttons">
+                <button id="confirmExitBtn" class="confirm-btn">Yes, exit</button>
+                <button id="cancelExitBtn" class="cancel-btn">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Quiz questions
+        const questions = [
+         {
+            question: 'A convection current is caused by differences in temperature resulting to variation in <span class="underline-space"></span>.',
+            options: ["air pressure", "color", "density", "mass"],
+            answer: 2
+        },
+        {
+            question: 'The motion of gas or liquid caused by differences in temperature is a <span class="underline-space"></span>.',
+            options: ["tectonic movement", "plate tectonic", "convection current", "magma chamber"],
+            answer: 2
+        },
+        {
+            question: 'A driving force for plate motion at mid-ocean ridges as a result of the rigid lithosphere sliding down <span class="underline-space"></span>.',
+            options: ["slab pull", "ridge push", "convection current", "seafloor spreading"],
+            answer: 1
+        },
+        {
+            question: 'The process of one plate moving under another plate is called <span class="underline-space"></span>.',
+            options: ["drifting", "plate tectonics", "seafloor spreading", "subduction"],
+            answer: 3
+        },
+        {
+            question: 'Tectonic plates ride on <span class="underline-space"></span>.',
+            options: ["inner core", "asthenosphere", "outer core", "lithosphere"],
+            answer: 1
+        },
+        {
+            question: 'Which of the following is NOT a method of heat transfer?',
+            options: ["condensation", "convection", "conduction", "radiation"],
+            answer: 0
+        },
+        {
+            question: 'The plastic-like upper portion of the mantle is called',
+            options: ["the magma", "the core", "the lithosphere", "the asthenosphere"],
+            answer: 3
+        },
+        {
+            question: 'Which of the following is NOT a driving force of tectonic plates?',
+            options: ["ridge push", "slab push", "drag force", "mantle convection"],
+            answer: 2
+        },
+        {
+            question: 'What is the source of heat in a mantle convection current?',
+            options: ["the Sun", "the crust", "the core", "the moon"],
+            answer: 2
+        },
+        {
+            question: 'Scientists believe that the motion of tectonic plates is caused by <span class="underline-space"></span>.',
+            options: ["pressure in Earth’s crust", "conveyor belts", "convection currents", "heat in the Earth’s core"],
+            answer: 2
+        },
+        {
+            question: 'It is a measure of how much mass there is in a volume of a substance.',
+            options: ["volume", "temperature", "density", "mass"],
+            answer: 2
+        },
+        {
+            question: 'Hot molten materials in a convection cell rises near the <span class="underline-space"></span>.',
+            options: ["outer core", "crust", "inner core", "mantle"],
+            answer: 1
+        },
+        {
+            question: 'The idea that Earth’s lithosphere is broken up into separate plates that float on the mantle is the theory of <span class="underline-space"></span>.',
+            options: ["continental drift", "seafloor spreading", "tectonic movement", "plate tectonics"],
+            answer: 3
+        },
+        {
+            question: 'The region in which one plate moves under another is <span class="underline-space"></span>.',
+            options: ["rift valley", "subduction zone", "magma chamber", "vent"],
+            answer: 1
+        },
+        {
+            question: 'The region where old crust melted back into magma is <span class="underline-space"></span>.',
+            options: ["along plate boundaries", "at the mid-ocean ridge", "at deep-sea trenches", "volcano"],
+            answer: 2
+        }
+    ]
+
+        // DOM elements
+        const preTest = document.getElementById('pre-test');
+        const quiz = document.getElementById('quiz');
+        const postTest = document.getElementById('post-test');
+        const startBtn = document.getElementById('start-quiz');
+        const submitBtn = document.getElementById('submit-quiz');
+        const retakeBtn = document.getElementById('retake-quiz');
+        const exitBtn = document.getElementById('exit-quiz');
+        const exitDuringQuizBtn = document.getElementById('exit-during-quiz');
+        const exitAfterQuizBtn = document.getElementById('exit-after-quiz');
+        const skipBtn = document.getElementById('skip-question');
+        const questionsContainer = document.getElementById('questions-container');
+        const timerElement = document.getElementById('timer');
+        const progressBar = document.getElementById('progress-bar');
+        const scoreElement = document.getElementById('score');
+        const resultMessage = document.getElementById('result-message');
+        const answersReview = document.getElementById('answers-review');
+
+        const exitModal = document.getElementById('exitModal');
+        const confirmExitBtn = document.getElementById('confirmExitBtn');
+        const cancelExitBtn = document.getElementById('cancelExitBtn');
+
+        // Quiz variables
+        let currentQuestion = 0;
+        let score = 0;
+        let userAnswers = new Array(questions.length).fill(null);
+        let timeLeft = 1200; // 20 minutes in seconds
+        let timer;
+
+        // Start the quiz
+        startBtn.addEventListener('click', startQuiz);
+        retakeBtn.addEventListener('click', startQuiz);
+
+        function openExitModal() {
+            exitModal.classList.add('show');
+            exitModal.classList.remove('hidden');
+        }
+
+        function closeExitModal() {
+            exitModal.classList.remove('show');
+            setTimeout(() => {
+                exitModal.classList.add('hidden');
+            }, 300); // match transition duration
+        }
+
+        exitBtn.addEventListener('click', openExitModal);
+        exitDuringQuizBtn.addEventListener('click', openExitModal);
+        exitAfterQuizBtn.addEventListener('click', openExitModal)
+
+        confirmExitBtn.addEventListener('click', () => {
+        window.location.href = "lesson4.html";
+        });
+
+        cancelExitBtn.addEventListener('click', closeExitModal);
+
+        // Skip button
+        skipBtn.addEventListener('click', skipQuestion);
+
+        // Submit the quiz
+        submitBtn.addEventListener('click', submitQuiz);
+
+        function skipQuestion() {
+            if (currentQuestion < questions.length - 1) {
+                currentQuestion++;
+                displayQuestion();
+            }
+        }
+
+        function startQuiz() {
+            // Reset quiz variables
+            currentQuestion = 0;
+            score = 0;
+            userAnswers.fill(null);
+            timeLeft = 1200;
+            
+            // Show quiz and hide other sections
+            preTest.classList.add('hidden');
+            quiz.classList.remove('hidden');
+            postTest.classList.add('hidden');
+            
+            // Start timer
+            clearInterval(timer);
+            timer = setInterval(updateTimer, 1000);
+            updateTimer();
+            
+            // Display first question
+            displayQuestion();
+        }
+
+        function displayQuestion() {
+            // Update progress bar
+            progressBar.style.width = `${(currentQuestion / questions.length) * 100}%`;
+            
+            // Clear previous question
+            questionsContainer.innerHTML = '';
+            
+            // Create question element
+            const questionElement = document.createElement('div');
+            questionElement.className = 'question';
+            
+            // Add question text
+            const questionText = document.createElement('h2');
+            // questionText.textContent = `Question ${currentQuestion + 1}: ${questions[currentQuestion].question}`;
+            questionText.innerHTML = `Question ${currentQuestion + 1}: ${questions[currentQuestion].question}`;
+            questionElement.appendChild(questionText);
+            
+            // Add options
+            const optionsDiv = document.createElement('div');
+            optionsDiv.className = 'options';
+            
+            const optionLetters = ['A', 'B', 'C', 'D'];
+            
+            questions[currentQuestion].options.forEach((option, index) => {
+                const label = document.createElement('label');
+                const input = document.createElement('input');
+                input.type = 'radio';
+                input.name = 'question';
+                input.value = index;
+                
+                // Check if this option was previously selected
+                if (userAnswers[currentQuestion] === index) {
+                    input.checked = true;
+                    label.classList.add('selected');
+                }
+                
+                input.addEventListener('change', () => {
+                    // Remove selected class from all labels first
+                    document.querySelectorAll('.options label').forEach(label => {
+                        label.classList.remove('selected');
+                    });
+                    
+                    // Add selected class to the clicked label
+                    label.classList.add('selected');
+                    userAnswers[currentQuestion] = parseInt(input.value);
+                });
+                
+                // Add option letter
+                const optionLetter = document.createElement('span');
+                optionLetter.className = 'option-letter';
+                optionLetter.textContent = optionLetters[index] + '.';
+                
+                label.appendChild(input);
+                label.appendChild(optionLetter);
+                label.appendChild(document.createTextNode(option));
+                optionsDiv.appendChild(label);
+            });
+            
+            questionElement.appendChild(optionsDiv);
+            
+            // Add navigation buttons
+            const navDiv = document.createElement('div');
+            navDiv.className = 'nav-buttons';
+            
+            const prevNextDiv = document.createElement('div');
+            
+            if (currentQuestion > 0) {
+                const prevBtn = document.createElement('button');
+                prevBtn.className = 'btn';
+                prevBtn.textContent = 'Previous';
+                prevBtn.addEventListener('click', () => {
+                    currentQuestion--;
+                    displayQuestion();
+                });
+                prevNextDiv.appendChild(prevBtn);
+            }
+            
+            if (currentQuestion < questions.length - 1) {
+                const nextBtn = document.createElement('button');
+                nextBtn.className = 'btn';
+                nextBtn.textContent = 'Next';
+                nextBtn.addEventListener('click', () => {
+                    currentQuestion++;
+                    displayQuestion();
+                });
+                prevNextDiv.appendChild(nextBtn);
+            }
+            
+            navDiv.appendChild(prevNextDiv);
+            questionElement.appendChild(navDiv);
+            questionsContainer.appendChild(questionElement);
+        }
+
+        function updateTimer() {
+            const minutes = Math.floor(timeLeft / 60);
+            let seconds = timeLeft % 60;
+            
+            // Add leading zero if seconds < 10
+            seconds = seconds < 10 ? `0${seconds}` : seconds;
+            
+            timerElement.textContent = `${minutes}:${seconds}`;
+            
+            if (timeLeft <= 0) {
+                clearInterval(timer);
+                submitQuiz();
+            } else {
+                timeLeft--;
+            }
+        }
+
+        function submitQuiz() {
+            clearInterval(timer);
+            
+            // Calculate score
+            userAnswers.forEach((answer, index) => {
+                if (answer !== null && answer === questions[index].answer) {
+                    score++;
+                }
+            });
+            
+            // Show post-test section
+            quiz.classList.add('hidden');
+            postTest.classList.remove('hidden');
+            
+            // Display score
+            scoreElement.textContent = `${score}/${questions.length}`;
+            
+            // Display result message
+            const percentage = (score / questions.length) * 100;
+            if (percentage >= 80) {
+                resultMessage.textContent = "";
+            } else if (percentage >= 60) {
+                resultMessage.textContent = "";
+            } else if (percentage >= 40) {
+                resultMessage.textContent = "";
+            } else {
+                resultMessage.textContent = "";
+            }
+            
+            // Display answers review
+            answersReview.innerHTML = "<h3>Review your answers:</h3>";
+            const optionLetters = ['A', 'B', 'C', 'D'];
+            
+            questions.forEach((q, index) => {
+                const answerDiv = document.createElement('div');
+                answerDiv.style.marginBottom = '10px';
+                answerDiv.style.padding = '10px';
+                answerDiv.style.backgroundColor = userAnswers[index] === q.answer ? '#d4edda' : '#f8d7da';
+                
+                const questionText = document.createElement('p');
+                questionText.style.fontWeight = 'bold';
+                // questionText.textContent = `Q${index + 1}: ${q.question}`;
+                questionText.innerHTML = `Q${index + 1}: ${q.question}`;
+                answerDiv.appendChild(questionText);
+                
+                const userAnswerText = document.createElement('p');
+                if (userAnswers[index] !== null) {
+                    userAnswerText.textContent = `Your answer: ${optionLetters[userAnswers[index]]}. ${q.options[userAnswers[index]]}`;
+                } else {
+                    userAnswerText.textContent = `Your answer: Skipped`;
+                }
+                answerDiv.appendChild(userAnswerText);
+                
+                if (userAnswers[index] !== q.answer) {
+                    const correctAnswerText = document.createElement('p');
+                    correctAnswerText.textContent = `Correct answer: ${optionLetters[q.answer]}. ${q.options[q.answer]}`;
+                    answerDiv.appendChild(correctAnswerText);
+                }
+                
+                answersReview.appendChild(answerDiv);
+            });
+        }
+    </script>
+</body>
+</html>

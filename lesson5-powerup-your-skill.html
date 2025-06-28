@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lesson 5 | Power Up Your Skill</title>
+  <link rel="stylesheet" href="./styles.css">
+  <style>
+    body {
+      background-image: linear-gradient(to right top, #f0f8ff, #edf5ff, #ebf2fe, #eaeffd, #e9ebfc, #eee9fb, #f4e8f8, #f9e6f4, #ffe8ee, #ffebe9, #ffefe6, #fff4e6);
+      color: #333;
+      padding: 2rem;
+      line-height: 1.6;
+    }
+
+    h1, h2 {
+        color: #2c3e50;
+        text-align: center;
+    }
+
+    .instructions {
+      background-color: #e0ecf8;
+      border-left: 5px solid #2a5d9f;
+      padding: 1rem;
+    }
+
+    select {
+      padding: 0.3rem;
+      font-size: 1rem;
+      margin: 0 0.2rem;
+    }
+
+    .paragraph {
+      background-color: #ffffff;
+      border: 1px solid #ddd;
+      padding: 1.5rem;
+      border-radius: 8px;
+      text-align: justify;
+    }
+
+    .choices {
+      margin-top: 2rem;
+      font-style: italic;
+      color: #555;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      background-color: #2a5d9f;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #result {
+      font-weight: bold;
+      margin-top: 15px;
+    }
+
+    .main-ctn{
+      max-width: 1000px;
+      align-self: center;
+      display: flex;
+      gap: 10px;
+      flex-direction: column;
+      font-size: 18px;
+    }
+
+    .exit-btn{
+      background-color: #e74c3c;
+      display: block;
+      /* margin: 20px auto; */
+      padding: 10px 25px;
+      font-size: 16px;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .exit-btn:hover{
+        background-color: #c0392b;
+    }
+  </style>
+</head>
+<body>
+<div class="main-ctn">
+  <h1>Lesson 5: Evidence of Plate Movements</h1>
+  <h3>Power Up Your Skill!</h3>
+  <p><strong>Drifting Evidence Challenge!</strong></p>
+  <div class="instructions">
+    <strong>How to Play:</strong><br>
+    Read each paragraph carefully.<br>
+    For each numbered blank, select the best word or phrase from the choices provided to complete the sentence accurately.<br>
+    Fill in all the blanks to demonstrate your knowledge of the different lines of evidence for continental drift and plate tectonics.
+  </div>
+
+  <div class="paragraph">
+    Alfred Wegener, a German polar researcher, proposed the (1)
+    <select></select>
+    Drift Theory in 1912, suggesting that continents are slowly drifting around the Earth. He hypothesized that all continents were once a single large landmass called (2)
+    <select></select>, a Greek word meaning "All Earth." One line of evidence Wegener observed was how the eastern border of South America and the western part of Africa seemed to fit together like a giant (3)
+    <select></select>. He gathered various (4)
+    <select></select> of evidence to support his theory, including geological "fit" and fossil evidence, though he didn't personally collect the fossils.
+
+    <br><br>
+    Beyond the matching coastlines, (5)
+    <select></select> "fit" evidence showed that rock terrains on separate continents also align. For example, the Appalachian Mountains in North America are linked with the (6)
+    <select></select> Highlands, and the Karoo system in South Africa matches the Santa Catarina system in Brazil. Another key line of evidence was (7)
+    <select></select> evidence, with land-dwelling animals like the Mesosaurus, Cynognathus, and Lystrosaurus found on continents now separated by vast oceans, suggesting they couldn't have (8)
+    <select></select> across. The presence of the plant Glossopteris in all southern continents also indicated a past connection.
+
+    <br><br>
+    The Continental Drift Theory gained further support with the discovery of (9)
+    <select></select> spreading by Harry Hess. Hess's observations of the seafloor, utilizing SONAR technology, revealed new seafloor generated at mid-ocean ridges and destroyed at (10)
+    <select></select> zones. A significant line of evidence supporting seafloor spreading came from the symmetrical patterns of (11)
+    <select></select> reversal on either side of the mid-oceanic ridge, where rocks of the same age showed identical magnetic polarities. By the 1970s, the concept evolved into (12)
+    <select></select> tectonics, recognizing that entire plates of the Earth's crust, including continents, are in motion.
+  </div>
+
+  <div class="choices">
+    <strong>Word Bank:</strong> continental, pangaea, puzzle, seafloor, subduction, magnetic, plate, pieces, geological, Scottish, fossil, swam
+  </div>
+
+  <div style="display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 900px;
+    padding: 10px 40px;">
+  <button type="button" class="exit-btn" onclick="window.location.href='lesson5.html#powerUpYourSkill'">Exit</button>
+  <button id="check-btn" onclick="checkAnswers()">Check Answers</button>
+</div>
+  <p id="result"></p>
+</div>
+  <script>
+    const wordBank = [
+      "continental", "pangaea", "puzzle", "seafloor",
+      "subduction", "magnetic", "plate", "pieces",
+      "geological", "Scottish", "fossil", "swam"
+    ];
+
+    const correctAnswers = [
+      "continental",  
+      "pangaea",    
+      "puzzle",      
+      "pieces",     
+      "geological",  
+      "Scottish",   
+      "fossil",    
+      "swam",        
+      "seafloor",    
+      "subduction",  
+      "magnetic",    
+      "plate"     
+    ];
+
+    document.querySelectorAll("select").forEach(select => {
+      const defaultOption = document.createElement("option");
+      defaultOption.textContent = "-- Select --";
+      defaultOption.value = "";
+      select.appendChild(defaultOption);
+
+      wordBank.forEach(word => {
+        const option = document.createElement("option");
+        option.value = word;
+        option.textContent = word;
+        select.appendChild(option);
+      });
+    });
+
+    function checkAnswers() {
+      const selects = document.querySelectorAll("select");
+      let correct = 0;
+
+      selects.forEach((select, index) => {
+        const userAnswer = select.value.trim().toLowerCase();
+        const correctAnswer = correctAnswers[index].toLowerCase();
+
+        if (userAnswer === correctAnswer) {
+          select.style.border = "2px solid green";
+          correct++;
+        } else {
+          select.style.border = "2px solid red";
+        }
+      });
+
+      const result = document.getElementById("result");
+      if (correct === correctAnswers.length) {
+        result.textContent = `🎉 All answers correct! (${correct}/${correctAnswers.length})`;
+        result.style.color = "green";
+      } else {
+        result.textContent = `You got ${correct} out of ${correctAnswers.length} correct. Try again!`;
+        result.style.color = "red";
+      }
+    }
+  </script>
+
+</body>
+</html>

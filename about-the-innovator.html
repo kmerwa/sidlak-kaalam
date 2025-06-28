@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sidlak Kaalam</title>
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+
+  <header id="header">
+   <div class="site-header"> 
+    <div class="header-content">
+      <a href="sidlak.html" class="logo-div">
+        <img src="images/logo.png" alt="logo" style="width: 5rem; height: auto;">
+        <h1>Sidlak Kaalam</h1>
+      </a>
+    </div>
+    <nav class="navbar">
+      <a href="sidlak.html#section1" id="home-link">Home</a>
+      <div class="dropdown">
+        <a href="sidlak.html#section3">Lessons</a>
+        <div class="dropdown-content">
+          <a href="lesson1.html">Lesson 1</a>
+          <a href="lesson2.html">Lesson 2</a>
+          <a href="lesson3.html">Lesson 3</a>
+          <a href="lesson4.html">Lesson 4</a>
+          <a href="lesson5.html">Lesson 5</a>
+        </div>
+      </div>
+      <a href="sidlak.html#section4">FAQ</a>
+      <a href="sidlak.html#section5">About The Innovator</a>
+      <a href="references.html">References</a>
+    </nav>
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </button>
+  </div>
+</header>
+
+<nav class="side-nav" id="sideNav">
+        <a href="sidlak.html#section1" id="home-link-mobile">Home</a>
+        <div class="dropdown" id="lessonsDropdown">
+            <a href="sidlak.html#section3">Lessons</a>
+            <div class="dropdown-content">
+                <a href="lesson1.html">Lesson 1</a>
+                <a href="lesson2.html">Lesson 2</a>
+                <a href="lesson3.html">Lesson 3</a>
+                <a href="lesson4.html">Lesson 4</a>
+                <a href="lesson5.html">Lesson 5</a>
+            </div>
+        </div>
+        <a href="sidlak.html#section4">FAQ</a>
+        <a href="sidlak.html#section5">About The Innovator</a>
+        <a href="references.html">References</a>
+    </nav>
+
+    <div class="overlay" id="overlay"></div>
+
+  <main>
+    <section id="section4" class="innovator-section">
+      <div class="innovator-ctn">
+        <h1 class="section-title animate-on-scroll">About The Innovator</h1>
+        <div class="profile-div animate-on-scroll">
+          <div class="image">
+            <img src="images/about-the-innovator2.jpg" alt="innovator profile" width="100%" height="100%">
+          </div>
+          <h3 class="name">LEOMEL A. AMPARADO, MAEd (cand), LPT.</h3>
+        </div>
+        <div class="info animate-on-scroll">
+          <p>Mr. Leomel A. Amparado is a Licensed Professional Teacher with a Bachelor of Secondary Education degree, 
+          majoring in General Science, from Biliran Province State University (BiPSU). He is currently pursuing a 
+          Master of Arts in Education, major in Science Education, at Cebu Normal University, where he continues to 
+          enhance his knowledge and pedagogical skills in science instruction.</p>
+        <p>A scholar of the Department of Science and Technology`s (DOST) Capacity Building Program for Science and 
+          Mathematics Education, Mr. Amparado is committed to advancing science education in the Philippines. This 
+          prestigious scholarship recognizes his academic potential and his dedication to improving the quality of 
+          science teaching and learning in the country.</p>
+        <p>His early foundation in the sciences was shaped during his secondary education at the Naval State University 
+          – Laboratory High School under the Science, Technology, Engineering, and Mathematics (STEM) strand. He further 
+          honed his instructional skills through a comprehensive internship at the Naval School of Fisheries, where he 
+          taught under the Science, Technology, and Engineering Program (STEP).</p>
+        <p>Mr. Amparado also holds Honor Graduate Eligibility under Presidential Decree 907 and is a licensed professional 
+          teacher accredited by the Professional Regulation Commission.</p>
+        <p>This instructional material is a product of his vision to create meaningful, technology-integrated learning 
+          experiences in Earth and Space Science. It reflects his mission to inspire learners and support educators by 
+          making science engaging, relevant, and accessible.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    © 2025 Sidlak Kaalam | All rights reserved.
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // 1. Header scroll behavior
+      const header = document.getElementById('header');
+      if (header) {
+          const isHomepage = window.location.pathname.endsWith('sidlak.html') || 
+                            window.location.pathname === '/' || 
+                            window.location.href.endsWith('index.html');
+
+          function toggleHeaderBackground() {
+              const scrollTop = window.scrollY || window.pageYOffset;
+              if (!isHomepage || scrollTop > 50) {
+                  header.classList.add('header-colored');
+              } else {
+                  header.classList.remove('header-colored');
+              }
+          }
+
+          // Initialize and set up scroll listener
+          toggleHeaderBackground();
+          window.addEventListener('scroll', toggleHeaderBackground);
+      }
+
+      // 2. Scroll animations for elements
+      function animateOnScroll() {
+          const elements = document.querySelectorAll('.animate-on-scroll');
+          const windowHeight = window.innerHeight;
+
+          elements.forEach(el => {
+              const elementTop = el.getBoundingClientRect().top;
+              const revealPoint = 150;
+
+              if (elementTop < windowHeight - revealPoint) {
+                  el.classList.add('active');
+              } else {
+                  el.classList.remove('active');
+              }
+          });
+      }
+
+      // Initialize and set up scroll listener
+      animateOnScroll();
+      window.addEventListener('scroll', animateOnScroll);
+
+      // 3. "See More" button functionality
+      const seeMoreBtn = document.getElementById("seeMoreBtn");
+      if (seeMoreBtn) {
+          seeMoreBtn.addEventListener("click", function () {
+              const more = document.querySelector(".more-references");
+              if (more) {
+                  if (more.classList.contains("hidden")) {
+                      more.classList.remove("hidden");
+                      this.textContent = "View less";
+                  } else {
+                      more.classList.add("hidden");
+                      this.textContent = "View more";
+                  }
+              }
+          });
+      }
+
+      // 4. Make current nav link active
+      const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+      document.querySelectorAll('.navbar a').forEach(link => {
+          const linkPage = link.getAttribute('href').split('/').pop();
+          if (linkPage === currentPage || 
+              (currentPage === 'index.html' && linkPage === 'sidlak.html')) {
+              link.classList.add('active-nav-link');
+          }
+      });
+  });
+</script>
+</body>
+</html>

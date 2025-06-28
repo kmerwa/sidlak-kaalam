@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sidlak Kaalam | Lesson 3: Processes and Landforms Along Plate Boundaries</title>
+  <link rel="preload" href="./images/bg-image.webp" as="image" />
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
+</head>
+<style>
+  body{
+    margin-top: 100px;
+    background: linear-gradient(to bottom, #f0f8ff, #eae6f9, #fff4e6);
+  }
+
+  main{
+    display: flex;
+    justify-content: center;
+  }
+
+  p, li{
+    font-size: 18px;
+    text-align: justify;
+    line-height: 25px;
+  }
+
+  .lesson1-ctn{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 1200px;
+    padding: 30px;
+    gap: 15px;
+
+    h2{
+      margin-bottom: 10px;
+    }
+  }
+
+  .title{
+    align-self: center;
+  }
+
+  .card{
+    padding: 20px 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    scroll-margin-top: 100px;
+  }
+
+  .gear-up-for-learning, .power-up-your-skill{
+    background-color: #fef6e4;
+  }
+
+  .readiness-check, .connect-the-dots{
+    background-color: #e0f7fa;
+  }
+
+  .dive-in, .mastery-check{
+    background-color: #fce4ec;
+  }
+
+  .build-knowledge{
+    background-color: #e8f5e9;
+  }
+
+  .see-in-action{
+    background-color: #f3e5f5;
+  }
+
+  img{
+    height: 100%;
+    width: 100%;
+  }
+
+  .image{
+    max-width: 650px;
+    height: auto;
+    align-self: center;
+    border: 1px solid rgba(173, 216, 230, 0.5);
+    margin-top: 10px;
+  }
+
+  .image-desc{
+    align-self: center;
+    font-style: italic;
+    margin-bottom: 10px;
+  }
+
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1em 0;
+    font-family: Arial, sans-serif;
+    text-align: left;
+  }
+
+  .comparison-table caption {
+    font-weight: bold;
+    margin-bottom: 0.5em;
+  }
+
+  .comparison-table th,
+  .comparison-table td {
+    border: 1px solid #333;
+    padding: 8px;
+  }
+
+  .comparison-table thead {
+    background-color: #f2f2f2;
+  }
+
+  .card.highlight {
+    animation: pastelPulse 0.6s ease-in-out;
+  }
+
+  .accordion-card{
+    overflow: hidden;
+  }
+
+  .a-card-header{
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .a-card-content{
+    display: none;
+  }
+
+  .content-div{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .accordion-card.active .a-card-content{
+    display: block;
+  }
+
+  .arrow{
+    transition: transform 0.3s ease;
+  }
+
+  .accordion-card.active .arrow{
+    transform: rotate(180deg);
+  }
+
+  .text-overlay {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  @keyframes pastelPulse {
+    0%   { transform: scale(1); box-shadow: 0 0 0px rgba(173, 216, 230, 0); }
+    50%  { transform: scale(1.02); box-shadow: 0 0 16px rgba(173, 216, 230, 0.5); }
+    100% { transform: scale(1); box-shadow: 0 0 0px rgba(173, 216, 230, 0); }
+  }
+
+</style>
+
+<body>
+    <header id="header">
+   <div class="site-header"> 
+    <div class="header-content">
+      <a href="sidlak.html" class="logo-div">
+        <img src="images/logo.png" alt="logo" style="width: 5rem; height: auto;">
+        <h1>Sidlak Kaalam</h1>
+      </a>
+    </div>
+    <nav class="navbar">
+      <a href="sidlak.html#section1" id="home-link">Home</a>
+      <div class="dropdown">
+        <a href="sidlak.html#section3">Lessons</a>
+        <div class="dropdown-content">
+          <a href="lesson1.html">Lesson 1</a>
+          <a href="lesson2.html">Lesson 2</a>
+          <a href="lesson3.html">Lesson 3</a>
+          <a href="lesson4.html">Lesson 4</a>
+          <a href="lesson5.html">Lesson 5</a>
+        </div>
+      </div>
+      <a href="sidlak.html#section4">FAQ</a>
+      <a href="sidlak.html#section5">About The Innovator</a>
+      <a href="references.html">References</a>
+    </nav>
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </button>
+  </div>
+</header>
+
+<nav class="side-nav" id="sideNav">
+        <a href="sidlak.html#section1" id="home-link-mobile">Home</a>
+        <div class="dropdown" id="lessonsDropdown">
+            <a href="sidlak.html#section3">Lessons</a>
+            <div class="dropdown-content">
+                <a href="lesson1.html">Lesson 1</a>
+                <a href="lesson2.html">Lesson 2</a>
+                <a href="lesson3.html">Lesson 3</a>
+                <a href="lesson4.html">Lesson 4</a>
+                <a href="lesson5.html">Lesson 5</a>
+            </div>
+        </div>
+        <a href="sidlak.html#section4">FAQ</a>
+        <a href="sidlak.html#section5">About The Innovator</a>
+        <a href="references.html">References</a>
+    </nav>
+
+    <div class="overlay" id="overlay"></div>
+  <main>
+    <div class="lesson1-ctn">
+      <h1 class="title">Lesson 3: Processes and Landforms Along Plate Boundaries</h1>
+      <div id="gearUpForLearning" class="gear-up-for-learning card">
+        <h2 class="lesson-header"><svg xmlns="http://www.w3.org/2000/svg" height="40" width="40" viewBox="0 0 512 512"><path fill="#14b8a6" d="M495.9 166.6c3.2 8.7 .5 18.4-6.4 24.6l-43.3 39.4c1.1 8.3 1.7 16.8 1.7 25.4s-.6 17.1-1.7 25.4l43.3 39.4c6.9 6.2 9.6 15.9 6.4 24.6c-4.4 11.9-9.7 23.3-15.8 34.3l-4.7 8.1c-6.6 11-14 21.4-22.1 31.2c-5.9 7.2-15.7 9.6-24.5 6.8l-55.7-17.7c-13.4 10.3-28.2 18.9-44 25.4l-12.5 57.1c-2 9.1-9 16.3-18.2 17.8c-13.8 2.3-28 3.5-42.5 3.5s-28.7-1.2-42.5-3.5c-9.2-1.5-16.2-8.7-18.2-17.8l-12.5-57.1c-15.8-6.5-30.6-15.1-44-25.4L83.1 425.9c-8.8 2.8-18.6 .3-24.5-6.8c-8.1-9.8-15.5-20.2-22.1-31.2l-4.7-8.1c-6.1-11-11.4-22.4-15.8-34.3c-3.2-8.7-.5-18.4 6.4-24.6l43.3-39.4C64.6 273.1 64 264.6 64 256s.6-17.1 1.7-25.4L22.4 191.2c-6.9-6.2-9.6-15.9-6.4-24.6c4.4-11.9 9.7-23.3 15.8-34.3l4.7-8.1c6.6-11 14-21.4 22.1-31.2c5.9-7.2 15.7-9.6 24.5-6.8l55.7 17.7c13.4-10.3 28.2-18.9 44-25.4l12.5-57.1c2-9.1 9-16.3 18.2-17.8C227.3 1.2 241.5 0 256 0s28.7 1.2 42.5 3.5c9.2 1.5 16.2 8.7 18.2 17.8l12.5 57.1c15.8 6.5 30.6 15.1 44 25.4l55.7-17.7c8.8-2.8 18.6-.3 24.5 6.8c8.1 9.8 15.5 20.2 22.1 31.2l4.7 8.1c6.1 11 11.4 22.4 15.8 34.3zM256 336a80 80 0 1 0 0-160 80 80 0 1 0 0 160z"/></svg>
+          Gear Up for Learning!</h2>
+        <p>Have you ever wondered why earthquakes, volcanoes, and mountains often form in specific regions of the world? These natural events are not random—they are closely related 
+          to the movement of huge sections of the Earth’s crust known as tectonic plates. In this lesson, you will explore the different processes that occur along plate boundaries, 
+          where these plates meet and interact. Understanding these processes will help you explain how features like trenches, volcanoes, rift valleys, and mountain ranges are formed. 
+          This knowledge is essential for us in the Philippines, a country located in one of the most geologically active regions on Earth. </p>
+        <p>After this lesson, you should be able to <strong><em>explain the different processes that occur along the plate boundaries; and (S10ES-Ia-j-36.3).</em></strong></p>
+      </div>
+      <div id="readinessCheck" class="readiness-check card">
+        <h2 class="lesson-header">
+          <svg xmlns="http://www.w3.org/2000/svg" height="40" width="40" viewBox="0 0 512 512"><path fill="#14b8a6" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg>
+          Readiness Check!</h2>
+        <p><strong>Directions:</strong> Read and understand each item carefully and select the letter of the CORRECT answer.
+        </p>
+        <button class="cssbuttons-io-button" onclick="location.href='lesson3-pre-test.html'">
+          Get started
+          <div class="icon">
+            <svg
+              height="24"
+              width="24"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M0 0h24v24H0z" fill="none"></path>
+              <path
+                d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                fill="currentColor"
+              ></path>
+            </svg>
+          </div>
+        </button>
+      </div>
+      <div id="diveIn" class="dive-in card accordion-card">
+        <div class="a-card-header">
+          <h2 style="margin: 0;" class="lesson-header"><svg xmlns="http://www.w3.org/2000/svg" height="40" width="44" viewBox="0 0 576 512"><path fill="#14b8a6" d="M269.5 69.9c11.1-7.9 25.9-7.9 37 0C329 85.4 356.5 96 384 96c26.9 0 55.4-10.8 77.4-26.1c0 0 0 0 0 0c11.9-8.5 28.1-7.8 39.2 1.7c14.4 11.9 32.5 21 50.6 25.2c17.2 4 27.9 21.2 23.9 38.4s-21.2 27.9-38.4 23.9c-24.5-5.7-44.9-16.5-58.2-25C449.5 149.7 417 160 384 160c-31.9 0-60.6-9.9-80.4-18.9c-5.8-2.7-11.1-5.3-15.6-7.7c-4.5 2.4-9.7 5.1-15.6 7.7c-19.8 9-48.5 18.9-80.4 18.9c-33 0-65.5-10.3-94.5-25.8c-13.4 8.4-33.7 19.3-58.2 25c-17.2 4-34.4-6.7-38.4-23.9s6.7-34.4 23.9-38.4C42.8 92.6 61 83.5 75.3 71.6c11.1-9.5 27.3-10.1 39.2-1.7c0 0 0 0 0 0C136.7 85.2 165.1 96 192 96c27.5 0 55-10.6 77.5-26.1zm37 288C329 373.4 356.5 384 384 384c26.9 0 55.4-10.8 77.4-26.1c0 0 0 0 0 0c11.9-8.5 28.1-7.8 39.2 1.7c14.4 11.9 32.5 21 50.6 25.2c17.2 4 27.9 21.2 23.9 38.4s-21.2 27.9-38.4 23.9c-24.5-5.7-44.9-16.5-58.2-25C449.5 437.7 417 448 384 448c-31.9 0-60.6-9.9-80.4-18.9c-5.8-2.7-11.1-5.3-15.6-7.7c-4.5 2.4-9.7 5.1-15.6 7.7c-19.8 9-48.5 18.9-80.4 18.9c-33 0-65.5-10.3-94.5-25.8c-13.4 8.4-33.7 19.3-58.2 25c-17.2 4-34.4-6.7-38.4-23.9s6.7-34.4 23.9-38.4c18.1-4.2 36.2-13.3 50.6-25.2c11.1-9.4 27.3-10.1 39.2-1.7c0 0 0 0 0 0C136.7 373.2 165.1 384 192 384c27.5 0 55-10.6 77.5-26.1c11.1-7.9 25.9-7.9 37 0zm0-144C329 229.4 356.5 240 384 240c26.9 0 55.4-10.8 77.4-26.1c0 0 0 0 0 0c11.9-8.5 28.1-7.8 39.2 1.7c14.4 11.9 32.5 21 50.6 25.2c17.2 4 27.9 21.2 23.9 38.4s-21.2 27.9-38.4 23.9c-24.5-5.7-44.9-16.5-58.2-25C449.5 293.7 417 304 384 304c-31.9 0-60.6-9.9-80.4-18.9c-5.8-2.7-11.1-5.3-15.6-7.7c-4.5 2.4-9.7 5.1-15.6 7.7c-19.8 9-48.5 18.9-80.4 18.9c-33 0-65.5-10.3-94.5-25.8c-13.4 8.4-33.7 19.3-58.2 25c-17.2 4-34.4-6.7-38.4-23.9s6.7-34.4 23.9-38.4c18.1-4.2 36.2-13.3 50.6-25.2c11.1-9.5 27.3-10.1 39.2-1.7c0 0 0 0 0 0C136.7 229.2 165.1 240 192 240c27.5 0 55-10.6 77.5-26.1c11.1-7.9 25.9-7.9 37 0z"/></svg>
+            Dive In!</h2>
+          <span class="arrow">&#9650;</span>
+        </div>
+        <div class="a-card-content">
+          <div class="content-div">
+            <p><strong>Plate Boundary Match Up! </strong></p>
+            <p><strong>Directions:</strong> Drag each scenario to the correct plate boundary and subtype.
+            </p>
+            <button class="cssbuttons-io-button" onclick="location.href='lesson3-dive-in.html'">
+              Get started
+              <div class="icon">
+                <svg
+                  height="24"
+                  width="24"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M0 0h24v24H0z" fill="none"></path>
+                  <path
+                    d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div id="buildYourKnowledge" class="build-knowledge card accordion-card">
+        <div class="a-card-header">
+          <h2 style="margin: 0;" class="lesson-header"><svg xmlns="http://www.w3.org/2000/svg" height="40" width="40" viewBox="0 0 512 512"><path fill="#14b8a6" d="M184 0c30.9 0 56 25.1 56 56l0 400c0 30.9-25.1 56-56 56c-28.9 0-52.7-21.9-55.7-50.1c-5.2 1.4-10.7 2.1-16.3 2.1c-35.3 0-64-28.7-64-64c0-7.4 1.3-14.6 3.6-21.2C21.4 367.4 0 338.2 0 304c0-31.9 18.7-59.5 45.8-72.3C37.1 220.8 32 207 32 192c0-30.7 21.6-56.3 50.4-62.6C80.8 123.9 80 118 80 112c0-29.9 20.6-55.1 48.3-62.1C131.3 21.9 155.1 0 184 0zM328 0c28.9 0 52.6 21.9 55.7 49.9c27.8 7 48.3 32.1 48.3 62.1c0 6-.8 11.9-2.4 17.4c28.8 6.2 50.4 31.9 50.4 62.6c0 15-5.1 28.8-13.8 39.7C493.3 244.5 512 272.1 512 304c0 34.2-21.4 63.4-51.6 74.8c2.3 6.6 3.6 13.8 3.6 21.2c0 35.3-28.7 64-64 64c-5.6 0-11.1-.7-16.3-2.1c-3 28.2-26.8 50.1-55.7 50.1c-30.9 0-56-25.1-56-56l0-400c0-30.9 25.1-56 56-56z"/></svg>
+            Build Your Knowledge</h2>
+          <span class="arrow">&#9650;</span>
+        </div>
+        <div class="a-card-content">
+          <div class="content-div">
+            <p>The Earth's lithosphere is broken into several large and small tectonic plates that are constantly in motion. The interactions and processes that occur at the boundaries where these 
+              plates meet are fundamental to many geological phenomena. There are three main types of plate boundaries, each characterized by distinct processes:</p>
+            <div class="image" style="max-width: 1100px;">
+              <img src="images/lesson3-images/image001.jpg" alt="The three types of plate boundaries with their corresponding processes">
+            </div>
+            <p class="image-desc">Figure 3.1 The three types of plate boundaries with their corresponding processes</p>
+            <p><strong>1. Convergent Boundaries ➡️⬅️ (Destructive Margins)</strong></p>
+            <p>At convergent boundaries, two plates move towards each other. The specific processes depend on the types of crust involved (oceanic or continental).</p>
+            <ul style="padding-left: 35px;">
+              <li><strong>a. Oceanic-Continental Convergence:</strong></li>
+              <ul style="padding-left: 45px;">
+                <li><strong>Process:</strong> When an oceanic plate collides with a continental plate, the denser oceanic plate subducts (sinks) beneath the less dense continental plate.</li>
+                <li><strong>Key Features & Processes: </strong></li>
+                <ul style="padding-left: 55px;">
+                  <li><strong>Subduction Zone:</strong> The area where the oceanic plate descends into the mantle.</li>
+                  <li><strong>Ocean Trench:</strong> A deep, linear depression forms on the ocean floor parallel to the subducting plate (e.g., the Mariana Trench). This is the topographic expression of the subduction zone.</li>
+                  <li><strong>Volcanic Arc (Continental Arc):</strong> As the subducting oceanic plate descends, it heats up and releases water and other volatiles. These volatiles lower the melting point of 
+                    the overlying mantle wedge, causing it to melt. This magma rises to the surface, erupting to form a chain of volcanoes along the edge of the continental plate (e.g., the Andes Mountains).</li>
+                  <li><strong>Earthquakes:</strong> Intense seismic activity occurs along the subducting slab (Benioff Zone). These can be shallow, intermediate, or deep-focus earthquakes, and are often very powerful.</li>
+                  <li><strong>Accretionary Wedge:</strong> Sediments scraped off the subducting oceanic plate and the continental margin accumulate and deform on the overriding continental plate.</li>
+                  <li><strong>Mountain Building:</strong> The collision and compression can lead to folding and faulting of the continental crust, contributing to mountain building.</li>
+                </ul>
+              </ul>
+              <li><strong>b. Oceanic-Oceanic Convergence:</strong></li>
+              <ul style="padding-left: 45px;">
+                <li><strong>Process:</strong> When two oceanic plates collide, the older, colder, and denser plate subducts beneath the younger, warmer, and less dense plate.</li>
+                <li><strong>Key Features & Processes:</strong></li>
+                <ul style="padding-left: 55px;">
+                  <li><strong>Subduction Zone:</strong> Similar to oceanic-continental convergence.</li>
+                  <li><strong>Ocean Trench:</strong> A deep trench is formed (e.g., the Tonga Trench).</li>
+                  <li><strong>Volcanic Island Arc:</strong> Magma generated from the melting of the mantle wedge (due to volatiles from the subducting plate) rises and erupts on the ocean floor. Over time, these submarine 
+                    volcanoes can grow to form a chain of volcanic islands (e.g., the Aleutian Islands, Japan, the Philippines).</li>
+                  <li><strong>Earthquakes:</strong> Frequent and powerful earthquakes occur, similar to oceanic-continental convergence, along the Benioff Zone.</li>
+                </ul>
+              </ul>
+              <li><strong>c. Continental-Continental Convergence:</strong></li>
+              <ul style="padding-left: 45px;">
+                <li><strong>Process:</strong> When two continental plates collide, neither plate is dense enough to subduct significantly into the mantle. Instead, the continental crust buckles, folds, and faults, 
+                  leading to extensive uplift.</li>
+                <li><strong>Key Features & Processes: </strong></li>
+                <ul style="padding-left: 55px;">
+                  <li><strong>Mountain Building (Orogeny):</strong> This type of collision forms vast and high mountain ranges (e.g., the Himalayas, formed by the collision of the Indian and Eurasian plates; the Alps).</li>
+                  <li><strong>Crustal Thickening:</strong> The crust in the collision zone becomes significantly thicker.</li>
+                  <li><strong>Earthquakes: </strong>Frequent and powerful shallow to intermediate-focus earthquakes occur due to the immense compressional forces.</li>
+                  <li><strong>Little to No Volcanism:</strong> Unlike other convergent boundaries, there is generally no significant volcanism because there is no subducting oceanic plate to release volatiles and induce mantle melting 
+                    in the same way. Any magma present is typically due to crustal melting from the intense pressure and heat.</li>
+                  <li><strong>Metamorphism:</strong> Intense pressure and heat cause widespread metamorphism of rocks.</li>
+                </ul>
+              </ul>
+            </ul>
+            <p><strong>2. Divergent Boundaries ⬅️➡️ (Constructive Margins)</strong></p>
+            <p>At divergent boundaries, two plates move away from each other.</p>
+            <ul style="padding-left: 35px;">
+              <li><strong>a. Oceanic Divergence (Seafloor Spreading):</strong></li>
+              <ul style="padding-left: 45px;">
+                <li><strong>Process:</strong> This primarily occurs at mid-ocean ridges. As plates pull apart, tensional stress causes the lithosphere to fracture. Hot asthenospheric mantle material rises to fill the gap.</li>
+                <li><strong>Key Features & Processes: </strong></li>
+                <ul style="padding-left: 55px;">
+                  <li><strong>Mid-Ocean Ridges:</strong> Long, underwater mountain ranges are formed (e.g., the Mid-Atlantic Ridge, East Pacific Rise). These are sites of active volcanism.</li>
+                  <li><strong>Rift Valley:</strong> A central valley often runs along the crest of the mid-ocean ridge.</li>
+                  <li><strong>Seafloor Spreading:</strong> New oceanic crust is continuously created as magma rises, cools, and solidifies at the ridge. This new crust is then pushed away from the ridge as more material upwells. This process is a key piece of evidence for plate tectonics.</li>
+                  <li><strong>Volcanism:</strong> Effusive (non-explosive) basaltic volcanism occurs as magma erupts onto the seafloor, often forming pillow lavas.</li>
+                  <li><strong>Earthquakes:</strong> Shallow, relatively low-magnitude earthquakes are common along the ridge system due to the tensional forces and magma movement.</li>
+                  <li><strong>Hydrothermal Vents:</strong> Seawater percolates through cracks in the new crust, is heated by magma, and then re-emerges as hot, mineral-rich plumes, supporting unique ecosystems.</li>
+                </ul>
+              </ul>
+            </ul>
+            <div class="image">
+              <img src="images/lesson3-images/image002.jpg" alt="Example of a hydrothermal vent">
+            </div>
+            <p class="image-desc">Figure 3.2 Example of a hydrothermal vent</p>
+            <ul style="padding-left: 35px;">
+              <li><strong>b. Continental Divergence (Rifting):</strong></li>
+              <ul style="padding-left: 45px;">
+                <li><strong>Process:</strong> When a divergent boundary develops within a continent, the continental crust is stretched and thinned.</li>
+                <li><strong>Key Features & Processes: </strong></li>
+                <ul style="padding-left: 55px;">
+                  <li><strong>Rift Valley Formation:</strong> The tensional forces cause the crust to fracture and drop down along normal faults, creating a large, elongated depression called a rift valley (e.g., the East African Rift Valley).</li>
+                  <li><strong>Volcanism:</strong> As the crust thins, magma can rise from the mantle and erupt, leading to volcanic activity within and along the rift. This can include both basaltic flows and more explosive silicic eruptions if continental crust melts.</li>
+                  <li><strong>Earthquakes:</strong> Shallow earthquakes are common along the faults within the rift system.</li>
+                  <li><strong>Formation of New Ocean Basins:</strong> If rifting continues, the continental crust can stretch and thin to the point where it breaks apart completely. Seawater can flood the rift valley, eventually leading to the formation of a new linear sea and, ultimately, 
+                    a new ocean basin with a mid-ocean ridge at its center (e.g., the Red Sea).</li>
+                </ul>
+              </ul>
+            </ul>
+            <div class="image" style="border: none;">
+              <img src="images/lesson3-images/image003.png" alt="Formation of new ocean basins">
+            </div>
+            <p class="image-desc">Figure 3.3 Formation of new ocean basins</p>
+            <p><strong>3. Transform Boundaries ⬆️⬇️ (Conservative Margins)</strong></p>
+            <p>At transform boundaries, two plates slide horizontally past each other. Lithosphere is neither created nor destroyed.</p>
+            <ul style="padding-left: 35px;">
+              <li><strong>Process:</strong> The motion is predominantly horizontal, driven by the differential movement of adjacent plates.</li>
+              <li><strong>Key Features & Processes: </strong></li>
+              <ul style="padding-left: 45px;">
+                <li><strong>Transform Faults:</strong> These are large-scale strike-slip faults that accommodate the lateral movement between plates (e.g., the San Andreas Fault in California, the Alpine Fault in New Zealand).</li>
+                <li><strong>Earthquakes:</strong> As the plates grind past each other, immense stress builds up due to friction. When this stress is suddenly released, it causes powerful, often shallow-focus earthquakes. The longer the plates remain locked, the more stress accumulates, potentially leading to larger earthquakes.</li>
+                <li><strong>No Significant Volcanism:</strong> Typically, there is no widespread volcanism associated with transform boundaries because there is no subduction to induce mantle melting and no upwelling of magma as seen at divergent boundaries.</li>
+                <li><strong>Linear Valleys and Ridges:</strong> The fault zone can create linear valleys, offset stream channels, and pressure ridges due to the shearing motion and local compression or extension along irregularities in the fault.</li>
+                <li><strong>Crustal Deformation:</strong> While crust isn't created or destroyed on a large scale, rocks along the fault zone can be intensely fractured, sheared, and metamorphosed due to the immense frictional forces.</li>
+              </ul>
+            </ul>
+            <p>Understanding these processes at plate boundaries is crucial for explaining the distribution of earthquakes, volcanoes, mountain ranges, and other major geological features on Earth. It also helps in assessing and mitigating natural hazards associated with these dynamic zones.</p>
+          </div>
+        </div>
+      </div>
+      <div id="seeItInAction" class="see-in-action card accordion-card">
+        <div class="a-card-header">
+          <h2 style="margin: 0;" class="lesson-header"><svg xmlns="http://www.w3.org/2000/svg" height="40" width="40" viewBox="0 0 512 512"><path fill="#14b8a6" d="M0 96C0 60.7 28.7 32 64 32l384 0c35.3 0 64 28.7 64 64l0 320c0 35.3-28.7 64-64 64L64 480c-35.3 0-64-28.7-64-64L0 96zM48 368l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16zm368-16c-8.8 0-16 7.2-16 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0zM48 240l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16zm368-16c-8.8 0-16 7.2-16 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0zM48 112l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16L64 96c-8.8 0-16 7.2-16 16zM416 96c-8.8 0-16 7.2-16 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0zM160 128l0 64c0 17.7 14.3 32 32 32l128 0c17.7 0 32-14.3 32-32l0-64c0-17.7-14.3-32-32-32L192 96c-17.7 0-32 14.3-32 32zm32 160c-17.7 0-32 14.3-32 32l0 64c0 17.7 14.3 32 32 32l128 0c17.7 0 32-14.3 32-32l0-64c0-17.7-14.3-32-32-32l-128 0z"/></svg>
+            See It in Action!</h2>
+          <span class="arrow">&#9650;</span>
+        </div>
+        <div class="a-card-content">
+          <div class="content-div">
+            <p style="color: #1b4f91; align-self: center;"><strong>Processes and Landforms along Divergent and Transform Plate Boundaries</strong></p>
+            <div style="max-width: 700px; height: auto; align-self: center; margin-bottom: 20px;">
+              <video width="100%" height="auto" controls>
+                <source src="videos/Processes_and_Landforms_along_Divergent_and_Transform_Plate_Boundaries.mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <p style="color: #1b4f91; align-self: center;"><strong>Processes and Landforms Along With Convergence of Plates</strong></p>
+            <div style="max-width: 700px; height: auto; align-self: center; margin-bottom: 20px;">
+              <video width="100%" height="auto" controls>
+                <source src="videos/Processes_and_Landforms_Along_With_Convergence_of_Plates.mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <p style="color: #1b4f91; align-self: center;"><strong>Processes and Landforms Along Plate Boundaries by Kyle Vasquez </strong></p>
+            <div style="max-width: 700px; height: auto; align-self: center; margin-bottom: 20px;">
+              <video width="100%" height="auto" controls>
+                <source src="videos/Processes_and_Landforms_Along_Plate_Boundaries.mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="powerUpYourSkill" class="power-up-your-skill card accordion-card">
+        <div class="a-card-header">
+          <h2 style="margin: 0;" class="lesson-header"><svg xmlns="http://www.w3.org/2000/svg" height="40" width="40" viewBox="0 0 512 512"><path fill="#14b8a6" d="M78.6 5C69.1-2.4 55.6-1.5 47 7L7 47c-8.5 8.5-9.4 22-2.1 31.6l80 104c4.5 5.9 11.6 9.4 19 9.4l54.1 0 109 109c-14.7 29-10 65.4 14.3 89.6l112 112c12.5 12.5 32.8 12.5 45.3 0l64-64c12.5-12.5 12.5-32.8 0-45.3l-112-112c-24.2-24.2-60.6-29-89.6-14.3l-109-109 0-54.1c0-7.5-3.5-14.5-9.4-19L78.6 5zM19.9 396.1C7.2 408.8 0 426.1 0 444.1C0 481.6 30.4 512 67.9 512c18 0 35.3-7.2 48-19.9L233.7 374.3c-7.8-20.9-9-43.6-3.6-65.1l-61.7-61.7L19.9 396.1zM512 144c0-10.5-1.1-20.7-3.2-30.5c-2.4-11.2-16.1-14.1-24.2-6l-63.9 63.9c-3 3-7.1 4.7-11.3 4.7L352 176c-8.8 0-16-7.2-16-16l0-57.4c0-4.2 1.7-8.3 4.7-11.3l63.9-63.9c8.1-8.1 5.2-21.8-6-24.2C388.7 1.1 378.5 0 368 0C288.5 0 224 64.5 224 144l0 .8 85.3 85.3c36-9.1 75.8 .5 104 28.7L429 274.5c49-23 83-72.8 83-130.5zM56 432a24 24 0 1 1 48 0 24 24 0 1 1 -48 0z"/></svg>
+            Power Up Your Skill!</h2>
+          <span class="arrow">&#9650;</span>
+        </div>
+        <div class="a-card-content">
+          <div class="content-div">
+            <p><strong>Plate Detective Game</strong></p>
+            <p>Use your knowledge of the different processes occurring at plate boundaries to solve the following geologic cases.
+            </p>
+            <button class="cssbuttons-io-button" onclick="location.href='lesson3-powerup-your-skill.html'">
+              Get started
+              <div class="icon">
+                <svg
+                  height="24"
+                  width="24"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M0 0h24v24H0z" fill="none"></path>
+                  <path
+                    d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div id="connectTheDots" class="connect-the-dots card accordion-card">
+        <div class="a-card-header">
+          <h2 style="margin: 0;" class="lesson-header"><svg xmlns="http://www.w3.org/2000/svg" height="40" width="48" viewBox="0 0 640 512"><path fill="#14b8a6" d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+            Connect the Dots</h2>
+          <span class="arrow">&#9650;</span>
+        </div>
+        <div class="a-card-content">
+          <div class="content-div">
+            <p>Earth’s lithosphere is divided into tectonic plates whose interactions at boundaries drive much of the planet’s geological activity. 
+              This section summarizes the three main types of plate boundaries—convergent, divergent, and transform—and their distinct features, processes, 
+              and effects. Understanding these boundaries helps explain the patterns of earthquakes, volcanism, and mountain building critical for both science and safety.</p>
+            <ul style="padding-left: 30px;">
+              <li>The <strong>Earth’s lithosphere</strong> is divided into tectonic plates that are constantly moving.</li>
+              <li>The <strong>boundaries</strong> where these plates interact are zones of significant geological activity</li>
+              <li>There are <strong>three major types of plate boundaries,</strong> each with distinct features and processes:</li>
+            </ul>
+            <p><strong>Convergent Boundaries (Destructive Margins) – Plates move toward each other</strong></p>
+            <ul style="padding-left: 30px;">
+              <li><strong>Oceanic-Continental Convergence:</strong></li>
+              <ul style="padding-left: 40px;">
+                <li>Denser oceanic plate subducts beneath continental plate.</li>
+                <li>Forms <strong>trenches, continental volcanic arcs, earthquakes,</strong> and <strong>mountains.</strong></li>
+              </ul>
+              <li><strong>Oceanic-Oceanic Convergence:</strong></li>
+                <ul style="padding-left: 40px;">
+                  <li>Older, denser oceanic plate subducts.</li>
+                  <li>Creates <strong>trenches, volcanic island arcs,</strong> and <strong>frequent earthquakes.</strong></li>
+                </ul>
+              <li><strong>Continental-Continental Convergence:</strong></li>
+                <ul style="padding-left: 40px;">
+                  <li>No subduction; plates <strong>collide and uplift.</strong></li>
+                  <li>Leads to <strong>mountain building, crustal thickening, shallow earthquakes,</strong> and <strong>metamorphism.</strong></li>
+                  <li>Generally <strong>no volcanism.</strong></li>
+                </ul>
+              </ul>
+              <p><strong>Divergent Boundaries (Constructive Margins) – Plates move away from each other</strong></p>
+              <ul style="padding-left: 30px;">
+                <li><strong>Oceanic Divergence (Seafloor Spreading):</strong></li>
+                <ul style="padding-left: 40px;">
+                  <li>Occurs at <strong>mid-ocean ridges;</strong> new crust is formed.</li>
+                  <li>Features include <strong>rift valleys, basaltic volcanism, shallow earthquakes,</strong> and <strong>hydrothermal vents.</strong></li>
+                </ul>
+                <li><strong>Continental Divergence (Rifting):</strong></li>
+                <ul style="padding-left: 40px;">
+                  <li>Crust stretches and breaks, forming <strong>rift valleys.</strong></li>
+                  <li>May result in <strong>volcanic activity, earthquakes,</strong> and eventually <strong>new ocean basins</strong> (e.g., Red Sea).</li>
+                </ul>               
+              </ul>
+              <p><strong>Transform Boundaries (Conservative Margins) – Plates slide past each other</strong></p>
+              <ul style="padding-left: 30px;">
+                <li>No crust is created or destroyed.</li>
+                <li>Characterized by <strong>transform faults</strong> (e.g., San Andreas Fault).</li>
+                <li>Produces <strong>powerful shallow earthquakes, linear valleys, offset landforms,</strong> and <strong>crustal deformation.</strong></li>
+                <li>Typically <strong>no volcanism.</strong></li>
+                <li>These plate boundary processes explain the <strong>distribution of volcanoes, earthquakes, and mountain ranges</strong> on Earth.</li>
+                <li>Understanding them is essential for <strong>disaster preparedness, geological mapping, and earth science education.</strong></li>
+              </ul>
+        </div>
+      </div>
+      </div>
+      <div id="masteryCheck" class="mastery-check card">
+        <h2 class="lesson-header"><svg xmlns="http://www.w3.org/2000/svg" height="40" width="40" viewBox="0 0 512 512"><path fill="#14b8a6" d="M448 256A192 192 0 1 0 64 256a192 192 0 1 0 384 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm256 80a80 80 0 1 0 0-160 80 80 0 1 0 0 160zm0-224a144 144 0 1 1 0 288 144 144 0 1 1 0-288zM224 256a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"/></svg>
+          Mastery Check!</h2>
+        <p><strong>Directions:</strong>Read and understand each item carefully and select the letter of the CORRECT answer.
+        </p>
+        <button class="cssbuttons-io-button" onclick="location.href='lesson3-mastery-check.html'">
+          Get started
+          <div class="icon">
+            <svg
+              height="24"
+              width="24"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M0 0h24v24H0z" fill="none"></path>
+              <path
+                d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                fill="currentColor"
+              ></path>
+            </svg>
+          </div>
+        </button>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer" style="margin-top: 50px;">
+    End of Lesson 3: Processes and Landforms Along Plate Boundaries
+  </footer>
+
+<script>
+  function highlightCardById(id) {
+      const card = document.getElementById(id);
+      if (card) {
+        card.classList.add('highlight');
+
+        card.scrollIntoView({
+          behavior: 'smooth',
+          block: "start"
+        });
+
+        setTimeout(() => card.classList.remove('highlight'), 1000);
+      }
+    } 
+
+    window.addEventListener('load', () => {
+      const hash = window.location.hash.slice(1); 
+      if (hash) {
+        highlightCardById(hash);
+      }
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      // 1. Header scroll behavior
+      const header = document.getElementById('header');
+      if (header) {
+          const isHomepage = window.location.pathname.endsWith('sidlak.html') || 
+                            window.location.pathname === '/' || 
+                            window.location.href.endsWith('index.html');
+
+          function toggleHeaderBackground() {
+              const scrollTop = window.scrollY || window.pageYOffset;
+              if (!isHomepage || scrollTop > 50) {
+                  header.classList.add('header-colored');
+              } else {
+                  header.classList.remove('header-colored');
+              }
+          }
+
+          // Initialize and set up scroll listener
+          toggleHeaderBackground();
+          window.addEventListener('scroll', toggleHeaderBackground);
+      }
+
+      // 2. Scroll animations for elements
+      function animateOnScroll() {
+          const elements = document.querySelectorAll('.animate-on-scroll');
+          const windowHeight = window.innerHeight;
+
+          elements.forEach(el => {
+              const elementTop = el.getBoundingClientRect().top;
+              const revealPoint = 150;
+
+              if (elementTop < windowHeight - revealPoint) {
+                  el.classList.add('active');
+              } else {
+                  el.classList.remove('active');
+              }
+          });
+      }
+
+      // Initialize and set up scroll listener
+      animateOnScroll();
+      window.addEventListener('scroll', animateOnScroll);
+
+      // 3. "See More" button functionality
+      const seeMoreBtn = document.getElementById("seeMoreBtn");
+      if (seeMoreBtn) {
+          seeMoreBtn.addEventListener("click", function () {
+              const more = document.querySelector(".more-references");
+              if (more) {
+                  if (more.classList.contains("hidden")) {
+                      more.classList.remove("hidden");
+                      this.textContent = "View less";
+                  } else {
+                      more.classList.add("hidden");
+                      this.textContent = "View more";
+                  }
+              }
+          });
+      }
+
+      // 4. Make current nav link active
+      const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+      document.querySelectorAll('.navbar a').forEach(link => {
+          const linkPage = link.getAttribute('href').split('/').pop();
+          if (linkPage === currentPage || 
+              (currentPage === 'index.html' && linkPage === 'sidlak.html')) {
+              link.classList.add('active-nav-link');
+          }
+      });
+  });
+
+  document.querySelectorAll('.a-card-header').forEach(header => {
+    header.addEventListener('click', () => {
+      const accordion = header.parentElement;
+      accordion.classList.toggle('active');
+    });
+  });
+</script>
+</body>
+</html>

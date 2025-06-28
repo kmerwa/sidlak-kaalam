@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 1 | Power Up Your Skill</title>
+    <link rel="stylesheet" href="./styles.css">
+    <style>
+        body {
+            /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
+            background-image: linear-gradient(to right top, #f0f8ff, #edf5ff, #ebf2fe, #eaeffd, #e9ebfc, #eee9fb, #f4e8f8, #f9e6f4, #ffe8ee, #ffebe9, #ffefe6, #fff4e6);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            gap: 15px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+
+        h1, h3{
+            align-self: center;
+        }
+
+        .header {
+            background: linear-gradient(45deg, #2c3e50, #34495e);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .activity-badge {
+            background: #27ae60;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .title {
+            font-size: 2.5em;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+
+        .game-area {
+            display: flex;
+            padding: 20px;
+            gap: 30px;
+        }
+
+        .crossword-container {
+            /* flex: 2; */
+            position: relative;
+        }
+
+                    .crossword-grid {
+            display: grid;
+            grid-template-columns: repeat(20, 25px);
+            grid-template-rows: repeat(28, 25px);
+            gap: 1px;
+            background: #ddd;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .cell {
+            width: 25px;
+            height: 25px;
+            background: white;
+            border: 1px solid #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .cell.blocked {
+            background: #333;
+            cursor: default;
+        }
+
+        .cell.active {
+            background: #3498db;
+            color: white;
+        }
+
+        .cell.correct {
+            background: #27ae60;
+            color: white;
+        }
+
+        .cell.incorrect {
+            background: #e74c3c;
+            color: white;
+        }
+
+        .cell input {
+            width: 100%;
+            height: 100%;
+            border: none;
+            background: transparent;
+            text-align: center;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .cell input:focus {
+            outline: 2px solid #3498db;
+        }
+
+        .number {
+            position: absolute;
+            top: 1px;
+            left: 2px;
+            font-size: 8px;
+            color: #666;
+        }
+
+        .clues-container {
+            flex: 1;
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            height: fit-content;
+        }
+
+        .clues-section {
+            margin-bottom: 25px;
+        }
+
+        .clues-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+        }
+
+        .clue {
+            margin-bottom: 8px;
+            padding: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .clue:hover {
+            background: #e8f4fd;
+        }
+
+        .clue.active {
+            background: #3498db;
+            color: white;
+        }
+
+        .clue-number {
+            font-weight: bold;
+            color: #2980b9;
+            margin-right: 5px;
+        }
+
+        .controls {
+            text-align: center;
+            padding: 20px;
+            background: #ecf0f1;
+        }
+
+        .btn {
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            margin: 0 10px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+        }
+
+        .btn.success {
+            background: linear-gradient(45deg, #27ae60, #229954);
+        }
+
+        .btn.danger {
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+        }
+
+        .status {
+            margin-top: 15px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        /* .success {
+            color: #27ae60;
+        } */
+
+        .error {
+            color: #e74c3c;
+        }
+
+        .exit-btn{
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            margin: 0 10px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .exit-btn:hover{
+            background-color: #c0392b;
+        }
+
+        @media (max-width: 768px) {
+            .game-area {
+                flex-direction: column;
+            }
+            
+            .crossword-grid {
+                grid-template-columns: repeat(15, 20px);
+                grid-template-rows: repeat(15, 20px);
+            }
+            
+            .cell {
+                width: 20px;
+                height: 20px;
+                font-size: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Lesson 1: Volcanoes, Earthquakes, and Mountain Ranges</h1>
+    <h3>Tectonic Word Power</h3>
+    <div class="container">
+        <div class="header">
+            <p><strong>Directions:</strong> In this activity, you will solve a crossword puzzle on the layers of the Earth and plate tectonics. </p>
+        </div>
+
+        <div class="game-area">
+            <div class="crossword-container">
+                <div id="crossword-grid" class="crossword-grid"></div>
+            </div>
+
+            <div class="clues-container">
+                <div class="clues-section">
+                    <div class="clues-title">ACROSS</div>
+                    <div id="across-clues">
+                        <div class="clue" data-word="1-across">
+                            <span class="clue-number">1.</span>
+                            The subducted tectonic plate beneath the Ring of Fire
+                        </div>
+                        <div class="clue" data-word="3-across">
+                            <span class="clue-number">3.</span>
+                            Fastest type of surface waves
+                        </div>
+                        <div class="clue" data-word="5-across">
+                            <span class="clue-number">5.</span>
+                            Point on Earth's crust directly above an earthquake's hypocenter
+                        </div>
+                        <div class="clue" data-word="9-across">
+                            <span class="clue-number">9.</span>
+                            Fracture on Earth's crust
+                        </div>
+                        <div class="clue" data-word="10-across">
+                            <span class="clue-number">10.</span>
+                            Type of force that squeezes rocks together
+                        </div>
+                        <div class="clue" data-word="11-across">
+                            <span class="clue-number">11.</span>
+                            Layer between the crust and the core
+                        </div>
+                        <div class="clue" data-word="13-across">
+                            <span class="clue-number">13.</span>
+                            Rigid layer of Earth; composed of crust and uppermost mantle
+                        </div>
+                        <div class="clue" data-word="16-across">
+                            <span class="clue-number">16.</span>
+                            A block of rocks that comprises the crust
+                        </div>
+                        <div class="clue" data-word="18-across">
+                            <span class="clue-number">18.</span>
+                            Theory by Alfred Wegener, which states that continents have moved slowly to their current locations
+                        </div>
+                        <div class="clue" data-word="20-across">
+                            <span class="clue-number">20.</span>
+                            Boundary at which two plates slide past each other
+                        </div>
+                        <div class="clue" data-word="24-across">
+                            <span class="clue-number">24.</span>
+                            Large ocean wave that may result from underwater earthquakes
+                        </div>
+                        <div class="clue" data-word="25-across">
+                            <span class="clue-number">25.</span>
+                            Bending of rock layers to make mountains
+                        </div>
+                        <div class="clue" data-word="26-across">
+                            <span class="clue-number">26.</span>
+                            German geophysicist who initiated the study of tectonic plates; surname only
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clues-section">
+                    <div class="clues-title">DOWN</div>
+                    <div id="down-clues">
+                        <div class="clue" data-word="1-down">
+                            <span class="clue-number">1.</span>
+                            Large landmass, also known as supercontinent
+                        </div>
+                        <div class="clue" data-word="2-down">
+                            <span class="clue-number">2.</span>
+                            An opening on Earth's surface through which volcanic materials, such as magma, are released
+                        </div>
+                        <div class="clue" data-word="4-down">
+                            <span class="clue-number">4.</span>
+                            The point within Earth where seismic energy is first released
+                        </div>
+                        <div class="clue" data-word="6-down">
+                            <span class="clue-number">6.</span>
+                            Outermost layer of Earth
+                        </div>
+                        <div class="clue" data-word="7-down">
+                            <span class="clue-number">7.</span>
+                            Boundary at which two plates move away from each other
+                        </div>
+                        <div class="clue" data-word="8-down">
+                            <span class="clue-number">8.</span>
+                            Solid, dense core of Earth
+                        </div>
+                        <div class="clue" data-word="12-down">
+                            <span class="clue-number">12.</span>
+                            Layer of Earth that can deform because of the heat from magma
+                        </div>
+                        <div class="clue" data-word="14-down">
+                            <span class="clue-number">14.</span>
+                            A scientist who studies earthquakes and maps Earth's internal structure
+                        </div>
+                        <div class="clue" data-word="15-down">
+                            <span class="clue-number">15.</span>
+                            A bowl-shaped depression at the top of a volcano
+                        </div>
+                        <div class="clue" data-word="17-down">
+                            <span class="clue-number">17.</span>
+                            Boundary between two colliding plates
+                        </div>
+                        <div class="clue" data-word="19-down">
+                            <span class="clue-number">19.</span>
+                            A type of force that pulls rocks apart
+                        </div>
+                        <div class="clue" data-word="21-down">
+                            <span class="clue-number">21.</span>
+                            A process where a dense tectonic plate sinks underneath a light one
+                        </div>
+                        <div class="clue" data-word="22-down">
+                            <span class="clue-number">22.</span>
+                            Liquid core of the Earth
+                        </div>
+                        <div class="clue" data-word="23-down">
+                            <span class="clue-number">23.</span>
+                            Measure of the energy released by an earthquake
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button class="btn" onclick="checkAnswers()">Check Answers</button>
+            <button class="btn success" onclick="showAnswers()">Show Answers</button>
+            <button class="btn danger" onclick="clearGrid()">Clear Grid</button>
+            <button class="btn exit-btn" onclick="window.location.href='lesson1.html#powerUpYourSkill'">Exit</button>
+            <div id="status" class="status"></div>
+        </div>
+    </div>
+
+    <script>
+        const GRID_COLS = 20;
+        const GRID_ROWS = 28;
+        
+        const answers = {
+            '1-across': { word: 'PACIFIC', start: [0, 1], direction: 'across', length: 7 },
+            '3-across': { word: 'LOVE', start: [3, 4], direction: 'across', length: 4 },
+            '5-across': { word: 'EPICENTER', start: [5, 1], direction: 'across', length: 9 },
+            '9-across': { word: 'FAULT', start: [7, 2], direction: 'across', length: 5 },
+            '10-across': { word: 'COMPRESSION', start: [8, 7], direction: 'across', length: 11 },
+            '11-across': { word: 'MANTLE', start: [9, 1], direction: 'across', length: 6 },
+            '13-across': { word: 'LITHOSPHERE', start: [11, 0], direction: 'across', length: 11 },
+            '16-across': { word: 'TECTONICPLATE', start: [13, 1], direction: 'across', length: 13 },
+            '18-across': { word: 'CONTINENTALDRIFT', start: [15, 1], direction: 'across', length: 16 },
+            '20-across': { word: 'TRANSFORM', start: [18, 7], direction: 'across', length: 9 },
+            '24-across': { word: 'TSUNAMI', start: [20, 13], direction: 'across', length: 7 },
+            '25-across': { word: 'FOLDING', start: [25, 7], direction: 'across', length: 7 },
+            '26-across': { word: 'WEGENER', start: [27, 7], direction: 'across', length: 7 },
+
+            '1-down': { word: 'PANGAEA', start: [0, 1], direction: 'down', length: 7 },
+            '2-down': { word: 'VENT', start: [2, 7], direction: 'down', length: 4 },
+            '4-down': { word: 'FOCUS', start: [4, 14], direction: 'down', length: 5 },
+            '6-down': { word: 'CRUST', start: [5, 4], direction: 'down', length: 5 },
+            '7-down': { word: 'DIVERGENT', start: [5, 12], direction: 'down', length: 9 },
+            '8-down': { word: 'INNER', start: [6, 17], direction: 'down', length: 5 },
+            '12-down': { word: 'ASTHENOSPHERE', start: [9, 2], direction: 'down', length: 13 },
+            '14-down': { word: 'SEISMOLOGIST', start: [11, 19], direction: 'down', length: 12 },
+            '15-down': { word: 'CRATER', start: [12, 16], direction: 'down', length: 6 },
+            '17-down': { word: 'CONVERGENT', start: [13, 8], direction: 'down', length: 10 },
+            '19-down': { word: 'TENSION', start: [15, 4], direction: 'down', length: 7 },
+            '21-down': { word: 'SUBDUCTION', start: [18, 11], direction: 'down', length: 10 },
+            '22-down': { word: 'OUTER', start: [18, 13], direction: 'down', length: 5 },
+            '23-down': { word: 'MAGNITUDE', start: [19, 17], direction: 'down', length: 9 }
+        };
+
+        let currentWord = null;
+        let cells = [];
+
+        function createGrid() {
+            const grid = document.getElementById('crossword-grid');
+            grid.innerHTML = '';
+
+            for (let row = 0; row < GRID_ROWS; row++) {
+                cells[row] = [];
+                for (let col = 0; col < GRID_COLS; col++) {
+                    const cell = document.createElement('div');
+                    cell.className = 'cell blocked';
+                    cell.dataset.row = row;
+                    cell.dataset.col = col;
+                    cells[row][col] = cell;
+                    grid.appendChild(cell);
+                }
+            }
+
+            Object.entries(answers).forEach(([key, data]) => {
+                const [startRow, startCol] = data.start;
+                const number = key.split('-')[0];
+
+                for (let i = 0; i < data.length; i++) {
+                    let row = startRow;
+                    let col = startCol;
+
+                    if (data.direction === 'across') col += i;
+                    else row += i;
+
+                    if (row < GRID_ROWS && col < GRID_COLS) {
+                        const cell = cells[row][col];
+                        cell.className = 'cell';
+                        cell.innerHTML = '<input type="text" maxlength="1">';
+                        cell.dataset.words = (cell.dataset.words || '') + key + ',';
+
+                        if (i === 0) {
+                            const numberDiv = document.createElement('div');
+                            numberDiv.className = 'number';
+                            numberDiv.textContent = number;
+                            cell.appendChild(numberDiv);
+                        }
+
+                        const input = cell.querySelector('input');
+                        input.addEventListener('input', handleInput);
+                        input.addEventListener('focus', () => highlightWord(key));
+                        cell.addEventListener('click', () => highlightWord(key));
+                    }
+                }
+            });
+        }
+
+        function handleInput(e) {
+            const input = e.target;
+            input.value = input.value.toUpperCase();
+            
+            if (input.value && currentWord) {
+                const cell = input.parentElement;
+                const row = parseInt(cell.dataset.row);
+                const col = parseInt(cell.dataset.col);
+                
+                const wordData = answers[currentWord];
+                const [startRow, startCol] = wordData.start;
+                const currentIndex = wordData.direction === 'across' ? col - startCol : row - startRow;
+                
+                if (currentIndex < wordData.length - 1) {
+                    let nextRow = row;
+                    let nextCol = col;
+                    
+                    if (wordData.direction === 'across') {
+                        nextCol++;
+                    } else {
+                        nextRow++;
+                    }
+                    
+                    const nextCell = cells[nextRow][nextCol];
+                    if (nextCell) {
+                        nextCell.querySelector('input').focus();
+                    }
+                }
+            }
+        }
+
+        function highlightWord(wordKey) {
+            document.querySelectorAll('.cell.active').forEach(cell => {
+                cell.classList.remove('active');
+            });
+            document.querySelectorAll('.clue.active').forEach(clue => {
+                clue.classList.remove('active');
+            });
+            
+            currentWord = wordKey;
+            const wordData = answers[wordKey];
+            const [startRow, startCol] = wordData.start;
+            
+            for (let i = 0; i < wordData.length; i++) {
+                let row = startRow;
+                let col = startCol;
+                
+                if (wordData.direction === 'across') {
+                    col += i;
+                } else {
+                    row += i;
+                }
+                
+                if (row < GRID_ROWS && col < GRID_COLS && cells[row][col]) {
+                    cells[row][col].classList.add('active');
+                }
+            }
+            
+            const clue = document.querySelector(`[data-word="${wordKey}"]`);
+            if (clue) {
+                clue.classList.add('active');
+            }
+        }
+
+        function checkAnswers() {
+            let correct = 0;
+            let total = 0;
+            
+            Object.entries(answers).forEach(([key, data]) => {
+                const [startRow, startCol] = data.start;
+                let wordCorrect = true;
+                
+                for (let i = 0; i < data.length; i++) {
+                    let row = startRow;
+                    let col = startCol;
+                    
+                    if (data.direction === 'across') {
+                        col += i;
+                    } else {
+                        row += i;
+                    }
+                    
+                    if (row < GRID_ROWS && col < GRID_COLS) {
+                        const cell = cells[row][col];
+                        const input = cell.querySelector('input');
+                        const userLetter = input.value.toUpperCase();
+                        const correctLetter = data.word[i];
+                        
+                        cell.classList.remove('correct', 'incorrect');
+                        
+                        if (userLetter === correctLetter) {
+                            cell.classList.add('correct');
+                        } else if (userLetter) {
+                            cell.classList.add('incorrect');
+                            wordCorrect = false;
+                        } else {
+                            wordCorrect = false;
+                        }
+                        
+                        total++;
+                    }
+                }
+                
+                if (wordCorrect) {
+                    correct++;
+                }
+            });
+            
+            const status = document.getElementById('status');
+            const percentage = Math.round((correct / Object.keys(answers).length) * 100);
+            status.innerHTML = `<span class="${percentage === 100 ? 'success' : 'error'}">Score: ${percentage}% (${correct}/${Object.keys(answers).length} words correct)</span>`;
+        }
+
+        function showAnswers() {
+            Object.entries(answers).forEach(([key, data]) => {
+                const [startRow, startCol] = data.start;
+                
+                for (let i = 0; i < data.length; i++) {
+                    let row = startRow;
+                    let col = startCol;
+                    
+                    if (data.direction === 'across') {
+                        col += i;
+                    } else {
+                        row += i;
+                    }
+                    
+                    if (row < GRID_ROWS && col < GRID_COLS) {
+                        const cell = cells[row][col];
+                        const input = cell.querySelector('input');
+                        input.value = data.word[i];
+                        cell.classList.remove('incorrect');
+                        cell.classList.add('correct');
+                    }
+                }
+            });
+            
+            const status = document.getElementById('status');
+            status.innerHTML = '<span class="success">All answers revealed!</span>';
+        }
+
+        function clearGrid() {
+            document.querySelectorAll('.cell input').forEach(input => {
+                input.value = '';
+            });
+            document.querySelectorAll('.cell').forEach(cell => {
+                cell.classList.remove('correct', 'incorrect', 'active');
+            });
+            document.querySelectorAll('.clue').forEach(clue => {
+                clue.classList.remove('active');
+            });
+            
+            const status = document.getElementById('status');
+            status.innerHTML = '';
+            currentWord = null;
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            createGrid();
+            
+            document.querySelectorAll('.clue').forEach(clue => {
+                clue.addEventListener('click', function() {
+                    const wordKey = this.dataset.word;
+                    highlightWord(wordKey);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

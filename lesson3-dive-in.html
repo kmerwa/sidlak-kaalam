@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Lesson 3 | Dive In!</title>
+<link rel="stylesheet" href="./styles.css">
+<style>
+  body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-size: 18px;
+    margin-top: 20px;
+    height: 100%;
+    gap: 20px;
+    padding: 40px;
+    background-image: linear-gradient(to right top, #f0f8ff, #edf5ff, #ebf2fe, #eaeffd, #e9ebfc, #eee9fb, #f4e8f8, #f9e6f4, #ffe8ee, #ffebe9, #ffefe6, #fff4e6);
+  }
+  h1{
+    align-self: center;
+  }
+  h2 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  #game-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  #scenarios, #dropzones {
+    background: #fff;
+    border: 2px solid #008080;
+    border-radius: 8px;
+    padding: 15px;
+    flex: 1 1 400px;
+    min-width: 350px;
+    max-width: 600px;
+  }
+  #scenarios {
+    max-height: 600px;
+    overflow-y: auto;
+  }
+  .scenario {
+    background: #d1f0f0;
+    border: 1px solid #008080;
+    border-radius: 5px;
+    padding: 8px;
+    margin-bottom: 8px;
+    cursor: grab;
+  }
+  .scenario.dragging {
+    opacity: 0.6;
+  }
+  .dropzone {
+    border: 2px dashed #008080;
+    border-radius: 6px;
+    min-height: 80px;
+    margin-bottom: 15px;
+    padding: 8px;
+    background: #e6f7f7;
+  }
+  .dropzone h3 {
+    margin-top: 0;
+  }
+  .subzone {
+    border: 1px solid #004c4c;
+    background: #ccf2f2;
+    padding: 6px;
+    margin: 6px 0;
+    min-height: 40px;
+  }
+  .subzone.highlight {
+    border-color: #00b3b3;
+    background: #b3ffff;
+  }
+  .scenario.in-dropzone {
+    cursor: default;
+  }
+  #check-btn {
+    background: #008080;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: block;
+    width: fit-content;
+  }
+  #result {
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 1.1em;
+  }
+  .exit-btn{
+      background-color: #e74c3c;
+      display: block;
+      /* margin: 20px auto; */
+      padding: 10px 25px;
+      font-size: 16px;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+  }
+  .exit-btn:hover{
+      background-color: #c0392b;
+  }
+</style>
+</head>
+<body>
+
+<h1>Lesson 3: Processes and Landforms Along Plate Boundaries</h1>
+<h3>Plate Boundary Match-Up: Drag each scenario to the correct plate boundary and subtype.</h3>
+
+<div id="game-container">
+  <!-- Scenarios -->
+  <div id="scenarios">
+    <div class="scenario" draggable="true" data-answer="convergent-oceanic-continental">1. The Himalayas rising due to massive compression.</div>
+    <div class="scenario" draggable="true" data-answer="divergent-oceanic">2. The Mid-Atlantic Ridge creating new oceanic crust.</div>
+    <div class="scenario" draggable="true" data-answer="convergent-oceanic-oceanic">3. A chain of volcanic islands over a deep ocean trench.</div>
+    <div class="scenario" draggable="true" data-answer="transform">4. Strong shallow earthquakes along the San Andreas Fault.</div>
+    <div class="scenario" draggable="true" data-answer="convergent-oceanic-continental">5. A deep trench and volcanoes off the coast of South America.</div>
+    <div class="scenario" draggable="true" data-answer="divergent-continental">6. The East African Rift Valley widening.</div>
+    <div class="scenario" draggable="true" data-answer="divergent-continental">7. A linear sea forming between diverging continents in the Red Sea.</div>
+    <div class="scenario" draggable="true" data-answer="convergent-oceanic-oceanic">8. Two oceanic plates converging, with the older subducting.</div>
+    <div class="scenario" draggable="true" data-answer="transform">9. Powerful earthquakes where plates slide horizontally.</div>
+    <div class="scenario" draggable="true" data-answer="divergent-oceanic">10. Hydrothermal vents and pillow lavas at a mid-ocean ridge.</div>
+  </div>
+
+  <!-- Drop Zones -->
+  <div id="dropzones">
+    <div class="dropzone" data-boundary="convergent">
+      <h3>Convergent Boundaries</h3>
+      <div class="subzone" data-subzone="convergent-oceanic-continental">Oceanic-Continental</div>
+      <div class="subzone" data-subzone="convergent-oceanic-oceanic">Oceanic-Oceanic</div>
+      <div class="subzone" data-subzone="convergent-continental-continental">Continental-Continental</div>
+    </div>
+    <div class="dropzone" data-boundary="divergent">
+      <h3>Divergent Boundaries</h3>
+      <div class="subzone" data-subzone="divergent-oceanic">Oceanic Divergence</div>
+      <div class="subzone" data-subzone="divergent-continental">Continental Divergence (Rifting)</div>
+    </div>
+    <div class="dropzone" data-boundary="transform">
+      <h3>Transform Boundaries</h3>
+      <div class="subzone" data-subzone="transform">Transform Faults</div>
+    </div>
+  </div>
+</div>
+
+<div style="display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 900px;
+    padding: 10px 40px;">
+  <button type="button" class="exit-btn" onclick="window.location.href='lesson3.html#diveIn'">Exit</button>
+  <button id="check-btn">Check Answers</button>
+</div>
+
+<div id="result"></div>
+
+<script>
+  const scenarios = document.querySelectorAll('.scenario');
+  const subzones = document.querySelectorAll('.subzone');
+  let dragged = null;
+
+  scenarios.forEach(scenario => {
+    scenario.addEventListener('dragstart', (e) => {
+      dragged = scenario;
+      setTimeout(() => {
+        scenario.classList.add('dragging');
+      }, 0);
+    });
+    scenario.addEventListener('dragend', (e) => {
+      dragged = null;
+      scenario.classList.remove('dragging');
+    });
+  });
+
+  subzones.forEach(zone => {
+    zone.addEventListener('dragover', e => {
+      e.preventDefault();
+      zone.classList.add('highlight');
+    });
+    zone.addEventListener('dragleave', e => {
+      zone.classList.remove('highlight');
+    });
+    zone.addEventListener('drop', e => {
+      e.preventDefault();
+      zone.classList.remove('highlight');
+      if(dragged) {
+        if(!zone.contains(dragged)) {
+          zone.appendChild(dragged);
+          dragged.classList.add('in-dropzone');
+        }
+      }
+    });
+  });
+
+  document.getElementById('check-btn').addEventListener('click', () => {
+    let total = scenarios.length;
+    let correct = 0;
+
+    scenarios.forEach(scenario => {
+      const correctAnswer = scenario.getAttribute('data-answer');
+      const parentZone = scenario.parentElement.getAttribute('data-subzone');
+      if(parentZone === correctAnswer) {
+        scenario.style.border = "2px solid green";
+        correct++;
+      } else {
+        scenario.style.border = "2px solid red";
+      }
+    });
+
+    document.getElementById('result').textContent = `You got ${correct} out of ${total} correct!`;
+  });
+</script>
+
+</body>
+</html>

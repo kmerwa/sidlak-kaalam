@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 2 | Dive In!</title>
+    <script src="./app.js" defer></script>
+    <link rel="stylesheet" href="./styles.css">
+    <style>
+        body {
+            padding: 20px;
+            max-width: 900px;
+            margin: auto;
+            line-height: 25px;
+            font-size: 18px;
+            background-image: linear-gradient(to right top, #f0f8ff, #edf5ff, #ebf2fe, #eaeffd, #e9ebfc, #eee9fb, #f4e8f8, #f9e6f4, #ffe8ee, #ffebe9, #ffefe6, #fff4e6);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .word-block {
+            display: flex;
+            flex-direction: column;
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+            width: fit-content;
+            align-self: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .definition {
+            font-weight: bold;
+        }
+        input[type="text"] {
+            max-width: 450px;
+            width: 100%;
+            text-align: center;
+            padding: 8px;
+            font-size: 16px;
+            margin-top: 5px;
+            align-self: center;
+            box-sizing: border-box;
+        }
+        .correct {
+            background-color: #d4edda;
+        }
+        .incorrect {
+            background-color: #f8d7da;
+        }
+        .correct-answer {
+            color: #155724;
+            font-style: italic;
+            font-size: 14px;
+        }
+        #result {
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 30px;
+        }
+        button {
+            display: block;
+            /* margin: 20px auto; */
+            padding: 10px 25px;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .exit-btn{
+            background-color: #e74c3c;
+        }
+        .exit-btn:hover{
+            background-color: #c0392b;
+        }
+        .image{
+          max-width: 450px;
+          height: auto;
+          align-self: center;
+        }
+        img{
+          height: 100%;
+          width: 100%;
+        }
+  </style>
+</head>
+<body>
+
+<h1>Lesson 2: Plate Boundaries</h1>
+<h3>Dive In!</h3>
+<p><strong>4 Pics, One Word</strong></p>
+<p><strong>Directions:</strong> Look at each group of four images. All images are related to one word that describes or relates to the topic of plate boundaries. Write the correct word in the blank provided.
+</p>
+
+<form id="quizForm" style="display: flex; flex-direction: column;">
+
+  <div class="word-block">
+    <div class="image">
+      <img src="images/lesson2-images/1.jpg">
+    </div>
+    <input type="text" data-answer="CONVERGENT">
+  </div>
+
+  <div class="word-block">
+    <div class="image">
+      <img src="images/lesson2-images/2.jpg">
+    </div>
+    <input type="text" data-answer="DIVERGENT">
+  </div>
+
+  <div class="word-block">
+    <div class="image">
+      <img src="images/lesson2-images/3.jpg">
+    </div>
+    <input type="text" data-answer="TRANSFORM">
+  </div>
+
+  <div class="word-block">
+    <div class="image">
+      <img src="images/lesson2-images/4.jpg">
+    </div>
+    <input type="text" data-answer="BOUNDARY">
+  </div>
+
+  <div class="word-block">
+    <div class="image">
+      <img src="images/lesson2-images/5.jpg">
+    </div>
+    <input type="text" data-answer="SUBDUCTION ZONE">
+  </div>
+
+  <div style="display: flex; justify-content: space-between; flex-direction: row;">
+    <button type="button" class="exit-btn" onclick="window.location.href='lesson2.html#diveIn'">Exit</button>
+    <button type="button" onclick="submitQuiz()">Submit Answers</button>
+  </div>
+  
+</form>
+
+<div id="result"></div>
+
+<script>
+  function submitQuiz() {
+    const inputs = document.querySelectorAll('#quizForm input');
+    let score = 0;
+    inputs.forEach(input => {
+      const userAnswer = input.value.trim().toUpperCase();
+      const correctAnswer = input.dataset.answer.trim().toUpperCase();
+
+      input.classList.remove('correct', 'incorrect');
+      const previousFeedback = input.nextElementSibling;
+      if (previousFeedback && previousFeedback.classList.contains('correct-answer')) {
+        previousFeedback.remove();
+      }
+
+      if (userAnswer === correctAnswer) {
+        input.classList.add('correct');
+        score++;
+      } else {
+        input.classList.add('incorrect');
+        const feedback = document.createElement('div');
+        feedback.classList.add('correct-answer');
+        feedback.textContent = 'Correct answer: ' + input.dataset.answer;
+        input.parentNode.appendChild(feedback);
+      }
+    });
+
+    const resultText = `You got ${score} out of ${inputs.length} correct.`;
+    document.getElementById('result').textContent = resultText;
+  }
+</script>
+
+</body>
+</html>

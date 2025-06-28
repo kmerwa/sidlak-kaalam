@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sidlak Kaalam | Lesson 1 - Volcanoes, Earthquakes, and Mountain Ranges</title>
+  <link rel="preload" href="./images/bg-image.webp" as="image" />
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
+</head>
+<style>
+  body{
+    margin-top: 100px;
+    background: linear-gradient(to bottom, #f0f8ff, #eae6f9, #fff4e6);
+  }
+
+  main{
+    display: flex;
+    justify-content: center;
+  }
+
+  p, li{
+    font-size: 18px;
+    text-align: justify;
+    line-height: 25px;
+  }
+
+  .lesson1-ctn{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 1200px;
+    padding: 30px;
+    gap: 15px;
+
+    h2{
+      margin-bottom: 10px;
+    }
+  }
+
+  .title{
+    align-self: center;
+  }
+
+  .card{
+    padding: 20px 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    scroll-margin-top: 100px;
+  }
+
+  .gear-up-for-learning, .power-up-your-skill{
+    background-color: #fef6e4;
+  }
+
+  .readiness-check, .connect-the-dots{
+    background-color: #e0f7fa;
+  }
+
+  .dive-in, .mastery-check{
+    background-color: #fce4ec;
+  }
+
+  .build-knowledge{
+    background-color: #e8f5e9;
+  }
+
+  .see-in-action{
+    background-color: #f3e5f5;
+  }
+
+  img{
+    height: 100%;
+    width: 100%;
+  }
+
+  .image{
+    max-width: 650px;
+    height: auto;
+    align-self: center;
+    border: 1px solid rgba(173, 216, 230, 0.5);
+    margin-top: 10px;
+  }
+
+  .image-desc{
+    align-self: center;
+    font-style: italic;
+    margin-bottom: 10px;
+  }
+
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1em 0;
+    font-family: Arial, sans-serif;
+    text-align: left;
+  }
+
+  .comparison-table caption {
+    font-weight: bold;
+    margin-bottom: 0.5em;
+  }
+
+  .comparison-table th,
+  .comparison-table td {
+    border: 1px solid #333;
+    padding: 8px;
+  }
+
+  .comparison-table thead {
+    background-color: #f2f2f2;
+  }
+
+  .card.highlight {
+    animation: pastelPulse 0.6s ease-in-out;
+  }
+
+  .accordion-card{
+    overflow: hidden;
+  }
+
+  .a-card-header{
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .a-card-content{
+    display: none;
+  }
+
+  .content-div{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .accordion-card.active .a-card-content{
+    display: block;
+  }
+
+  .arrow{
+    transition: transform 0.3s ease;
+  }
+
+  .accordion-card.active .arrow{
+    transform: rotate(180deg);
+  }
+
+  @keyframes pastelPulse {
+    0%   { transform: scale(1); box-shadow: 0 0 0px rgba(173, 216, 230, 0); }
+    50%  { transform: scale(1.02); box-shadow: 0 0 16px rgba(173, 216, 230, 0.5); }
+    100% { transform: scale(1); box-shadow: 0 0 0px rgba(173, 216, 230, 0); }
+  }
+
+</style>
+
+<body>
+    <header id="header">
+   <div class="site-header"> 
+    <div class="header-content">
+      <a href="sidlak.html" class="logo-div">
+        <img src="images/logo.png" alt="logo" style="width: 5rem; height: auto;">
+        <h1>Sidlak Kaalam</h1>
+      </a>
+    </div>
+    <nav class="navbar">
+      <a href="sidlak.html#section1" id="home-link">Home</a>
+      <div class="dropdown">
+        <a href="sidlak.html#section3">Lessons</a>
+        <div class="dropdown-content">
+          <a href="lesson1.html">Lesson 1</a>
+          <a href="lesson2.html">Lesson 2</a>
+          <a href="lesson3.html">Lesson 3</a>
+          <a href="lesson4.html">Lesson 4</a>
+          <a href="lesson5.html">Lesson 5</a>
+        </div>
+      </div>
+      <a href="sidlak.html#section4">FAQ</a>
+      <a href="sidlak.html#section5">About The Innovator</a>
+      <a href="references.html">References</a>
+    </nav>
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </button>
+  </div>
+</header>
+
+<nav class="side-nav" id="sideNav">
+        <a href="sidlak.html#section1" id="home-link-mobile">Home</a>
+        <div class="dropdown" id="lessonsDropdown">
+            <a href="sidlak.html#section3">Lessons</a>
+            <div class="dropdown-content">
+                <a href="lesson1.html">Lesson 1</a>
+                <a href="lesson2.html">Lesson 2</a>
+                <a href="lesson3.html">Lesson 3</a>
+                <a href="lesson4.html">Lesson 4</a>
+                <a href="lesson5.html">Lesson 5</a>
+            </div>
+        </div>
+        <a href="sidlak.html#section4">FAQ</a>
+        <a href="sidlak.html#section5">About The Innovator</a>
+        <a href="references.html">References</a>
+    </nav>
+
+    <div class="overlay" id="overlay"></div>
+  <main>
+    <div class="lesson1-ctn">
+      <h1 class="title">Lesson 1: Volcanoes, Earthquakes, and Mountain Ranges</h1>
+      <div id="gearUpForLearning" class="gear-up-for-learning card">
+        <h2 class="lesson-header"><svg xmlns="http://www.w3.org/2000/svg" height="40" width="40" viewBox="0 0 512 512"><path fill="#14b8a6" d="M495.9 166.6c3.2 8.7 .5 18.4-6.4 24.6l-43.3 39.4c1.1 8.3 1.7 16.8 1.7 25.4s-.6 17.1-1.7 25.4l43.3 39.4c6.9 6.2 9.6 15.9 6.4 24.6c-4.4 11.9-9.7 23.3-15.8 34.3l-4.7 8.1c-6.6 11-14 21.4-22.1 31.2c-5.9 7.2-15.7 9.6-24.5 6.8l-55.7-17.7c-13.4 10.3-28.2 18.9-44 25.4l-12.5 57.1c-2 9.1-9 16.3-18.2 17.8c-13.8 2.3-28 3.5-42.5 3.5s-28.7-1.2-42.5-3.5c-9.2-1.5-16.2-8.7-18.2-17.8l-12.5-57.1c-15.8-6.5-30.6-15.1-44-25.4L83.1 425.9c-8.8 2.8-18.6 .3-24.5-6.8c-8.1-9.8-15.5-20.2-22.1-31.2l-4.7-8.1c-6.1-11-11.4-22.4-15.8-34.3c-3.2-8.7-.5-18.4 6.4-24.6l43.3-39.4C64.6 273.1 64 264.6 64 256s.6-17.1 1.7-25.4L22.4 191.2c-6.9-6.2-9.6-15.9-6.4-24.6c4.4-11.9 9.7-23.3 15.8-34.3l4.7-8.1c6.6-11 14-21.4 22.1-31.2c5.9-7.2 15.7-9.6 24.5-6.8l55.7 17.7c13.4-10.3 28.2-18.9 44-25.4l12.5-57.1c2-9.1 9-16.3 18.2-17.8C227.3 1.2 241.5 0 256 0s28.7 1.2 42.5 3.5c9.2 1.5 16.2 8.7 18.2 17.8l12.5 57.1c15.8 6.5 30.6 15.1 44 25.4l55.7-17.7c8.8-2.8 18.6-.3 24.5 6.8c8.1 9.8 15.5 20.2 22.1 31.2l4.7 8.1c6.1 11 11.4 22.4 15.8 34.3zM256 336a80 80 0 1 0 0-160 80 80 0 1 0 0 160z"/></svg>
+          Gear Up for Learning!</h2>
+        <p>The Earth is constantly changing. Have you ever wondered why most of the world`s volcanoes and 
+          earthquakes are concentrated in specific zones? Why does the Philippines have so many active volcanoes? 
+          In this lesson, you will learn about the theory that explains the distribution of volcanoes, earthquakes, 
+          and mountain ranges — Plate Tectonic Theory.</p>
+        <p>After this lesson, you should be able to <strong><em>describe and relate the distribution of active volcanoes, 
+          earthquake epicenters, and major mountain belts to Plate Tectonic Theory. (S10ES – Ia-j-36.1)</em></strong></p>
+      </div>
+      <div id="readinessCheck" class="readiness-check card">
+        <h2 class="lesson-header">
+          <svg xmlns="http://www.w3.org/2000/svg" height="40" width="40" viewBox="0 0 512 512"><path fill="#14b8a6" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg>
+          Readiness Check!</h2>
+        <p><strong>Directions:</strong> Read and understand each item carefully and select the letter of the CORRECT answer.
+        </p>
+        <button class="cssbuttons-io-button" onclick="location.href='lesson1-pre-test.html'">
+          Get started
+          <div class="icon">
+            <svg
+              height="24"
+              width="24"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M0 0h24v24H0z" fill="none"></path>
+              <path
+                d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                fill="currentColor"
+              ></path>
+            </svg>
+          </div>
+        </button>
+      </div>
+      <div id="diveIn" class="dive-in card accordion-card">
+        <div class="a-card-header">
+          <h2 style="margin: 0;" class="lesson-header"><svg xmlns="http://www.w3.org/2000/svg" height="40" width="44" viewBox="0 0 576 512"><path fill="#14b8a6" d="M269.5 69.9c11.1-7.9 25.9-7.9 37 0C329 85.4 356.5 96 384 96c26.9 0 55.4-10.8 77.4-26.1c0 0 0 0 0 0c11.9-8.5 28.1-7.8 39.2 1.7c14.4 11.9 32.5 21 50.6 25.2c17.2 4 27.9 21.2 23.9 38.4s-21.2 27.9-38.4 23.9c-24.5-5.7-44.9-16.5-58.2-25C449.5 149.7 417 160 384 160c-31.9 0-60.6-9.9-80.4-18.9c-5.8-2.7-11.1-5.3-15.6-7.7c-4.5 2.4-9.7 5.1-15.6 7.7c-19.8 9-48.5 18.9-80.4 18.9c-33 0-65.5-10.3-94.5-25.8c-13.4 8.4-33.7 19.3-58.2 25c-17.2 4-34.4-6.7-38.4-23.9s6.7-34.4 23.9-38.4C42.8 92.6 61 83.5 75.3 71.6c11.1-9.5 27.3-10.1 39.2-1.7c0 0 0 0 0 0C136.7 85.2 165.1 96 192 96c27.5 0 55-10.6 77.5-26.1zm37 288C329 373.4 356.5 384 384 384c26.9 0 55.4-10.8 77.4-26.1c0 0 0 0 0 0c11.9-8.5 28.1-7.8 39.2 1.7c14.4 11.9 32.5 21 50.6 25.2c17.2 4 27.9 21.2 23.9 38.4s-21.2 27.9-38.4 23.9c-24.5-5.7-44.9-16.5-58.2-25C449.5 437.7 417 448 384 448c-31.9 0-60.6-9.9-80.4-18.9c-5.8-2.7-11.1-5.3-15.6-7.7c-4.5 2.4-9.7 5.1-15.6 7.7c-19.8 9-48.5 18.9-80.4 18.9c-33 0-65.5-10.3-94.5-25.8c-13.4 8.4-33.7 19.3-58.2 25c-17.2 4-34.4-6.7-38.4-23.9s6.7-34.4 23.9-38.4c18.1-4.2 36.2-13.3 50.6-25.2c11.1-9.4 27.3-10.1 39.2-1.7c0 0 0 0 0 0C136.7 373.2 165.1 384 192 384c27.5 0 55-10.6 77.5-26.1c11.1-7.9 25.9-7.9 37 0zm0-144C329 229.4 356.5 240 384 240c26.9 0 55.4-10.8 77.4-26.1c0 0 0 0 0 0c11.9-8.5 28.1-7.8 39.2 1.7c14.4 11.9 32.5 21 50.6 25.2c17.2 4 27.9 21.2 23.9 38.4s-21.2 27.9-38.4 23.9c-24.5-5.7-44.9-16.5-58.2-25C449.5 293.7 417 304 384 304c-31.9 0-60.6-9.9-80.4-18.9c-5.8-2.7-11.1-5.3-15.6-7.7c-4.5 2.4-9.7 5.1-15.6 7.7c-19.8 9-48.5 18.9-80.4 18.9c-33 0-65.5-10.3-94.5-25.8c-13.4 8.4-33.7 19.3-58.2 25c-17.2 4-34.4-6.7-38.4-23.9s6.7-34.4 23.9-38.4c18.1-4.2 36.2-13.3 50.6-25.2c11.1-9.5 27.3-10.1 39.2-1.7c0 0 0 0 0 0C136.7 229.2 165.1 240 192 240c27.5 0 55-10.6 77.5-26.1c11.1-7.9 25.9-7.9 37 0z"/></svg>
+            Dive In!</h2>
+          <span class="arrow">&#9650;</span>
+        </div>
+        <div class="a-card-content">
+          <div class="content-div">
+            <p>The Philippines is situated in the Pacific Ring of Fire, a region renowned for its intense geological activity, 
+              characterized by the movement of tectonic plates. This is why we frequently experience earthquakes, volcanic eruptions, 
+              and the formation of mountain ranges. These events are directly linked to the structure and behavior of Earth`s lithosphere, 
+              which comprises the crust and the rigid upper mantle.</p>
+            <p>Before we explore these concepts further, let`s activate your prior knowledge about Earth`s structure, earthquakes, 
+              and volcanoes — topics you studied in Grades 8 and 9. </p>
+            <p><strong>Directions:</strong> Use the definition provided to help you complete each missing word.
+            </p>
+            <button class="cssbuttons-io-button" onclick="location.href='lesson1-dive-in.html'">
+              Get started
+              <div class="icon">
+                <svg
+                  height="24"
+                  width="24"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M0 0h24v24H0z" fill="none"></path>
+                  <path
+                    d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div id="buildYourKnowledge" class="build-knowledge card accordion-card">
+        <div class="a-card-header">
+          <h2 style="margin: 0;" class="lesson-header"><svg xmlns="http://www.w3.org/2000/svg" height="40" width="40" viewBox="0 0 512 512"><path fill="#14b8a6" d="M184 0c30.9 0 56 25.1 56 56l0 400c0 30.9-25.1 56-56 56c-28.9 0-52.7-21.9-55.7-50.1c-5.2 1.4-10.7 2.1-16.3 2.1c-35.3 0-64-28.7-64-64c0-7.4 1.3-14.6 3.6-21.2C21.4 367.4 0 338.2 0 304c0-31.9 18.7-59.5 45.8-72.3C37.1 220.8 32 207 32 192c0-30.7 21.6-56.3 50.4-62.6C80.8 123.9 80 118 80 112c0-29.9 20.6-55.1 48.3-62.1C131.3 21.9 155.1 0 184 0zM328 0c28.9 0 52.6 21.9 55.7 49.9c27.8 7 48.3 32.1 48.3 62.1c0 6-.8 11.9-2.4 17.4c28.8 6.2 50.4 31.9 50.4 62.6c0 15-5.1 28.8-13.8 39.7C493.3 244.5 512 272.1 512 304c0 34.2-21.4 63.4-51.6 74.8c2.3 6.6 3.6 13.8 3.6 21.2c0 35.3-28.7 64-64 64c-5.6 0-11.1-.7-16.3-2.1c-3 28.2-26.8 50.1-55.7 50.1c-30.9 0-56-25.1-56-56l0-400c0-30.9 25.1-56 56-56z"/></svg>
+            Build Your Knowledge</h2>
+          <span class="arrow">&#9650;</span>
+        </div>
+        <div class="a-card-content">
+          <div class="content-div">
+            <p><strong><em>Layers of the Earth</em></strong></p>
+            <p>Earth is divided into four major layers: the <em>crust, mantle, outer core,</em> and <em>inner core.</em> Each layer has distinct properties. 
+              The crust and the uppermost part of the mantle comprise the lithosphere, a rigid layer that can break under stress. The lithosphere 
+              is broken into large and small sections, called tectonic plates, that interact and create the tectonic activities on Earth.</p>
+            <p>Below the lithosphere is the asthenosphere. The <em>asthenosphere</em> is approximately 180 km thick and comprises hot, molten rocks, also known as magma. 
+              The asthenosphere can deform and reshape because of the hot, molten mantle, which circulates as convection currents. These convection currents are 
+              generated when the hot lower mantle moves upward, displacing the cooler materials from the upper mantle, which then move downward. This mechanism 
+              of heat transfer drives the movement of tectonic plates. These movements, together with the movement of magma to the surface, generate earthquakes 
+              and form mountains, volcanoes, islands, trenches, and mid-ocean ridges.</p>
+            <div class="image">
+              <img src="images/lesson1-images/image001.png" alt="Convection currents in the mantle">
+            </div>
+            <p class="image-desc">Figure 1.1 Convection currents in the mantle</p>
+            <p>The outermost layer of Earth where life exists is called the crust. The crust that makes up the continents is called the continental crust and is about 
+              40 to 70 km thick. It is made up of light granitic rocks, mostly made up of aluminum silicates. The crust that underlies the ocean floor is called the 
+              oceanic crust and is about 7 to 10 km thick. It is composed of dense basaltic rocks made up of magnesium silicates</p>
+            <p>These differences explain why continental crust forms elevated landmasses like continents, while oceanic crust lies beneath ocean basins.</p>
+            <table class="comparison-table">
+              <caption>Table 1.1 Comparison of Oceanic and Continental Crusts</caption>
+              <thead>
+                <tr>
+                  <th>Property</th>
+                  <th>Continental Plates</th>
+                  <th>Oceanic Plates</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Property</td>
+                  <td>Granitic, light, and composed of aluminum silicates</td>
+                  <td>Basaltic, heavier, and composed of magnesium silicates</td>
+                </tr>
+                <tr>
+                  <td>Composition</td>
+                  <td>2.7 g/cm³</td>
+                  <td>2.9 g/cm³</td>
+                </tr>
+                <tr>
+                  <td>Density</td>
+                  <td>25–70 km</td>
+                  <td>7–10 km</td>
+                </tr>
+                <tr>
+                  <td>Thickness</td>
+                  <td>3.8–4 billion years old</td>
+                  <td>Less than 200 million years old</td>
+                </tr>
+                <tr>
+                  <td>Coverage</td>
+                  <td>71% of Earth’s surface</td>
+                  <td>29% of Earth’s surface</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>Beneath the crust is a semisolid, rocky, and very hot layer called the <em>mantle.</em> It is approximately 2900 km thick and accounts for 80 percent 
+              of the Earth's mass and most of its volume. The mantle is composed of ferro-magnesium silicate rocks. Its top layer has a temperature of about 900°C. 
+              As one goes deeper into the mantle, the temperature increases from 1000°C to 3700°C.</p>
+            <p>The core has two layers: the liquid <em>outer core</em> and the solid <em>inner core.</em> The outer core is Earth's only liquid layer, made up of molten nickel and iron. 
+              It is approximately 2270 km thick and has a temperature range of 3700°C to 4300°C. The inner core has a diameter of roughly 1,220 km and is primarily 
+              composed of solid iron. The inner core is extremely hot, estimated to be about 6000°C.</p>
+            <p style="margin-top: 10px;"><strong><em>Key Discontinuities in Earth's Interior</em></strong></p>
+            <ul style="padding-left: 30px;">
+              <li>The <em>Mohorovičić discontinuity</em> interfaces the crust and the upper mantle. The "Moho," as it is commonly called, was recognized by Croatian seismologist Andrija Mohorovicic in 1909.</li>
+              <li>The <em>Gutenberg discontinuity</em> marks the boundary between the lower mantle and the outer core. It was named after American seismologist Beno Gutenberg, who made substantial contributions to Earth's interior in 1913.</li>
+              <li>The <em>Lehmann discontinuity</em> is between the liquid outer core and the solid inner core. Danish seismologist Inge Lehmann named it after her discovery of the inner core in 1936.</li>
+            </ul>
+            <div class="image">
+              <img src="images/lesson1-images/image003.jpg" alt="Layers of the Earth">
+            </div>
+            <p class="image-desc">Figure 1.2 Layers of the Earth</p>
+            <div class="image">
+              <img src="images/lesson1-images/image005.jpg" alt="Discontinuities in Earth's Interior">
+            </div>
+            <p class="image-desc">Figure 1.3 Discontinuities in Earth's Interior</p>
+            <p style="margin-top: 10px;"><strong><em>Mapping the Inner Earth</em></strong></p>
+            <p>As you have learned in your Grade 8 Earth Science, scientists inferred the different layers of Earth by analyzing seismic waves created by earthquakes, volcanic eruptions, 
+              and other tectonic processes. Knowledge of how seismic waves behave has allowed scientists to learn the composition, density, and properties of Earth's layers. These seismic 
+              waves are detected by highly sensitive instruments called seismometers and recorded by seismographs.</p>
+            <p>The two types of seismic waves are body waves and surface waves. Body waves travel through the inner layers of the planet, while surface waves only travel on the surface. 
+              Although surface waves are important in other aspects of geological studies such as earthquake damages and perceived earthquake strength, they do not provide information about Earth's interior.</p>
+            <p>During an earthquake, two types of body waves radiate in all directions: the primary waves and the secondary waves.</p>
+            <p>Primary waves, or P waves, are the first to be felt on Earth's surface. They travel at speeds between 1.5 and 8 km/s. P waves are compressional waves; they shake the ground 
+              back and forth in the same direction the wave is moving. P waves pass through solid and liquid sections of Earth but refract or bend as they pass through liquids.</p>
+            <p>Secondary waves, or S waves, are transverse waves. They move particles in an up-and-down motion and move perpendicular to the direction of the wave. S waves do not travel 
+              through liquids. The outer core was discovered to be liquid using this principle. S waves travel about 60 to 70 percent more slowly than P waves.</p>
+            <div class="image" style="border: none;">
+              <img src="images/lesson1-images/image007.png" alt="The path of seismic waves through the Earth’s interior">
+            </div>
+            <p class="image-desc">Figure 1.4 The path of seismic waves through the Earth’s interior</p>
+            <p style="margin-top: 10px;"><strong><em>Plate Tectonics</em></strong></p>
+            <p>Earth may appear as a solid, steady, and unchanging sphere of rock, but it is constantly undergoing minor or major changes externally and internally. Several theories have 
+              been proposed to explain changes such as the formation of different landforms, separation of continents, formation of new ocean floor, and movement of the lithospheric plates.</p>
+            <p>Earth began as a single landmass or supercontinent called Pangaea. The term comes from the Greek words pan which means "all" and gaea which means "Earth." Pangaea literally 
+              translates to "all of Earth" or "all lands." It was surrounded by a vast sea or superocean called Panthalassa, which means "all seas." You will learn more about Earth's early oceans in chapter 3.</p>
+            <p>It has been proposed that today's continents were once joined together and gradually drifted apart as a result of tectonic forces. These continents are cradled by continental 
+              tectonic plates on the lithosphere. Figure 5 shows the sequence of how Pangaea broke up over time from one massive supercontinent into the seven continents.</p>
+            <div class="image">
+              <img src="images/lesson1-images/image009.jpg" alt="How Pangea broke apart">
+            </div>
+            <p class="image-desc">Figure 1.5 How Pangea broke apart</p>
+            <p>One of the earliest theories on the changing geography and surface topography of Earth was the contraction theory, which was proposed in the early twentieth century. This theory 
+              suggested that as Earth cooled after its formation, its surface contracted and wrinkled, with these wrinkles being the mountain ranges on Earth's surface. Furthermore, the theory also</p>
+            <p>assumed that all other features on Earth were formed during a single cooling event and that the planet was relatively static, without any significant change since the cooling (and wrinkling) slowed to a halt.</p>
+            <p>The contraction theory was superseded by the theory of continental drift proposed by Alfred Wegener in 1912. It asserted that there once existed a single large landmass or supercontinent 
+              he called Pangaea. Wegener's theory was based upon his observations which included the following:</p>
+            <ul style="padding-left: 30px;">
+              <li>The apparent fit of the eastern coastline of South America and western coastline of Africa</li>
+              <li>Similarities of plant and animal fossils in South America and some parts of the African continent, which were separated by a vast oceans. </li>
+              <li>Similarities in the sequences of rock layers of opposite sides of the Atlantic Ocean</li>
+            </ul>
+            <p>Pangaea would later break into two smaller supercontinents, Gondwana and Laurasia. These two supercontinents further split into smaller landmasses. Gondwana is now the present-day Africa, 
+              Antarctica, South America, Australia, and the subcontinent of India. It was first hypothesized by Austrian geologist Eduard Suess in the mid-1800s. Laurasia was the precursor to Asia, 
+              North America, and Europe. It was coined by South African geologist Alexander du Toit in 1937. The theory of continental drift was rejected because Wegener failed to provide compelling 
+              evidence for the mechanism that drives the movement of plates. About half a century after his death, advancements in science enabled further studies and paved new ways to study tectonic movements. 
+              These new studies and information led to the verification and improvement of Wegener's initial theory, cementing his legacy as one of the pioneers of plate tectonics.</p>
+            <p>In the 1960s, American geologist Harry Hess proposed the seafloor spreading theory, which states that the seafloors or ocean floors-not the continents-move and carry the continents along. 
+              Seafloor spreading occurs at the divergent plate boundaries or along mid-ocean ridges. As the plates move away from each other, hot magma from underneath are pushed by the mantle convection. 
+              This provides new materials that becomes part of the seafloor and the crust.</p>
+            <div class="image">
+              <img src="images/lesson1-images/image011.png" alt="Seafloor - spreading">
+            </div>
+            <p class="image-desc">Figure 1.6 Seafloor - spreading</p>
+            <p>The theory of plate tectonics, simply put, incorporates the continental drift theory and the seafloor spreading theory. Plate tectonics explains that Earth's lithosphere is composed of many 
+              independent massive slabs of solid rocks, or plates, which floats on an inner pliable mantle. This movement is due to the convection currents beneath the plates. The convection currents are driven 
+              by the molten outer core and decay of radioactive elements underneath Earth. With the discovery of the spreading oceans (through the seafloor spreading theory) the ocean floor is continually moving 
+              and constantly regenerated from a spreading center.</p>
+            <p>At present, there are 15 major tectonic plates that consist of seven primary plates and eight secondary smaller plates. The primary plates are the Eurasian Plate, Australian Plate, Pacific Plate, 
+              North American Plate, South American Plate, African Plate, and Antarctic Plate. The secondary plates are the Juan de Fuca Plate, Nazca Plate, Cocos Plate, Caribbean Plate, Philippine Sea Plate, 
+              Arabian Plate, Indian Plate, and Scotia Plate. Figure 1-7 shows these major plates.</p>
+            <div class="image">
+              <img src="images/lesson1-images/image013.jpg" alt="Earth’s Tectonic Plates and their Boundaries">
+            </div>
+            <p class="image-desc">Figure 1.7  Earth’s Tectonic Plates and their Boundaries</p>
+            <p style="margin-top: 10px;"><strong><em>Volcanoes</em></strong></p>
+            <p>A volcano is a rupture in the Earth’s crust where magma (molten rock), gases, and ash escape to the surface. Volcanic activity is most common at convergent and divergent boundaries, 
+              though it can also occur at hotspots (isolated volcanic regions within a plate).</p>
+            <p>The different types of volcanoes include: </p>
+            <div class="image">
+              <img src="images/lesson1-images/image015.jpg" alt="Different types of volcanoes">
+            </div>
+            <p class="image-desc">Figure 1.8 Different types of volcanoes</p>
+            <ul style="padding-left: 30px;">
+              <li>Stratovolcanoes (Composite Volcanoes) – Steep-sided; alternating layers of lava and ash; explosive.</li>
+              <li>Cinder Cone Volcanoes – Small, steep; built from pyroclastic fragments.</li>
+              <li>Shield Volcanoes – Broad, gently sloping; formed by fluid lava flows.</li>
+            </ul>
+            <p>Volcanoes are not randomly scattered but concentrated:</p>
+            <ul style="padding-left: 30px;">
+              <li>Along subduction zones, such as the Pacific Ring of Fire, which contains 75% of the world’s active and dormant volcanoes.</li>
+              <li>At mid-ocean ridges where plates are diverging.</li>
+              <li>At intraplate hotspots, such as Hawaii and Yellowstone.</li>
+            </ul>
+            <p>The Philippines, located at the junction of the Philippine Sea Plate and the Eurasian Plate, contains 24 active volcanoes. Some notable examples:</p>
+            <div style="display: flex; flex-direction: row; gap: 25px; align-self: center; margin-top: 10px;">
+              <div style="display: flex; flex-direction: column; gap: 10px;">
+                <div style="max-width: 400px; height: 100%;">
+                  <img src="images/lesson1-images/image017.jpg" alt="Mount Mayon – Known for its perfect cone shape.">
+                </div>
+                <p class="image-desc" style="font-size: 1rem;">Figure 1.9 Mount Mayon – Known for its perfect cone shape.</p>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 10px;">
+                <div style="max-width: 400px; height: 100%;">
+                  <img src="images/lesson1-images/image019.jpg" alt="Taal Volcano – Small but very active">
+                </div>
+                <p class="image-desc" style="font-size: 1rem;">Figure 1.10 Taal Volcano – Small but very active.</p>
+              </div>
+            </div>
+            <div class="image" style="max-width: 400px;">
+              <img src="images/lesson1-images/image021.png" alt="Mount Pinatubo – Had a major eruption in 1991.">
+            </div>
+            <p class="image-desc">Figure 1.11 Mount Pinatubo – Had a major eruption in 1991.</p>
+            <p style="margin-top: 10px;"><strong><em>Earthquakes</em></strong></p>
+            <p>Earthquakes are generated by the sudden release of energy from rocks when they break or shift. During an earthquake, energy travels through Earth in the 
+              form of seismic waves. The point within Earth where the rocks break and where seismic energy is first released is the focus, or hypocenter. It is found 
+              within the fault plane. The point on the crust of Earth directly above the focus is the epicenter.</p>
+            <p>The focus of an earthquake is found at different depths and is classified as shallow (10 to 100 km), intermediate (70 to 300 km), or deep (300 km or deeper). 
+              Earthquakes from shallow epicenters originate from a much closer distance to Earth's crust. They cause the most damage since energy is more concentrated and 
+              seismic waves travel faster over shorter distances in all directions to the surface. The earthquakes are strongest at the epicenter than at any other point on 
+              Earth's surface, since it is directly above the source of the rupture.</p>
+            <div class="image">
+              <img src="images/lesson1-images/image023.jpg" alt="The relative location of focus and epicenter of an earthquake">
+            </div>
+            <p class="image-desc">Figure 1.12 The relative location of focus and epicenter of an earthquake</p>
+            <p>Underwater earthquakes associated with oceanic-continental subduction cause a vertical movement of the seafloor. Those greater than magnitude seven and whose 
+              focus is less than 30 km produce a significant movement that generates large ocean waves called tsunamis.</p>
+            <p>Seismic waves are significant in studying earthquakes. Primary and secondary waves help scientists locate the epicenter of an earthquake. During an earthquake, 
+              the seismic waves reach Earth's surface at different times because P waves travel faster than S waves. The difference in their arrival time (recorded by seismograph) 
+              is used to help determine the distance of the epicenter. The longer the time interval is, the farther is the earthquake epicenter to a seismographic station.</p>
+            <p>Seismic information are used to find the exact location of the epicenter. Using the triangulation method, seismologists use the information recorded from at least 
+              three seismographic stations to plot their respective distances and locate the epicenter. </p>
+            <p style="margin-top: 10px;"><strong><em>Mountain Ranges</em></strong></p>
+            <p>Mountains are large landforms that rise well above the ground and have steep slopes and a peak generally higher than a hill. Orogenesis refers to the process of 
+              forming mountains and mountain ranges. It involves the collision of plates and forces of compression.</p>
+            <p>Tectonic plates may move toward one another and push landmasses upward to form mountains and mountain ranges, which are classified according to their origin and 
+              the manner by which they are produced by the different forces within Earth.</p>
+            <p style="margin-top: 10px;"><em>Fold Mountains</em></p>
+            <p>Fold mountains are formed through plate convergence. When a continental plate is subducted beneath another continental plate, the immense forces of compression 
+              fold the crust to develop mountain ranges. The Himalayas in Asia was formed from the collision of the Indian Plate and the Tibetan Plate.</p>
+            <div class="image">
+              <img src="images/lesson1-images/image025.jpg" alt="Mountain range forms when two continental plates collide">
+            </div>
+            <p class="image-desc">Figure 1.13 Mountain range forms when two continental plates collide</p>
+            <p>Mountain ranges can also form when an oceanic plate subducts beneath a continental plate. The Andes Mountain Range in South America formed through this process. Other 
+              examples of fold mountain ranges are Pyrenees in Europe and the Rocky Mountains and Appalachians in North America.</p>
+            <p style="margin-top: 10px;"><em>Volcanic Mountain Ranges</em></p>
+            <div class="image">
+              <img src="images/lesson1-images/image027.jpg" alt="The movement of the Pacific plate over a hot spot produced the volcanic islands of Hawaii.">
+            </div>
+            <p class="image-desc">Figure 1.14 The movement of the Pacific plate over a hot spot produced the volcanic islands of Hawaii. <br> Note that volcanoes are progressively older from right to left.</p>
+            <p>Volcanic mountain ranges usually have isolated peaks that formed for over thousands or millions of years. These structures are constructed from accumulated lava flows, pyroclasts, and other 
+              igneous rocks that piled up over time. This may be produced by a hot spot, which causes the magma to rise up, pushing its way up the crust, and accumulate in large amounts. This is the manner 
+              by which the islands of Hawaii were formed, which are actually the summits of volcanoes. The subduction of a tectonic plate also gives rise to volcanic mountain ranges along the edges of another 
+              tectonic plate.</p>
+            <p style="margin-top: 10px;"><em>Erosion-Formed Mountain Ranges</em></p>
+            <p>Erosion-formed mountain ranges do not form because of Earth's internal activity but because of rock erosion or weathering. The Appalachian Plateau in the Eastern United States, for example, 
+              is made up of sedimentary rocks and formed as a result of erosion and the movement of thrust faults.</p>
+            <div class="image" style="max-width: 400px; height: auto;">
+              <img src="images/lesson1-images/image029.jpg" alt="Appalachian Plateau">
+            </div>
+            <p class="image-desc">Figure 1.15.The Appalachian Plateau is a long chain of mountains that were formed <br>as a result of erosion and the movement of thrust faults.</p>
+            <p style="margin-top: 10px;"><em>Dome Mountain Ranges</em></p>
+            <p>Domes result from the upwarping of tectonic plates and are not accompanied by the collision of plate boundaries. This movement can form isolated and large folds in flat 
+              regions, which produce elongated structures in the crust called domes. The Black Hills in western South Dakota, USA is an example.</p>
+            <div class="image" style="max-width: 400px; height: auto;">
+              <img src="images/lesson1-images/image032.jpg" alt="The Black Hills are composed of elongated granite structures called batholiths.">
+            </div>
+            <p class="image-desc">Figure 1.16 The Black Hills are composed of elongated granite structures called batholiths.</p>
+            <p style="margin-top: 10px;"><em>Fault-Block Mountain Ranges</em></p>
+            <p>The movement of normal faults causes tensional forces and uplifts large blocks of crust to form fault-block mountains. The displacement of the crust sometimes 
+              produces numerous cracks and consequently creates parallel mountain ranges. As the crust forms cracks, the block that slides down because of gravity is called 
+              graben, which usually becomes a valley. The crustal blocks that do not slide down are referred to as borsts. Examples of fault-block mountains are the Marinduque 
+              mountains in the Philippines and the Sierra Nevada in California and the Teton Range in Wyoming, USA</p>
+            <div class="image" style="max-width: 400px; height: auto;">
+              <img src="images/lesson1-images/image036.jpg" alt="Marinduque mountains in the Philippines">
+            </div>
+            <p class="image-desc">Figure 1.17. Marinduque mountains in the Philippines is an example of a fault- block mountain range</p>
+            <p style="margin-top: 10px;"><strong><em>Relationship to Plate Tectonic Theory</em></strong></p>
+            <p>The <strong>Plate Tectonic Theory</strong> provides a unifying explanation for the global distribution of volcanoes, earthquakes, and mountain ranges. Their concentration along plate 
+              boundaries supports the idea that these features are direct consequences of plate interactions:</p>
+            <ul style="padding-left: 30px;">
+              <li><strong>Subduction zones</strong> create volcanic arcs and earthquake zones.</li>
+              <li><strong>Transform boundaries</strong> result in strike-slip faults and frequent seismic activity.</li>
+              <li><strong>Continental collisions</strong> produce extensive mountain belts.</li>
+              <li><strong>Divergent boundaries</strong> allow magma to rise, creating new crust and shallow-focus earthquakes.</li>
+            </ul>
+            <p>The theory not only explains the <strong>locations</strong> of these features but also their <strong>origins, mechanisms,</strong> and <strong>patterns</strong> of occurrence. 
+              It highlights that the Earth's surface is dynamic and continuously reshaped by the movement of tectonic plates.</p>
+          </div>
+        </div>
+      </div>
+      <div id="seeItInAction" class="see-in-action card accordion-card">
+        <div class="a-card-header">
+          <h2 style="margin: 0;" class="lesson-header"><svg xmlns="http://www.w3.org/2000/svg" height="40" width="40" viewBox="0 0 512 512"><path fill="#14b8a6" d="M0 96C0 60.7 28.7 32 64 32l384 0c35.3 0 64 28.7 64 64l0 320c0 35.3-28.7 64-64 64L64 480c-35.3 0-64-28.7-64-64L0 96zM48 368l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16zm368-16c-8.8 0-16 7.2-16 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0zM48 240l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16zm368-16c-8.8 0-16 7.2-16 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0zM48 112l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16L64 96c-8.8 0-16 7.2-16 16zM416 96c-8.8 0-16 7.2-16 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0zM160 128l0 64c0 17.7 14.3 32 32 32l128 0c17.7 0 32-14.3 32-32l0-64c0-17.7-14.3-32-32-32L192 96c-17.7 0-32 14.3-32 32zm32 160c-17.7 0-32 14.3-32 32l0 64c0 17.7 14.3 32 32 32l128 0c17.7 0 32-14.3 32-32l0-64c0-17.7-14.3-32-32-32l-128 0z"/></svg>
+            See It in Action!</h2>
+          <span class="arrow">&#9650;</span>
+        </div>
+        <div class="a-card-content">
+          <div class="content-div">
+            <p style="color: #1b4f91; align-self: center;"><strong>Structures of the Earth | The Dr. Binocs Show | Educational Videos For Kids</strong></p>
+            <div style="max-width: 700px; height: auto; align-self: center; margin-bottom: 20px;">
+              <video width="100%" height="auto" controls>
+                <source src="videos/Structure_Of_The_Earth.mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <p style="color: #1b4f91; align-self: center;"><strong>What Is Pangaea & Plate Tectonic? | CONTINENTAL DRIFT | The Dr Binocs Show | Peekaboo Kidz</strong></p>
+            <div style="max-width: 700px; height: auto; align-self: center; margin-bottom: 20px;">
+              <video width="100%" height="auto" controls>
+                <source src="videos/What_Is_Pangaea_&_Plate_Tectonic.mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <p style="color: #1b4f91; align-self: center;"><strong>What Is An Earthquake? | The Dr. Binocs Show | Educational Videos For Kids</strong></p>
+            <div style="max-width: 700px; height: auto; align-self: center; margin-bottom: 20px;">
+              <video width="100%" height="auto" controls>
+                <source src="videos/What_Is_An_Earthquake.mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <p style="color: #1b4f91; align-self: center;"><strong>Volcano | The Dr. Binocs Show | Learn Videos For Kids</strong></p>
+            <div style="max-width: 700px; height: auto; align-self: center; margin-bottom: 20px;">
+              <video width="100%" height="auto" controls>
+                <source src="videos/Volcano.mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="powerUpYourSkill" class="power-up-your-skill card accordion-card">
+        <div class="a-card-header">
+          <h2 style="margin: 0;" class="lesson-header"><svg xmlns="http://www.w3.org/2000/svg" height="40" width="40" viewBox="0 0 512 512"><path fill="#14b8a6" d="M78.6 5C69.1-2.4 55.6-1.5 47 7L7 47c-8.5 8.5-9.4 22-2.1 31.6l80 104c4.5 5.9 11.6 9.4 19 9.4l54.1 0 109 109c-14.7 29-10 65.4 14.3 89.6l112 112c12.5 12.5 32.8 12.5 45.3 0l64-64c12.5-12.5 12.5-32.8 0-45.3l-112-112c-24.2-24.2-60.6-29-89.6-14.3l-109-109 0-54.1c0-7.5-3.5-14.5-9.4-19L78.6 5zM19.9 396.1C7.2 408.8 0 426.1 0 444.1C0 481.6 30.4 512 67.9 512c18 0 35.3-7.2 48-19.9L233.7 374.3c-7.8-20.9-9-43.6-3.6-65.1l-61.7-61.7L19.9 396.1zM512 144c0-10.5-1.1-20.7-3.2-30.5c-2.4-11.2-16.1-14.1-24.2-6l-63.9 63.9c-3 3-7.1 4.7-11.3 4.7L352 176c-8.8 0-16-7.2-16-16l0-57.4c0-4.2 1.7-8.3 4.7-11.3l63.9-63.9c8.1-8.1 5.2-21.8-6-24.2C388.7 1.1 378.5 0 368 0C288.5 0 224 64.5 224 144l0 .8 85.3 85.3c36-9.1 75.8 .5 104 28.7L429 274.5c49-23 83-72.8 83-130.5zM56 432a24 24 0 1 1 48 0 24 24 0 1 1 -48 0z"/></svg>
+            Power Up Your Skill!</h2>
+          <span class="arrow">&#9650;</span>
+        </div>
+        <div class="a-card-content">
+          <div class="content-div">
+            <p><strong>Tectonic Word Power!</strong></p>
+            <p><strong>Directions:</strong> In this activity, you will solve a crossword puzzle on the layers of the Earth and plate tectonics. </p>
+            <button class="cssbuttons-io-button" onclick="location.href='lesson1-powerup-your-skill.html'">
+              Get started
+              <div class="icon">
+                <svg
+                  height="24"
+                  width="24"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M0 0h24v24H0z" fill="none"></path>
+                  <path
+                    d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div id="connectTheDots" class="connect-the-dots card accordion-card">
+        <div class="a-card-header">
+          <h2 style="margin: 0;" class="lesson-header"><svg xmlns="http://www.w3.org/2000/svg" height="40" width="48" viewBox="0 0 640 512"><path fill="#14b8a6" d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+            Connect the Dots</h2>
+          <span class="arrow">&#9650;</span>
+        </div>
+        <div class="a-card-content">
+          <div class="content-div">
+            <p>Understanding the Earth's structure and the dynamic processes beneath and on its surface helps us make sense of the changes in landforms, 
+              the occurrence of natural phenomena such as earthquakes and volcanoes, and the movements of continents. Below is a summary of the key 
+              concepts and insights gained from this lesson:
+            </p>
+            <p style="margin-top: 10px;"><strong>Layers of the Earth:</strong></p>
+            <ul style="padding-left: 30px;">
+              <li>Earth has four major layers: crust, mantle, outer core, and inner core.</li>
+              <li>The lithosphere includes the crust and the uppermost mantle and is broken into tectonic plates.</li>
+              <li>Beneath the lithosphere lies the asthenosphere, a semi-fluid layer that allows plate movement through convection currents.</li>
+            </ul>
+            <p style="margin-top: 10px;"><strong>Crust:</strong></p>
+            <ul style="padding-left: 30px;">
+              <li>Continental crust: thick (40–70 km), light, granitic, and composed of aluminum silicates.</li>
+              <li>Oceanic crust: thinner (7–10 km), dense, basaltic, and composed of magnesium silicates.</li>
+              <li>The crust is the outermost layer where life exists.</li>
+            </ul>
+            <p style="margin-top: 10px;"><strong>Mantle:</strong></p>
+            <ul style="padding-left: 30px;">
+              <li>About 2,900 km thick and makes up 80% of Earth’s volume.</li>
+              <li>Composed of ferro-magnesium silicates; temperature increases with depth from ~900°C to 3700°C.</li>
+            </ul>
+            <p style="margin-top: 10px;"><strong>Core:</strong></p>
+            <ul style="padding-left: 30px;">
+              <li>Outer core: liquid layer of molten nickel and iron, ~2,270 km thick, with temperatures from 3700°C to 4300°C.</li>
+              <li>Inner core: solid iron, extremely hot (~6000°C), ~1,220 km in diameter.</li>
+            </ul>
+            <p style="margin-top: 10px;"><strong>Discontinuities in Earth’s Interior:</strong></p>
+            <ul style="padding-left: 30px;">
+              <li>Mohorovičić (Moho): boundary between crust and upper mantle.</li>
+              <li>Gutenberg: boundary between lower mantle and outer core.</li>
+              <li>Lehmann: boundary between liquid outer core and solid inner core.</li>
+            </ul>
+            <p style="margin-top: 10px;"><strong>Seismic Waves and Earth’s Interior:</strong></p>
+            <ul style="padding-left: 30px;">
+              <li>Earth’s internal layers are studied through seismic waves.</li>
+              <li>P waves travel through solids and liquids; S waves travel only through solids.</li>
+              <li>Seismometers and seismographs detect and record these waves.</li>
+            </ul>
+            <p style="margin-top: 10px;"><strong>Plate Tectonics:</strong></p>
+            <ul style="padding-left: 30px;">
+              <li>Earth's lithosphere is divided into tectonic plates that move due to mantle convection.</li>
+              <li>Plate movement creates landforms like mountains, volcanoes, and ocean ridges.</li>
+              <li>The theory of continental drift, proposed by Alfred Wegener, introduced the concept of Pangaea.</li>
+              <li>Seafloor spreading, proposed by Harry Hess, explains the movement of oceanic plates at mid-ocean ridges.</li>
+            </ul>
+            <p style="margin-top: 10px;"><strong>Major Tectonic Plates:</strong></p>
+            <ul style="padding-left: 30px;">
+              <li>7 primary: Eurasian, Australian, Pacific, North American, South American, African, Antarctic.</li>
+              <li>8 secondary: e.g., Philippine Sea Plate, Nazca Plate, Juan de Fuca Plate.</li>
+            </ul>
+            <p style="margin-top: 10px;"><strong>Volcanoes:</strong></p>
+            <ul style="padding-left: 30px;">
+              <li>Formed at convergent/divergent boundaries and hotspots.</li>
+              <li>Types include stratovolcanoes, cinder cones, and shield volcanoes.</li>
+              <li>The Philippines has 24 active volcanoes due to its tectonic location.</li>
+            </ul>
+            <p style="margin-top: 10px;"><strong>Earthquakes:</strong></p>
+            <ul style="padding-left: 30px;">
+              <li>Caused by sudden release of energy from rock movement along faults.</li>
+              <li>The focus is the point of energy release; the epicenter is directly above it.</li>
+              <li>Shallow earthquakes are more destructive due to proximity to the surface.</li>
+              <li>Underwater earthquakes can trigger tsunamis if conditions are met.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div id="masteryCheck" class="mastery-check card">
+        <h2 class="lesson-header"><svg xmlns="http://www.w3.org/2000/svg" height="40" width="40" viewBox="0 0 512 512"><path fill="#14b8a6" d="M448 256A192 192 0 1 0 64 256a192 192 0 1 0 384 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm256 80a80 80 0 1 0 0-160 80 80 0 1 0 0 160zm0-224a144 144 0 1 1 0 288 144 144 0 1 1 0-288zM224 256a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"/></svg>
+          Mastery Check!</h2>
+        <p><strong>Directions:</strong>Read and understand each item carefully and select the letter of the CORRECT answer.
+        </p>
+        <button class="cssbuttons-io-button" onclick="location.href='lesson1-mastery-check.html'">
+          Get started
+          <div class="icon">
+            <svg
+              height="24"
+              width="24"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M0 0h24v24H0z" fill="none"></path>
+              <path
+                d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                fill="currentColor"
+              ></path>
+            </svg>
+          </div>
+        </button>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer" style="margin-top: 50px;">
+    End of Lesson 1: Volcanoes, Earthquakes, and Mountain Ranges
+  </footer>
+
+<script>
+  function highlightCardById(id) {
+      const card = document.getElementById(id);
+      if (card) {
+        card.classList.add('highlight');
+
+        card.scrollIntoView({
+          behavior: 'smooth',
+          block: "start"
+        });
+
+        setTimeout(() => card.classList.remove('highlight'), 1000);
+      }
+    } 
+
+    window.addEventListener('load', () => {
+      const hash = window.location.hash.slice(1); 
+      if (hash) {
+        highlightCardById(hash);
+      }
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      // 1. Header scroll behavior
+      const header = document.getElementById('header');
+      if (header) {
+          const isHomepage = window.location.pathname.endsWith('sidlak.html') || 
+                            window.location.pathname === '/' || 
+                            window.location.href.endsWith('index.html');
+
+          function toggleHeaderBackground() {
+              const scrollTop = window.scrollY || window.pageYOffset;
+              if (!isHomepage || scrollTop > 50) {
+                  header.classList.add('header-colored');
+              } else {
+                  header.classList.remove('header-colored');
+              }
+          }
+
+          // Initialize and set up scroll listener
+          toggleHeaderBackground();
+          window.addEventListener('scroll', toggleHeaderBackground);
+      }
+
+      // 2. Scroll animations for elements
+      function animateOnScroll() {
+          const elements = document.querySelectorAll('.animate-on-scroll');
+          const windowHeight = window.innerHeight;
+
+          elements.forEach(el => {
+              const elementTop = el.getBoundingClientRect().top;
+              const revealPoint = 150;
+
+              if (elementTop < windowHeight - revealPoint) {
+                  el.classList.add('active');
+              } else {
+                  el.classList.remove('active');
+              }
+          });
+      }
+
+      // Initialize and set up scroll listener
+      animateOnScroll();
+      window.addEventListener('scroll', animateOnScroll);
+
+      // 3. "See More" button functionality
+      const seeMoreBtn = document.getElementById("seeMoreBtn");
+      if (seeMoreBtn) {
+          seeMoreBtn.addEventListener("click", function () {
+              const more = document.querySelector(".more-references");
+              if (more) {
+                  if (more.classList.contains("hidden")) {
+                      more.classList.remove("hidden");
+                      this.textContent = "View less";
+                  } else {
+                      more.classList.add("hidden");
+                      this.textContent = "View more";
+                  }
+              }
+          });
+      }
+
+      // 4. Make current nav link active
+      const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+      document.querySelectorAll('.navbar a').forEach(link => {
+          const linkPage = link.getAttribute('href').split('/').pop();
+          if (linkPage === currentPage || 
+              (currentPage === 'index.html' && linkPage === 'sidlak.html')) {
+              link.classList.add('active-nav-link');
+          }
+      });
+  });
+
+  document.querySelectorAll('.a-card-header').forEach(header => {
+    header.addEventListener('click', () => {
+      const accordion = header.parentElement;
+      accordion.classList.toggle('active');
+    });
+  });
+</script>
+</body>
+</html>

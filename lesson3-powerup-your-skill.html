@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 3 | Power Up Your Skill</title>
+  <link rel="stylesheet" href="./styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: linear-gradient(to right top, #f0f8ff, #edf5ff, #ebf2fe, #eaeffd, #e9ebfc, #eee9fb, #f4e8f8, #f9e6f4, #ffe8ee, #ffebe9, #ffefe6, #fff4e6);
+      padding: 20px;
+    }
+    .case {
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+    h1{
+      align-self: center;
+    }
+    .case h3 {
+      color: #333;
+    }
+    .options label {
+      display: block;
+      margin: 10px 0;
+      cursor: pointer;
+    }
+    .options input[type="radio"] {
+      margin-right: 8px;
+    }
+    .options label.correct {
+      background-color: #d4edda;
+      color: #155724;
+      padding: 5px;
+      border-radius: 3px;
+      border: 1px solid #c3e6cb;
+    }
+    .options label.incorrect {
+      background-color: #f8d7da;
+      color: #721c24;
+      padding: 5px;
+      border-radius: 3px;
+      border: 1px solid #f5c6cb;
+    }
+    .correct-answer {
+      color: #155724;
+      font-weight: bold;
+      margin-top: 5px;
+      padding: 5px;
+      background-color: #d4edda;
+      border-radius: 3px;
+      border: 1px solid #c3e6cb;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 15px 30px;
+      margin: 20px 0;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    .main-ctn{
+      max-width: 1000px;
+      align-self: center;
+      display: flex;
+      gap: 15px;
+      flex-direction: column;
+      font-size: 18px;
+    }
+    .exit-btn{
+      background-color: #e74c3c;
+      display: block;
+      padding: 10px 30px;
+      font-size: 16px;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      align-self: center;
+      width: fit-content;
+    }
+    .exit-btn:hover{
+        background-color: #c0392b;
+    }
+    .submit-btn {
+      align-self: center;
+      width: fit-content;
+    }
+    #result {
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 5px;
+    }
+    /* .score-display {
+      background-color: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    } */
+  </style>
+</head>
+<body>
+  <div class="main-ctn">
+  
+  <h1>Lesson 3: Processes and Landforms Along Plate Boundaries</h1>
+  <h3>Power Up Your Skill!</h3>
+  <p>Use your knowledge of the different processes occurring at plate boundaries to solve the following geologic cases.</p>
+
+  <form id="quizForm">
+    <div class="case">
+      <h3>Case 1:</h3>
+      <p>You observe a deep ocean trench, strong earthquakes, and a chain of volcanoes on the edge of a continent. What process is occurring here?</p>
+      <div class="options">
+        <label><input type="radio" name="q0" value="A" data-answer="C"> A. Plates moving apart</label>
+        <label><input type="radio" name="q0" value="B" data-answer="C"> B. Plates sliding past each other</label>
+        <label><input type="radio" name="q0" value="C" data-answer="C"> C. Subduction of oceanic plate beneath continental plate</label>
+      </div>
+    </div>
+
+    <div class="case">
+      <h3>Case 2:</h3>
+      <p>A mid-ocean ridge is forming where two oceanic plates move away from each other. What process is happening?</p>
+      <div class="options">
+        <label><input type="radio" name="q1" value="A" data-answer="A"> A. Seafloor spreading</label>
+        <label><input type="radio" name="q1" value="B" data-answer="A"> B. Subduction</label>
+        <label><input type="radio" name="q1" value="C" data-answer="A"> C. Mountain building</label>
+      </div>
+    </div>
+
+    <div class="case">
+      <h3>Case 3:</h3>
+      <p>Two continental plates collide, forming high mountain ranges like the Himalayas. What process is taking place?</p>
+      <div class="options">
+        <label><input type="radio" name="q2" value="A" data-answer="B"> A. Subduction</label>
+        <label><input type="radio" name="q2" value="B" data-answer="B"> B. Continental collision and uplift</label>
+        <label><input type="radio" name="q2" value="C" data-answer="B"> C. Seafloor spreading</label>
+      </div>
+    </div>
+
+    <div class="case">
+      <h3>Case 4:</h3>
+      <p>You observe shallow earthquakes along a region like the San Andreas Fault with no volcanic activity. What type of plate interaction is this?</p>
+      <div class="options">
+        <label><input type="radio" name="q3" value="A" data-answer="B"> A. Divergent boundary</label>
+        <label><input type="radio" name="q3" value="B" data-answer="B"> B. Transform fault movement</label>
+        <label><input type="radio" name="q3" value="C" data-answer="B"> C. Convergent collision</label>
+      </div>
+    </div>
+
+    <div class="case">
+      <h3>Case 5:</h3>
+      <p>An oceanic plate is subducting beneath another oceanic plate, forming an island arc. What is this process called?</p>
+      <div class="options">
+        <label><input type="radio" name="q4" value="A" data-answer="C"> A. Ridge push</label>
+        <label><input type="radio" name="q4" value="B" data-answer="C"> B. Slab pull</label>
+        <label><input type="radio" name="q4" value="C" data-answer="C"> C. Oceanic-oceanic subduction</label>
+      </div>
+    </div>
+
+    <div class="case">
+      <h3>Case 6:</h3>
+      <p>A rift valley is forming in a continental region. What process is responsible for this landform?</p>
+      <div class="options">
+        <label><input type="radio" name="q5" value="A" data-answer="A"> A. Continental rifting</label>
+        <label><input type="radio" name="q5" value="B" data-answer="A"> B. Transform faulting</label>
+        <label><input type="radio" name="q5" value="C" data-answer="A"> C. Oceanic subduction</label>
+      </div>
+    </div>
+
+    <div class="case">
+      <h3>Case 7:</h3>
+      <p>New crust is continuously created as magma rises between diverging plates. What process does this describe?</p>
+      <div class="options">
+        <label><input type="radio" name="q6" value="A" data-answer="B"> A. Crust folding</label>
+        <label><input type="radio" name="q6" value="B" data-answer="B"> B. Seafloor spreading</label>
+        <label><input type="radio" name="q6" value="C" data-answer="B"> C. Subduction</label>
+      </div>
+    </div>
+
+    <div class="case">
+      <h3>Case 8:</h3>
+      <p>A trench and volcanic arc are found parallel to each other in an oceanic-continental setting. What is the dominant process?</p>
+      <div class="options">
+        <label><input type="radio" name="q7" value="A" data-answer="C"> A. Transform sliding</label>
+        <label><input type="radio" name="q7" value="B" data-answer="C"> B. Ocean floor spreading</label>
+        <label><input type="radio" name="q7" value="C" data-answer="C"> C. Subduction</label>
+      </div>
+    </div>
+
+    <div class="case">
+      <h3>Case 9:</h3>
+      <p>You discover a region with significant uplift and mountain formation but no volcanic activity. It's far from any ocean. What is happening?</p>
+      <div class="options">
+        <label><input type="radio" name="q8" value="A" data-answer="A"> A. Continental-continental collision</label>
+        <label><input type="radio" name="q8" value="B" data-answer="A"> B. Oceanic-continental subduction</label>
+        <label><input type="radio" name="q8" value="C" data-answer="A"> C. Mid-ocean spreading</label>
+      </div>
+    </div>
+
+    <div class="case">
+      <h3>Case 10:</h3>
+      <p>Along a transform boundary, which process is most common?</p>
+      <div class="options">
+        <label><input type="radio" name="q9" value="A" data-answer="A"> A. Shallow earthquakes from shearing</label>
+        <label><input type="radio" name="q9" value="B" data-answer="A"> B. Volcanic eruption from subduction</label>
+        <label><input type="radio" name="q9" value="C" data-answer="A"> C. Mountain formation from collision</label>
+      </div>
+    </div>
+
+    <div class="case">
+      <h3>Case 11:</h3>
+      <p>A new volcanic island forms in a curved chain over a subduction zone. What is the likely setting?</p>
+      <div class="options">
+        <label><input type="radio" name="q10" value="A" data-answer="B"> A. Divergent boundary</label>
+        <label><input type="radio" name="q10" value="B" data-answer="B"> B. Oceanic-oceanic convergence</label>
+        <label><input type="radio" name="q10" value="C" data-answer="B"> C. Transform fault</label>
+      </div>
+    </div>
+
+    <div class="case">
+      <h3>Case 12:</h3>
+      <p>Plates are pulled into the mantle by the weight of a descending slab. What process drives this?</p>
+      <div class="options">
+        <label><input type="radio" name="q11" value="A" data-answer="A"> A. Slab pull</label>
+        <label><input type="radio" name="q11" value="B" data-answer="A"> B. Ridge push</label>
+        <label><input type="radio" name="q11" value="C" data-answer="A"> C. Mantle convection</label>
+      </div>
+    </div>
+
+    <div class="case">
+      <h3>Case 13:</h3>
+      <p>Molten rock rises between plates at a mid-ocean ridge. What is this process called?</p>
+      <div class="options">
+        <label><input type="radio" name="q12" value="A" data-answer="B"> A. Volcanic arc formation</label>
+        <label><input type="radio" name="q12" value="B" data-answer="B"> B. Seafloor spreading</label>
+        <label><input type="radio" name="q12" value="C" data-answer="B"> C. Slab rollback</label>
+      </div>
+    </div>
+
+    <div class="case">
+      <h3>Case 14:</h3>
+      <p>A series of earthquakes occur where two plates grind past each other without producing volcanoes. What process is responsible?</p>
+      <div class="options">
+        <label><input type="radio" name="q13" value="A" data-answer="A"> A. Lateral slipping</label>
+        <label><input type="radio" name="q13" value="B" data-answer="A"> B. Rift spreading</label>
+        <label><input type="radio" name="q13" value="C" data-answer="A"> C. Subduction thrusting</label>
+      </div>
+    </div>
+
+    <div class="case">
+      <h3>Case 15:</h3>
+      <p>A continent splits apart, creating a rift system like in East Africa. What boundary process is this?</p>
+      <div class="options">
+        <label><input type="radio" name="q14" value="A" data-answer="A"> A. Divergent boundary on land</label>
+        <label><input type="radio" name="q14" value="B" data-answer="A"> B. Oceanic trench formation</label>
+        <label><input type="radio" name="q14" value="C" data-answer="A"> C. Transform sliding</label>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: row; justify-content: space-between;">
+      <button type="button" class="exit-btn" onclick="window.location.href='lesson3.html#powerUpYourSkill'">Exit</button>
+      <button type="button" class="submit-btn" onclick="submitQuiz()">Submit Quiz</button>
+    </div>
+    
+  </form>
+
+  <div id="result"></div>
+
+  
+</div>
+
+<script>
+function submitQuiz() {
+  const radioButtons = document.querySelectorAll('#quizForm input[type="radio"]:checked');
+  const allQuestions = document.querySelectorAll('#quizForm input[type="radio"]');
+  let score = 0;
+  let totalQuestions = 15;
+
+  document.querySelectorAll('.correct-answer').forEach(el => el.remove());
+  document.querySelectorAll('label').forEach(label => {
+    label.classList.remove('correct', 'incorrect');
+  });
+
+  for (let i = 0; i < totalQuestions; i++) {
+    const questionName = `q${i}`;
+    const selectedOption = document.querySelector(`input[name="${questionName}"]:checked`);
+    const correctAnswer = document.querySelector(`input[name="${questionName}"]`).dataset.answer;
+    const questionLabels = document.querySelectorAll(`input[name="${questionName}"]`);
+    
+    if (selectedOption) {
+      const userAnswer = selectedOption.value;
+      const selectedLabel = selectedOption.parentElement;
+      
+      if (userAnswer === correctAnswer) {
+        selectedLabel.classList.add('correct');
+        score++;
+      } else {
+        selectedLabel.classList.add('incorrect');
+        
+        const correctLabel = document.querySelector(`input[name="${questionName}"][value="${correctAnswer}"]`).parentElement;
+        correctLabel.classList.add('correct');
+        
+        const feedback = document.createElement('div');
+        feedback.classList.add('correct-answer');
+        feedback.textContent = `Correct answer: ${correctAnswer}`;
+        selectedLabel.parentElement.appendChild(feedback);
+      }
+    } else {
+      const correctLabel = document.querySelector(`input[name="${questionName}"][value="${correctAnswer}"]`).parentElement;
+      correctLabel.classList.add('correct');
+      
+      const feedback = document.createElement('div');
+      feedback.classList.add('correct-answer');
+      feedback.textContent = `Correct answer: ${correctAnswer}`;
+      correctLabel.parentElement.appendChild(feedback);
+    }
+  }
+
+  const resultText = `You got ${score} out of ${totalQuestions} correct.`;
+  const resultDiv = document.getElementById('result');
+  resultDiv.textContent = resultText;
+  resultDiv.classList.add('score-display');
+  
+  resultDiv.scrollIntoView({ behavior: 'smooth' });
+}
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 3 | Power Up Your Skill</title>
+  <link rel="stylesheet" href="./styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: linear-gradient(to right top, #f0f8ff, #edf5ff, #ebf2fe, #eaeffd, #e9ebfc, #eee9fb, #f4e8f8, #f9e6f4, #ffe8ee, #ffebe9, #ffefe6, #fff4e6);
+      padding: 20px;
+    }
+    .case {
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1{
+      align-self: center;
+    }
+    .case h3 {
+      color: #333;
+    }
+    .options label {
+      display: block;
+      margin: 10px 0;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .result {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    .main-ctn{
+      max-width: 1000px;
+      align-self: center;
+      display: flex;
+      gap: 15px;
+      flex-direction: column;
+      font-size: 18px;
+    }
+    .exit-btn{
+      background-color: #e74c3c;
+      display: block;
+      padding: 10px 30px;
+      font-size: 16px;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      align-self: center;
+      width: fit-content;
+    }
+    .exit-btn:hover{
+        background-color: #c0392b;
+    }
+  </style>
+</head>
+<body>
+  <div class="main-ctn">
+  
+  <h1>Lesson 3: Processes and Landforms Along Plate Boundaries</h1>
+  <h3>Power Up Your Skill!</h3>
+  <p>Use your knowledge of the different processes occurring at plate boundaries to solve the following geologic cases.</p>
+
+  <script>
+    const questions = [
+      {
+        case: "You observe a deep ocean trench, strong earthquakes, and a chain of volcanoes on the edge of a continent. What process is occurring here?",
+        options: ["A. Plates moving apart", "B. Plates sliding past each other", "C. Subduction of oceanic plate beneath continental plate"],
+        answer: "C"
+      },
+      {
+        case: "A mid-ocean ridge is forming where two oceanic plates move away from each other. What process is happening?",
+        options: ["A. Seafloor spreading", "B. Subduction", "C. Mountain building"],
+        answer: "A"
+      },
+      {
+        case: "Two continental plates collide, forming high mountain ranges like the Himalayas. What process is taking place?",
+        options: ["A. Subduction", "B. Continental collision and uplift", "C. Seafloor spreading"],
+        answer: "B"
+      },
+      {
+        case: "You observe shallow earthquakes along a region like the San Andreas Fault with no volcanic activity. What type of plate interaction is this?",
+        options: ["A. Divergent boundary", "B. Transform fault movement", "C. Convergent collision"],
+        answer: "B"
+      },
+      {
+        case: "An oceanic plate is subducting beneath another oceanic plate, forming an island arc. What is this process called?",
+        options: ["A. Ridge push", "B. Slab pull", "C. Oceanic-oceanic subduction"],
+        answer: "C"
+      },
+      {
+        case: "A rift valley is forming in a continental region. What process is responsible for this landform?",
+        options: ["A. Continental rifting", "B. Transform faulting", "C. Oceanic subduction"],
+        answer: "A"
+      },
+      {
+        case: "New crust is continuously created as magma rises between diverging plates. What process does this describe?",
+        options: ["A. Crust folding", "B. Seafloor spreading", "C. Subduction"],
+        answer: "B"
+      },
+      {
+        case: "A trench and volcanic arc are found parallel to each other in an oceanic-continental setting. What is the dominant process?",
+        options: ["A. Transform sliding", "B. Ocean floor spreading", "C. Subduction"],
+        answer: "C"
+      },
+      {
+        case: "You discover a region with significant uplift and mountain formation but no volcanic activity. It’s far from any ocean. What is happening?",
+        options: ["A. Continental-continental collision", "B. Oceanic-continental subduction", "C. Mid-ocean spreading"],
+        answer: "A"
+      },
+      {
+        case: "Along a transform boundary, which process is most common?",
+        options: ["A. Shallow earthquakes from shearing", "B. Volcanic eruption from subduction", "C. Mountain formation from collision"],
+        answer: "A"
+      },
+      {
+        case: "A new volcanic island forms in a curved chain over a subduction zone. What is the likely setting?",
+        options: ["A. Divergent boundary", "B. Oceanic-oceanic convergence", "C. Transform fault"],
+        answer: "B"
+      },
+      {
+        case: "Plates are pulled into the mantle by the weight of a descending slab. What process drives this?",
+        options: ["A. Slab pull", "B. Ridge push", "C. Mantle convection"],
+        answer: "A"
+      },
+      {
+        case: "Molten rock rises between plates at a mid-ocean ridge. What is this process called?",
+        options: ["A. Volcanic arc formation", "B. Seafloor spreading", "C. Slab rollback"],
+        answer: "B"
+      },
+      {
+        case: "A series of earthquakes occur where two plates grind past each other without producing volcanoes. What process is responsible?",
+        options: ["A. Lateral slipping", "B. Rift spreading", "C. Subduction thrusting"],
+        answer: "A"
+      },
+      {
+        case: "A continent splits apart, creating a rift system like in East Africa. What boundary process is this?",
+        options: ["A. Divergent boundary on land", "B. Oceanic trench formation", "C. Transform sliding"],
+        answer: "A"
+      }
+    ];
+
+    function createCase(index, q) {
+      return `
+        <div class="case">
+          <h3>Case ${index + 1}:</h3>
+          <p>${q.case}</p>
+          <div class="options">
+            ${q.options.map(option => `
+              <label><input type="radio" name="q${index}" value="${option[0]}"> ${option}</label>
+            `).join('')}
+          </div>
+          <button onclick="checkAnswer('q${index}', '${q.answer}', 'result${index}')">Submit</button>
+          <div class="result" id="result${index}"></div>
+        </div>
+      `;
+    }
+
+    function checkAnswer(questionName, correctAnswer, resultId) {
+      const options = document.getElementsByName(questionName);
+      let selected = null;
+      for (let option of options) {
+        if (option.checked) {
+          selected = option.value;
+          break;
+        }
+      }
+      const result = document.getElementById(resultId);
+      if (selected === correctAnswer) {
+        result.style.color = 'green';
+        result.innerText = '✅ Correct!';
+      } else {
+        result.style.color = 'red';
+        result.innerText = '❌ Incorrect. Try again!';
+      }
+    }
+
+    document.write(questions.map((q, index) => createCase(index, q)).join(''));
+  </script>
+
+  <button type="button" class="exit-btn" onclick="window.location.href='lesson3.html#powerUpYourSkill'">Exit</button>
+</div>
+</body>
+</html> -->

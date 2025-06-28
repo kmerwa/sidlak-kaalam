@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 4 | Dive In!</title>
+  <link rel="stylesheet" href="./styles.css">
+  <style>
+    body {
+      padding: 20px;
+      background-image: linear-gradient(to right top, #f0f8ff, #edf5ff, #ebf2fe, #eaeffd, #e9ebfc, #eee9fb, #f4e8f8, #f9e6f4, #ffe8ee, #ffebe9, #ffefe6, #fff4e6);
+    }
+    h1, h2 {
+      color: #2c3e50;
+      align-self: center;
+    }
+    .word-box {
+      background: #ffffff;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .hint {
+      color: #7f8c8d;
+      font-style: italic;
+    }
+    input[type="text"] {
+      padding: 5px;
+      margin-top: 5px;
+      width: 100%;
+      max-width: 400px;
+    }
+    .result {
+      margin-top: 5px;
+      font-weight: bold;
+    }
+    button {
+      margin-top: 10px;
+      padding: 5px 10px;
+      background: #27ae60;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #2ecc71;
+    }
+    .main-ctn{
+      max-width: 1000px;
+      align-self: center;
+      display: flex;
+      gap: 15px;
+      flex-direction: column;
+      font-size: 18px;
+    }
+    .exit-btn{
+      background-color: #e74c3c;
+      display: block;
+      padding: 10px 30px;
+      font-size: 16px;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      align-self: center;
+      width: fit-content;
+    }
+    .exit-btn:hover{
+        background-color: #c0392b;
+    }
+  </style>
+</head>
+<body>
+  <div class="main-ctn">
+  <h1>Lesson 4: Earth’s Mechanism</h1>
+  <h3>Dive In!</h3>
+  <h3>Jumble Quest: Earth's Inner Secrets</h3>
+  <p>Arrange the scrambled letters below to form the word defined in each number.</p>
+
+  <div id="quiz"></div>
+
+  <script>
+    const questions = [
+      { jumble: "OTICLNNVOECE", answer: "CONVECTION", hint: "A type of heat transfer in fluids" },
+      { jumble: "RMAANTCVEON", answer: "MANTLE CONVECTION", hint: "It drives the movement of tectonic plates" },
+      { jumble: "TESAHSNRPEOHA", answer: "ASTHENOSPHERE", hint: "A semi-fluid layer under the lithosphere" },
+      { jumble: "LBAS LUPL", answer: "SLAB PULL", hint: "A force that pulls a subducting plate" },
+      { jumble: "EDIRG USHP", answer: "RIDGE PUSH", hint: "Gravity-driven plate movement at ridges" },
+      { jumble: "TMNAEL", answer: "MANTLE", hint: "A layer beneath where the less dense hot molten material rises, and sinks" },
+      { jumble: "THPREHAEOSENS", answer: "ASTHENOSPHERE", hint: "A soft, weak and plastic-like layer, the upper part of the mantle where lithospheric plates float and move." },
+      { jumble: "MMGAA", answer: "MAGMA", hint: "Hot molten rocks formed beneath the Earth’s surface." },
+      { jumble: "NOITCEVNOC CTUNRRE", answer: "CONVECTION CURRENT", hint: "Facilitates the movement of the lithospheric plates." },
+      { jumble: "ORCE", answer: "CORE", hint: "The innermost layer of the Earth, which generates heat to the mantle." }
+    ];
+
+    const quizDiv = document.getElementById("quiz");
+
+    questions.forEach((q, index) => {
+      const box = document.createElement("div");
+      box.className = "word-box";
+
+      box.innerHTML = `
+        <strong>${index + 1}. Jumbled Word:</strong> ${q.jumble}<br>
+        <span class="hint">Hint: ${q.hint}</span><br>
+        <input type="text" id="input-${index}" placeholder="Your answer here">
+        <div class="result" id="result-${index}"></div>
+        <button onclick="checkAnswer(${index})">Check</button>
+      `;
+      quizDiv.appendChild(box);
+    });
+
+    function checkAnswer(index) {
+      const input = document.getElementById(`input-${index}`);
+      const result = document.getElementById(`result-${index}`);
+      const userAnswer = input.value.trim().toUpperCase();
+      const correctAnswer = questions[index].answer.toUpperCase();
+
+      if (userAnswer === correctAnswer) {
+        result.style.color = "green";
+        result.textContent = "✅ Correct!";
+      } else {
+        result.style.color = "red";
+        result.textContent = "❌ Try again!";
+      }
+    }
+  </script>
+  <button type="button" class="exit-btn" onclick="window.location.href='lesson4.html#diveIn'">Exit</button>
+  </div>
+</body>
+</html>

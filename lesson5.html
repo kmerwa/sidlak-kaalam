@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sidlak Kaalam | Lesson 5: Evidence of Plate Movements</title>
+  <link rel="preload" href="./images/bg-image.webp" as="image" />
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
+</head>
+<style>
+  body{
+    margin-top: 100px;
+    background: linear-gradient(to bottom, #f0f8ff, #eae6f9, #fff4e6);
+  }
+
+  main{
+    display: flex;
+    justify-content: center;
+  }
+
+  p, li{
+    font-size: 18px;
+    text-align: justify;
+    line-height: 25px;
+  }
+
+  .lesson1-ctn{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 1200px;
+    padding: 30px;
+    gap: 15px;
+
+    h2{
+      margin-bottom: 10px;
+    }
+  }
+
+  .title{
+    align-self: center;
+  }
+
+  .card{
+    padding: 20px 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    scroll-margin-top: 100px;
+  }
+
+  .gear-up-for-learning, .power-up-your-skill{
+    background-color: #fef6e4;
+  }
+
+  .readiness-check, .connect-the-dots{
+    background-color: #e0f7fa;
+  }
+
+  .dive-in, .mastery-check{
+    background-color: #fce4ec;
+  }
+
+  .build-knowledge{
+    background-color: #e8f5e9;
+  }
+
+  .see-in-action{
+    background-color: #f3e5f5;
+  }
+
+  img{
+    height: 100%;
+    width: 100%;
+  }
+
+  .image{
+    max-width: 650px;
+    height: auto;
+    align-self: center;
+    border: 1px solid rgba(173, 216, 230, 0.5);
+    margin-top: 10px;
+  }
+
+  .image-desc{
+    align-self: center;
+    font-style: italic;
+    margin-bottom: 10px;
+  }
+
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1em 0;
+    font-family: Arial, sans-serif;
+    text-align: left;
+  }
+
+  .comparison-table caption {
+    font-weight: bold;
+    margin-bottom: 0.5em;
+  }
+
+  .comparison-table th,
+  .comparison-table td {
+    border: 1px solid #333;
+    padding: 8px;
+  }
+
+  .comparison-table thead {
+    background-color: #f2f2f2;
+  }
+
+  .card.highlight {
+    animation: pastelPulse 0.6s ease-in-out;
+  }
+
+  .accordion-card{
+    overflow: hidden;
+  }
+
+  .a-card-header{
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .a-card-content{
+    display: none;
+  }
+
+  .content-div{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .accordion-card.active .a-card-content{
+    display: block;
+  }
+
+  .arrow{
+    transition: transform 0.3s ease;
+  }
+
+  .accordion-card.active .arrow{
+    transform: rotate(180deg);
+  }
+
+  .text-overlay {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .check-list {
+        list-style: none;
+        padding-left: 30px;
+    }
+
+    .check-list li::before {
+        content: "✔";
+        margin-right: 8px;
+    }
+
+  @keyframes pastelPulse {
+    0%   { transform: scale(1); box-shadow: 0 0 0px rgba(173, 216, 230, 0); }
+    50%  { transform: scale(1.02); box-shadow: 0 0 16px rgba(173, 216, 230, 0.5); }
+    100% { transform: scale(1); box-shadow: 0 0 0px rgba(173, 216, 230, 0); }
+  }
+
+</style>
+
+<body>
+    <header id="header">
+   <div class="site-header"> 
+    <div class="header-content">
+      <a href="sidlak.html" class="logo-div">
+        <img src="images/logo.png" alt="logo" style="width: 5rem; height: auto;">
+        <h1>Sidlak Kaalam</h1>
+      </a>
+    </div>
+    <nav class="navbar">
+      <a href="sidlak.html#section1" id="home-link">Home</a>
+      <div class="dropdown">
+        <a href="sidlak.html#section3">Lessons</a>
+        <div class="dropdown-content">
+          <a href="lesson1.html">Lesson 1</a>
+          <a href="lesson2.html">Lesson 2</a>
+          <a href="lesson3.html">Lesson 3</a>
+          <a href="lesson4.html">Lesson 4</a>
+          <a href="lesson5.html">Lesson 5</a>
+        </div>
+      </div>
+      <a href="sidlak.html#section4">FAQ</a>
+      <a href="sidlak.html#section5">About The Innovator</a>
+      <a href="references.html">References</a>
+    </nav>
+    <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </button>
+  </div>
+</header>
+
+<nav class="side-nav" id="sideNav">
+        <a href="sidlak.html#section1" id="home-link-mobile">Home</a>
+        <div class="dropdown" id="lessonsDropdown">
+            <a href="sidlak.html#section3">Lessons</a>
+            <div class="dropdown-content">
+                <a href="lesson1.html">Lesson 1</a>
+                <a href="lesson2.html">Lesson 2</a>
+                <a href="lesson3.html">Lesson 3</a>
+                <a href="lesson4.html">Lesson 4</a>
+                <a href="lesson5.html">Lesson 5</a>
+            </div>
+        </div>
+        <a href="sidlak.html#section4">FAQ</a>
+        <a href="sidlak.html#section5">About The Innovator</a>
+        <a href="references.html">References</a>
+    </nav>
+
+    <div class="overlay" id="overlay"></div>
+  <main>
+    <div class="lesson1-ctn">
+      <h1 class="title">Lesson 5: Evidence of Plate Movements</h1>
+      <div id="gearUpForLearning" class="gear-up-for-learning card">
+        <h2 class="lesson-header"><svg xmlns="http://www.w3.org/2000/svg" height="40" width="40" viewBox="0 0 512 512"><path fill="#14b8a6" d="M495.9 166.6c3.2 8.7 .5 18.4-6.4 24.6l-43.3 39.4c1.1 8.3 1.7 16.8 1.7 25.4s-.6 17.1-1.7 25.4l43.3 39.4c6.9 6.2 9.6 15.9 6.4 24.6c-4.4 11.9-9.7 23.3-15.8 34.3l-4.7 8.1c-6.6 11-14 21.4-22.1 31.2c-5.9 7.2-15.7 9.6-24.5 6.8l-55.7-17.7c-13.4 10.3-28.2 18.9-44 25.4l-12.5 57.1c-2 9.1-9 16.3-18.2 17.8c-13.8 2.3-28 3.5-42.5 3.5s-28.7-1.2-42.5-3.5c-9.2-1.5-16.2-8.7-18.2-17.8l-12.5-57.1c-15.8-6.5-30.6-15.1-44-25.4L83.1 425.9c-8.8 2.8-18.6 .3-24.5-6.8c-8.1-9.8-15.5-20.2-22.1-31.2l-4.7-8.1c-6.1-11-11.4-22.4-15.8-34.3c-3.2-8.7-.5-18.4 6.4-24.6l43.3-39.4C64.6 273.1 64 264.6 64 256s.6-17.1 1.7-25.4L22.4 191.2c-6.9-6.2-9.6-15.9-6.4-24.6c4.4-11.9 9.7-23.3 15.8-34.3l4.7-8.1c6.6-11 14-21.4 22.1-31.2c5.9-7.2 15.7-9.6 24.5-6.8l55.7 17.7c13.4-10.3 28.2-18.9 44-25.4l12.5-57.1c2-9.1 9-16.3 18.2-17.8C227.3 1.2 241.5 0 256 0s28.7 1.2 42.5 3.5c9.2 1.5 16.2 8.7 18.2 17.8l12.5 57.1c15.8 6.5 30.6 15.1 44 25.4l55.7-17.7c8.8-2.8 18.6-.3 24.5 6.8c8.1 9.8 15.5 20.2 22.1 31.2l4.7 8.1c6.1 11 11.4 22.4 15.8 34.3zM256 336a80 80 0 1 0 0-160 80 80 0 1 0 0 160z"/></svg>
+          Gear Up for Learning!</h2>
+        <p>You have learned from your previous lessons that lithospheric plates—the solid outer part of the Earth—are constantly moving, giving rise to various geologic 
+            events such as earthquakes, mountain formation, and volcanic activity. But what drives these plates to move? And what evidence supports the idea that Earth's 
+            plates are indeed in motion? These questions sparked the curiosity of scientists and led to the development of key theories, including the Continental Drift Theory, 
+            Seafloor Spreading, and Earth’s Magnetic Reversal.</p>
+        <p>After this lesson, you should be able to <strong><em>enumerate the lines of evidence that support the plate movement (S9ES –Ia-j-36.6).</em></strong></p>
+      </div>
+      <div id="readinessCheck" class="readiness-check card">
+        <h2 class="lesson-header">
+          <svg xmlns="http://www.w3.org/2000/svg" height="40" width="40" viewBox="0 0 512 512"><path fill="#14b8a6" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg>
+          Readiness Check!</h2>
+        <p><strong>Directions:</strong> Read and understand each item carefully and select the letter of the CORRECT answer.
+        </p>
+        <button class="cssbuttons-io-button" onclick="location.href='lesson5-pre-test.html'">
+          Get started
+          <div class="icon">
+            <svg
+              height="24"
+              width="24"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M0 0h24v24H0z" fill="none"></path>
+              <path
+                d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                fill="currentColor"
+              ></path>
+            </svg>
+          </div>
+        </button>
+      </div>
+      <div id="diveIn" class="dive-in card accordion-card">
+        <div class="a-card-header">
+          <h2 style="margin: 0;" class="lesson-header"><svg xmlns="http://www.w3.org/2000/svg" height="40" width="44" viewBox="0 0 576 512"><path fill="#14b8a6" d="M269.5 69.9c11.1-7.9 25.9-7.9 37 0C329 85.4 356.5 96 384 96c26.9 0 55.4-10.8 77.4-26.1c0 0 0 0 0 0c11.9-8.5 28.1-7.8 39.2 1.7c14.4 11.9 32.5 21 50.6 25.2c17.2 4 27.9 21.2 23.9 38.4s-21.2 27.9-38.4 23.9c-24.5-5.7-44.9-16.5-58.2-25C449.5 149.7 417 160 384 160c-31.9 0-60.6-9.9-80.4-18.9c-5.8-2.7-11.1-5.3-15.6-7.7c-4.5 2.4-9.7 5.1-15.6 7.7c-19.8 9-48.5 18.9-80.4 18.9c-33 0-65.5-10.3-94.5-25.8c-13.4 8.4-33.7 19.3-58.2 25c-17.2 4-34.4-6.7-38.4-23.9s6.7-34.4 23.9-38.4C42.8 92.6 61 83.5 75.3 71.6c11.1-9.5 27.3-10.1 39.2-1.7c0 0 0 0 0 0C136.7 85.2 165.1 96 192 96c27.5 0 55-10.6 77.5-26.1zm37 288C329 373.4 356.5 384 384 384c26.9 0 55.4-10.8 77.4-26.1c0 0 0 0 0 0c11.9-8.5 28.1-7.8 39.2 1.7c14.4 11.9 32.5 21 50.6 25.2c17.2 4 27.9 21.2 23.9 38.4s-21.2 27.9-38.4 23.9c-24.5-5.7-44.9-16.5-58.2-25C449.5 437.7 417 448 384 448c-31.9 0-60.6-9.9-80.4-18.9c-5.8-2.7-11.1-5.3-15.6-7.7c-4.5 2.4-9.7 5.1-15.6 7.7c-19.8 9-48.5 18.9-80.4 18.9c-33 0-65.5-10.3-94.5-25.8c-13.4 8.4-33.7 19.3-58.2 25c-17.2 4-34.4-6.7-38.4-23.9s6.7-34.4 23.9-38.4c18.1-4.2 36.2-13.3 50.6-25.2c11.1-9.4 27.3-10.1 39.2-1.7c0 0 0 0 0 0C136.7 373.2 165.1 384 192 384c27.5 0 55-10.6 77.5-26.1c11.1-7.9 25.9-7.9 37 0zm0-144C329 229.4 356.5 240 384 240c26.9 0 55.4-10.8 77.4-26.1c0 0 0 0 0 0c11.9-8.5 28.1-7.8 39.2 1.7c14.4 11.9 32.5 21 50.6 25.2c17.2 4 27.9 21.2 23.9 38.4s-21.2 27.9-38.4 23.9c-24.5-5.7-44.9-16.5-58.2-25C449.5 293.7 417 304 384 304c-31.9 0-60.6-9.9-80.4-18.9c-5.8-2.7-11.1-5.3-15.6-7.7c-4.5 2.4-9.7 5.1-15.6 7.7c-19.8 9-48.5 18.9-80.4 18.9c-33 0-65.5-10.3-94.5-25.8c-13.4 8.4-33.7 19.3-58.2 25c-17.2 4-34.4-6.7-38.4-23.9s6.7-34.4 23.9-38.4c18.1-4.2 36.2-13.3 50.6-25.2c11.1-9.5 27.3-10.1 39.2-1.7c0 0 0 0 0 0C136.7 229.2 165.1 240 192 240c27.5 0 55-10.6 77.5-26.1c11.1-7.9 25.9-7.9 37 0z"/></svg>
+            Dive In!</h2>
+          <span class="arrow">&#9650;</span>
+        </div>
+        <div class="a-card-content">
+          <div class="content-div">
+            <p><strong>Match the Evidence: What Supports Plate Movement?</strong></p>
+            <p><strong>Directions:</strong> Drag and drop each image to the matching description that explains the evidence supporting plate movement. Match all images correctly to complete the activity.
+            </p>
+            <button class="cssbuttons-io-button" onclick="location.href='lesson5-dive-in.html'">
+              Get started
+              <div class="icon">
+                <svg
+                  height="24"
+                  width="24"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M0 0h24v24H0z" fill="none"></path>
+                  <path
+                    d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div id="buildYourKnowledge" class="build-knowledge card accordion-card">
+        <div class="a-card-header">
+          <h2 style="margin: 0;" class="lesson-header"><svg xmlns="http://www.w3.org/2000/svg" height="40" width="40" viewBox="0 0 512 512"><path fill="#14b8a6" d="M184 0c30.9 0 56 25.1 56 56l0 400c0 30.9-25.1 56-56 56c-28.9 0-52.7-21.9-55.7-50.1c-5.2 1.4-10.7 2.1-16.3 2.1c-35.3 0-64-28.7-64-64c0-7.4 1.3-14.6 3.6-21.2C21.4 367.4 0 338.2 0 304c0-31.9 18.7-59.5 45.8-72.3C37.1 220.8 32 207 32 192c0-30.7 21.6-56.3 50.4-62.6C80.8 123.9 80 118 80 112c0-29.9 20.6-55.1 48.3-62.1C131.3 21.9 155.1 0 184 0zM328 0c28.9 0 52.6 21.9 55.7 49.9c27.8 7 48.3 32.1 48.3 62.1c0 6-.8 11.9-2.4 17.4c28.8 6.2 50.4 31.9 50.4 62.6c0 15-5.1 28.8-13.8 39.7C493.3 244.5 512 272.1 512 304c0 34.2-21.4 63.4-51.6 74.8c2.3 6.6 3.6 13.8 3.6 21.2c0 35.3-28.7 64-64 64c-5.6 0-11.1-.7-16.3-2.1c-3 28.2-26.8 50.1-55.7 50.1c-30.9 0-56-25.1-56-56l0-400c0-30.9 25.1-56 56-56z"/></svg>
+            Build Your Knowledge</h2>
+          <span class="arrow">&#9650;</span>
+        </div>
+        <div class="a-card-content">
+          <div class="content-div">
+            <p><strong><em>Continental Drift Theory</em></strong></p>
+            <p>Have you seen a world map before? Definitely, yes, you have seen one! Did you notice that the eastern border of South America and the Western part of Africa seem to fit together like a big jigsaw puzzle?</p>
+            <div class="image">
+              <img src="images/lesson5-images/image001.png" alt="Border of South America and Western part of Africa. ">
+            </div>
+            <p class="image-desc">Figure 5.1 Border of South America and Western part of Africa. </p>
+            <p>If you said yes, then you are thinking like Alfred Lothar Wegener (1880-1930), who was a German polar researcher, geophysicist, and meteorologist.</p>
+            <p>He is remembered as the originator of the Continental Drift Theory by hypothesizing in 1912 that the continents are slowly drifting around the Earth and is once a large landmass called Pangaea, a Greek word which means "All Earth."</p>
+            <p>The figure below shows the evolution of the supercontinent Pangaea to the present-day distribution of continents. Can you say that continents are drifting?</p>
+            <div class="image">
+              <img src="images/lesson5-images/image011.png" alt="Figure 5.2 The Evolution of Pangaea">
+            </div>
+            <p class="image-desc">Figure 5.2 The Evolution of Pangaea</p>
+            <p>Wegener's curiosity about the idea of drifting continents started when he noticed the edges of South America and Africa in a World Map could be fitted like a jigsaw puzzle.</p>
+            <p>Would fitting edges of continents be enough proof that the continents are drifting? What are the other pieces of evidence gathered by Wegener to support his Continental Drift Theory?</p>
+            <p><strong>Evidence</strong></p>
+            <p>Alfred Wegener collected diverse pieces of evidence to support his theory, including geological "fit" and fossil evidence. It is essential to note that Wegener did not cite the following specific fossil evidence to support his theory. </p>
+            <p>Wegener did not collect the fossils, but he drew attention to the idea of using these scientific documents, stating that fossils of species were present on separate continents to support his claim. </p>
+            <p>Geological "fit" evidence is the matching of large-scale geological features on different continents. It has been noted that the coastlines of South America and West Africa seem to match up; however, more particularly, the rock terrains of separate continents also confirm this.</p>
+            <p>Examples include the Appalachian Mountains of eastern North America, linked with the Scottish Highlands; the familiar rock strata of the Karoo system in South Africa, which are matched correctly with those of the Santa Catarina system in Brazil; and the mountain ranges of Brazil and Ghana, which align across the Atlantic Ocean.</p>
+            <p>Glaciers carve rocks and leave marks as they move. In this evidence, scientists can determine the direction of movement of each continent. In addition, the existence of coal deposits in Antarctica suggests that it was once located near the region of the Earth where the climate was sufficient to support complex life forms, such as plants and tall trees. </p>
+            <p>Look at the map below. It shows how Alfred Wegener mapped-out the distributions of the four Permian and Triassic fossil groups and used it as biogeographic evidence for continental drift and land bridging. </p>
+            <div class="image">
+              <img src="images/lesson5-images/image012.png" alt="Figure 5.3 Illustration showing similar rock continents">
+            </div>
+            <p class="image-desc">Figure 5.3 Illustration showing similar rock continents</p>
+            <p>The <strong>Mesosaurus</strong> is known to have been a type of reptile, similar to the modern crocodile, which propelled itself through the water with its long hind legs and limber tail. It lived during the early Permian period (286 to 258 million years ago), and its remains are found solely in South Africa and Eastern South America. </p>
+            <div class="image">
+              <img src="images/lesson5-images/image013.jpg" alt="Figure 5.4 Modern Representation of Mesosaurus">
+            </div>
+            <p class="image-desc">Figure 5.4 Modern Representation of Mesosaurus</p>
+            <p>Now, if the continents were still in their present positions, there would be no possibility that the Mesosaurus could have swum across such a large body of ocean, like the Atlantic, because it was a coastal animal.</p>
+            <p>The now extinct <strong>Cynognathus</strong> was a mammal-like reptile. Roaming the terrains during the Triassic period (250 to 240 million years ago), the Cynognathus was as large as a modern wolf. Its fossils are found only in South Africa and South America. As a dominant land species, the Cynognathus would not have been capable of migrating across the Atlantic. </p>
+            <div class="image">
+              <img src="images/lesson5-images/image014.jpg" alt="Figure 5.5 Modern Representation of Cynognathus">
+            </div>
+            <p class="image-desc">Figure 5.5 Modern Representation of Cynognathus</p>
+            <p>The <strong>Lystrosaurus</strong>, which translates to "shovel reptile," is thought to have been a herbivore with a stout built like a pig. Lystrosaurus fossils are only found in Antarctica, India, and South Africa. Similar to the land-dwelling Cynognathus, the Lystrosaurus would not have had the swimming capability to traverse any ocean</p>
+            <div class="image">
+              <img src="images/lesson5-images/image015.jpg" alt="Figure 5.6 Modern Representation of Lystrosaurus">
+            </div>
+            <p class="image-desc">Figure 5.6 Modern Representation of Lystrosaurus</p>
+            <p>Possibly the most crucial fossil evidence was found in the plant Glossopteris. The <strong>Glossopteris</strong> fossil is found in Australia, Antarctica, India, South Africa, and South America—all the southern continents. </p>
+            <div class="image">
+              <img src="images/lesson5-images/image016.jpg" alt="Figure 5.7 Modern Representation of Glossopteris">
+            </div>
+            <p class="image-desc">Figure 5.7 Modern Representation of Glossopteris</p>
+            <p>Glossopteris seed is known to be large and bulky, and possibly could not have drifted or flown across the oceans to a separate continent. Therefore, the continents must have been joined at least once to maintain the Glossopteris' wide range across the southern continents. </p>
+            <div class="image">
+              <img src="images/lesson5-images/image017.jpg" alt="Figure 5.8 Description showing the fossil locations of the Mesosaurus, Cynognathus, Lystrosaurus, and Glossopteris spread across different continents.">
+            </div>
+            <p class="image-desc">Figure 5.8 Description showing the fossil locations of the Mesosaurus, Cynognathus,<br> Lystrosaurus, and Glossopteris spread across different continents.</p>
+            <p><strong><em>Seafloor Spreading and Magnetic Reversal </em></strong></p>
+            <p>The idea of continental drift circulated in scientific circles until World War II, when sounding gear called <strong>SONAR</strong> produced new evidence of what the seafloor looked like. The gear, developed in the 1930s, bounced sound waves off the seafloor to determine its depth and features.</p>
+            <div class="image">
+              <img src="images/lesson5-images/image018.png" alt="Figure 5.9 SONAR beam to navigate and map out the seafloor">
+            </div>
+            <p class="image-desc">Figure 5.9 SONAR beam to navigate and map out the seafloor</p>
+            <p>It happened that the command of one attack transport ship, the USS Cape Johnson, was given to <strong>Harry</strong> </p>
+            <div class="image">
+              <img src="images/lesson5-images/image019.png" alt="Harry Hess">
+            </div>
+            <p class="image-desc">Figure 5.10 Harry Hess</p>
+            <p><strong>Hammond Hess</strong>, a geologist from Princeton University. Hess, then in his late thirties, wanted to continue his scientific investigations even while at war. So he left his ship's sounding gear all of the time, not just when approaching port or navigating a difficult landing. What Hess discovered was a big surprise. </p>
+            <p>What did Harry Hess and his men accidentally discover when they explored the oceanic floor? Were they able to locate the start of all the movements on the Earth's surface? Moreover, did the Harry Hess team gather much strong evidence to support the claim that continents are drifting. </p>
+            <p>Ocean floor exploration continued, and by the 1950s, other researchers had found that a huge rift ran along the top of the Mid-Atlantic Ridge. That enabled Hess to understand his ocean floor profiles in the Pacific. He discovered that the bottom of the sea was not as smooth as expected, 
+              but full of canyons, trenches, and volcanic sea mountains. He realized that the Earth's crust had been moving away on each side of oceanic ridges, down the Atlantic and Pacific oceans, long and volcanically active.</p>
+            <p>Harry Hess observed that the rate of formation of new seafloor at the mid-ocean ridge is not always as fast as the destruction of the old seafloor at <strong>the subduction zone.</strong> This explains why the Pacific Ocean is getting smaller and why the Atlantic Ocean is getting wider. 
+              If the subduction zone is faster than the seafloor spreading, the ocean shrinks. He published his theory in History of Ocean Basins (1962), and it came to be called <strong>"seafloor spreading."</strong></p>
+            <p>In the early 1960s, dating of ocean-core samples showed that the <strong>ocean floor was younger at the Mid-Atlantic Ridge but progressively older in either direction</strong>, confirming the reality of seafloor spreading.</p>
+            <div class="image">
+              <img src="images/lesson5-images/image020.png" alt="Figure 5.11 Red arrows pointing the Mid-Atlantic Ridge">
+            </div>
+            <p class="image-desc">Figure 5.11 Red arrows pointing the Mid-Atlantic Ridge</p>
+            <p><strong><em>Magnetic Reversal</em></strong></p>
+            <p>Further evidence came along by 1963, as geophysicists realized that <strong>Earth's magnetic field had reversed polarity many times</strong>, with each reversal lasting less than 200,000 years. Rocks of the same age in the seafloor crust would have taken on the magnetic polarity at the time that part of the crust formed. </p>
+            <p>Sure enough, surveys of either side of the Mid-Atlantic Ridge showed a symmetrical pattern of alternating polarity stripes. A magnetic compass can tell direction. The needle of a magnetic compass usually points to the North Pole of the Earth, which is actually the South Magnetic Pole at present. The crystalized irons in 
+              rocks found in the seafloor act as a magnetic compass that can tell the Earth's magnetic field direction. So, what is magnetic reversal? How can magnetic reversal be used as evidence of the Seafloor Spreading Theory? </p>
+            <div class="image">
+              <img src="images/lesson5-images/image021.png" alt="Figure 5.12 Symmetrical patterns on each side of the mid-oceanic ridge">
+            </div>
+            <p class="image-desc">Figure 5.12 Symmetrical patterns on each side of the mid-oceanic ridge</p>
+            <p>Magnetic reversal happened many times in the past. The occurrence of the magnetic reversal can be explained through the magnetic patterns in the magnetic rocks. These magnetic patterns allow our scientists to understand the ages and rate of movement of the materials from the mid-oceanic ridge. </p>
+            <p>The magnetic reversal, also called the "magnetic flip" of the Earth, happens when the North Pole is transformed into the South Pole, and the South Pole becomes the North Pole. This event happens because of the changing direction of the flow of materials in the Earth's liquid outer core.</p>
+            <p>Over the last 10 million years, there had been an average of 4 to 5 reversals per million years. New rocks are added to the ocean floor at the ridge with approximately equal amounts on both sides of the oceanic ridge.</p>
+            <p>By the 1970s, geologists had agreed to use the term "plate tectonics" for what had become the core paradigm of their discipline. They used the term "plates" because they had found evidence that not just continents move, but so do whole plates of the Earth's crust.</p>
+            <p>A plate might include a continent, parts of a continent, and or undersea portions of the crust. Alfred Wegener's idea of continental drift had been developed and refined together with the Seafloor Spreading of Harry Hess.</p>
+          </div>
+        </div>
+      </div>
+      <div id="seeItInAction" class="see-in-action card accordion-card">
+        <div class="a-card-header">
+          <h2 style="margin: 0;" class="lesson-header"><svg xmlns="http://www.w3.org/2000/svg" height="40" width="40" viewBox="0 0 512 512"><path fill="#14b8a6" d="M0 96C0 60.7 28.7 32 64 32l384 0c35.3 0 64 28.7 64 64l0 320c0 35.3-28.7 64-64 64L64 480c-35.3 0-64-28.7-64-64L0 96zM48 368l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16zm368-16c-8.8 0-16 7.2-16 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0zM48 240l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16zm368-16c-8.8 0-16 7.2-16 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0zM48 112l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16L64 96c-8.8 0-16 7.2-16 16zM416 96c-8.8 0-16 7.2-16 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0zM160 128l0 64c0 17.7 14.3 32 32 32l128 0c17.7 0 32-14.3 32-32l0-64c0-17.7-14.3-32-32-32L192 96c-17.7 0-32 14.3-32 32zm32 160c-17.7 0-32 14.3-32 32l0 64c0 17.7 14.3 32 32 32l128 0c17.7 0 32-14.3 32-32l0-64c0-17.7-14.3-32-32-32l-128 0z"/></svg>
+            See It in Action!</h2>
+          <span class="arrow">&#9650;</span>
+        </div>
+        <div class="a-card-content">
+          <div class="content-div">
+            <!-- <p style="color: #1b4f91; align-self: center;"><strong>Evidence of Plate Movements: Continental Drift Theory</strong></p>
+            <div style="max-width: 700px; height: auto; align-self: center; margin-bottom: 20px;">
+              <video width="100%" height="auto" controls>
+                <source src="videos/Evidence of Plate Movements_ Continental Drift Theory.mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div> -->
+            <p style="color: #1b4f91; align-self: center;"><strong>Evidence of Plate Movement by Hiztory Guy</strong></p>
+            <div style="max-width: 700px; height: auto; align-self: center; margin-bottom: 20px;">
+              <video width="100%" height="auto" controls>
+                <source src="videos/Evidence of Plate Movement.mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <p style="color: #1b4f91; align-self: center;"><strong>Evidence of Plate Movement by Kyle Vasquez</strong></p>
+            <div style="max-width: 700px; height: auto; align-self: center; margin-bottom: 20px;">
+              <video width="100%" height="auto" controls>
+                <source src="videos/Evidence of Plate Movements.mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="powerUpYourSkill" class="power-up-your-skill card accordion-card">
+        <div class="a-card-header">
+          <h2 style="margin: 0;" class="lesson-header"><svg xmlns="http://www.w3.org/2000/svg" height="40" width="40" viewBox="0 0 512 512"><path fill="#14b8a6" d="M78.6 5C69.1-2.4 55.6-1.5 47 7L7 47c-8.5 8.5-9.4 22-2.1 31.6l80 104c4.5 5.9 11.6 9.4 19 9.4l54.1 0 109 109c-14.7 29-10 65.4 14.3 89.6l112 112c12.5 12.5 32.8 12.5 45.3 0l64-64c12.5-12.5 12.5-32.8 0-45.3l-112-112c-24.2-24.2-60.6-29-89.6-14.3l-109-109 0-54.1c0-7.5-3.5-14.5-9.4-19L78.6 5zM19.9 396.1C7.2 408.8 0 426.1 0 444.1C0 481.6 30.4 512 67.9 512c18 0 35.3-7.2 48-19.9L233.7 374.3c-7.8-20.9-9-43.6-3.6-65.1l-61.7-61.7L19.9 396.1zM512 144c0-10.5-1.1-20.7-3.2-30.5c-2.4-11.2-16.1-14.1-24.2-6l-63.9 63.9c-3 3-7.1 4.7-11.3 4.7L352 176c-8.8 0-16-7.2-16-16l0-57.4c0-4.2 1.7-8.3 4.7-11.3l63.9-63.9c8.1-8.1 5.2-21.8-6-24.2C388.7 1.1 378.5 0 368 0C288.5 0 224 64.5 224 144l0 .8 85.3 85.3c36-9.1 75.8 .5 104 28.7L429 274.5c49-23 83-72.8 83-130.5zM56 432a24 24 0 1 1 48 0 24 24 0 1 1 -48 0z"/></svg>
+            Power Up Your Skill!</h2>
+          <span class="arrow">&#9650;</span>
+        </div>
+        <div class="a-card-content">
+          <div class="content-div">
+            <p><strong>Drifting Evidence Challenge!</strong></p>
+            <p>Welcome to the "Drifting Evidence Challenge"! This activity will test your understanding of the evidence that supports plate movement.
+            </p>
+            <button class="cssbuttons-io-button" onclick="location.href='lesson5-powerup-your-skill.html'">
+              Get started
+              <div class="icon">
+                <svg
+                  height="24"
+                  width="24"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M0 0h24v24H0z" fill="none"></path>
+                  <path
+                    d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div id="connectTheDots" class="connect-the-dots card accordion-card">
+        <div class="a-card-header">
+          <h2 style="margin: 0;" class="lesson-header"><svg xmlns="http://www.w3.org/2000/svg" height="40" width="48" viewBox="0 0 640 512"><path fill="#14b8a6" d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg>
+            Connect the Dots</h2>
+          <span class="arrow">&#9650;</span>
+        </div>
+        <div class="a-card-content">
+          <div class="content-div">
+            <p>Now that you have explored how Earth's surface is shaped by dynamic geological processes, you are expected to describe and relate the distribution of active volcanoes, 
+              earthquake epicenters, and major mountain belts to the theory of plate tectonics. This section will help you reflect on the key concepts and connections you've made about 
+              how the movement of tectonic plates gives rise to these important Earth features.</p>
+            <ul style="padding-left: 30px;">
+                <li><strong>Alfred Wegener</strong>, a German polar researcher, geophysicist, and meteorologist, proposed the <strong>Continental Drift Theory in 1912</strong>, hypothesizing that continents slowly 
+                  drift and were once a single landmass called Pangaea. </li>
+                <li>Wegener's curiosity was sparked by the apparent jigsaw fit of the eastern border of South America and the western part of Africa on a world map. </li>
+                <li>Evidence supporting the theory includes geological <strong>"fit"</strong> (e.g., matching rock terrains like the Appalachian Mountains with the Scottish Highlands, and the 
+                  Karoo system in South Africa with the Santa Catarina system in Brazil). </li>
+                <li>Glacial markings and the presence of coal deposits in Antarctica also suggest past continental positions. </li>
+                <li><strong>Fossil evidence</strong>, though not collected by Wegener himself, was used to support the theory, highlighting that identical fossils of species were found on widely separated continents. </li>
+                <li>Specific fossil examples include: </li>
+                <ul class="check-list" style="padding-left: 40px;">
+                  <li><strong>Mesosaurus:</strong> A coastal reptile whose remains are found only in South Africa and Eastern South America, suggesting these landmasses were once connected.</li>
+                  <li><strong>Cynognathus:</strong> A mammal-like reptile found only in South Africa and South America, indicating it could not have crossed a large ocean.</li>
+                  <li><strong>Lystrosaurus:</strong> A herbivore whose fossils are found in Antarctica, India, and South Africa, suggesting a past land connection.</li>
+                  <li><strong>Glossopteris:</strong> A plant with large, bulky seeds found across all southern continents (Australia, Antarctica, India, South Africa, and South America), implying these continents were once joined.</li>
+                </ul>
+                <li>New evidence emerged after World War II with the use of <strong>SONAR</strong>, which revealed the seafloor's features. </li>
+                <li><strong>Harry Hammond Hess</strong>, a geologist, continuously used his ship's sounding gear and discovered that the ocean floor was not smooth but contained canyons, trenches, and volcanic sea mountains. </li>
+                <li>Hess proposed the theory of <strong>"seafloor spreading"</strong> in 1962, suggesting that Earth's crust moves away from oceanic ridges, leading to the formation of new seafloor. </li>
+                <li>Dating of ocean-core samples in the early 1960s confirmed seafloor spreading, showing that the ocean floor was younger at the Mid-Atlantic Ridge and progressively older in either direction. </li>
+                <li>Further evidence came from the discovery of magnetic reversals in Earth's magnetic field. Rocks of the same age in the seafloor crust show symmetrical patterns of alternating magnetic polarity stripes on either side of the Mid-Atlantic Ridge. </li>
+                <li><strong>Magnetic reversal, or "magnetic flip,"</strong> occurs when the Earth's North and South Poles switch due to changes in the flow of materials in the liquid outer core. </li>
+                <li>By the 1970s, geologists adopted the term <strong>"plate tectonics,"</strong> recognizing that not just continents, but entire <strong>"plates"</strong> of Earth's crust (which can include continents and/or undersea portions of the crust) are in motion. </li>
+                <li><strong>Alfred Wegener's Continental Drift Theory</strong> and <strong>Harry Hess's Seafloor Spreading Theory</strong> were combined to form the core paradigm of plate tectonics.</li>
+            </ul>
+        </div>
+      </div>
+      </div>
+      <div id="masteryCheck" class="mastery-check card">
+        <h2 class="lesson-header"><svg xmlns="http://www.w3.org/2000/svg" height="40" width="40" viewBox="0 0 512 512"><path fill="#14b8a6" d="M448 256A192 192 0 1 0 64 256a192 192 0 1 0 384 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm256 80a80 80 0 1 0 0-160 80 80 0 1 0 0 160zm0-224a144 144 0 1 1 0 288 144 144 0 1 1 0-288zM224 256a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"/></svg>
+          Mastery Check!</h2>
+        <p><strong>Directions:</strong> Read and understand each item carefully and select the letter of the CORRECT answer.
+        </p>
+        <button class="cssbuttons-io-button" onclick="location.href='lesson5-mastery-check.html'">
+          Get started
+          <div class="icon">
+            <svg
+              height="24"
+              width="24"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M0 0h24v24H0z" fill="none"></path>
+              <path
+                d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                fill="currentColor"
+              ></path>
+            </svg>
+          </div>
+        </button>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer" style="margin-top: 50px;">
+    End of Lesson 5: Evidence of Plate Movements
+  </footer>
+
+<script>
+  function highlightCardById(id) {
+      const card = document.getElementById(id);
+      if (card) {
+        card.classList.add('highlight');
+
+        card.scrollIntoView({
+          behavior: 'smooth',
+          block: "start"
+        });
+
+        setTimeout(() => card.classList.remove('highlight'), 1000);
+      }
+    } 
+
+    window.addEventListener('load', () => {
+      const hash = window.location.hash.slice(1); 
+      if (hash) {
+        highlightCardById(hash);
+      }
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      // 1. Header scroll behavior
+      const header = document.getElementById('header');
+      if (header) {
+          const isHomepage = window.location.pathname.endsWith('sidlak.html') || 
+                            window.location.pathname === '/' || 
+                            window.location.href.endsWith('index.html');
+
+          function toggleHeaderBackground() {
+              const scrollTop = window.scrollY || window.pageYOffset;
+              if (!isHomepage || scrollTop > 50) {
+                  header.classList.add('header-colored');
+              } else {
+                  header.classList.remove('header-colored');
+              }
+          }
+
+          // Initialize and set up scroll listener
+          toggleHeaderBackground();
+          window.addEventListener('scroll', toggleHeaderBackground);
+      }
+
+      // 2. Scroll animations for elements
+      function animateOnScroll() {
+          const elements = document.querySelectorAll('.animate-on-scroll');
+          const windowHeight = window.innerHeight;
+
+          elements.forEach(el => {
+              const elementTop = el.getBoundingClientRect().top;
+              const revealPoint = 150;
+
+              if (elementTop < windowHeight - revealPoint) {
+                  el.classList.add('active');
+              } else {
+                  el.classList.remove('active');
+              }
+          });
+      }
+
+      // Initialize and set up scroll listener
+      animateOnScroll();
+      window.addEventListener('scroll', animateOnScroll);
+
+      // 3. "See More" button functionality
+      const seeMoreBtn = document.getElementById("seeMoreBtn");
+      if (seeMoreBtn) {
+          seeMoreBtn.addEventListener("click", function () {
+              const more = document.querySelector(".more-references");
+              if (more) {
+                  if (more.classList.contains("hidden")) {
+                      more.classList.remove("hidden");
+                      this.textContent = "View less";
+                  } else {
+                      more.classList.add("hidden");
+                      this.textContent = "View more";
+                  }
+              }
+          });
+      }
+
+      // 4. Make current nav link active
+      const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+      document.querySelectorAll('.navbar a').forEach(link => {
+          const linkPage = link.getAttribute('href').split('/').pop();
+          if (linkPage === currentPage || 
+              (currentPage === 'index.html' && linkPage === 'sidlak.html')) {
+              link.classList.add('active-nav-link');
+          }
+      });
+  });
+
+  document.querySelectorAll('.a-card-header').forEach(header => {
+    header.addEventListener('click', () => {
+      const accordion = header.parentElement;
+      accordion.classList.toggle('active');
+    });
+  });
+</script>
+</body>
+</html>

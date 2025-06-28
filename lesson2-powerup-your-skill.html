@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Lesson 2 | Power Up Your Skill</title>
+<link rel="stylesheet" href="./styles.css">
+<style>
+  body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-size: 18px;
+    margin-top: 20px;
+    height: 100%;
+    gap: 20px;
+    padding: 40px;
+    background-image: linear-gradient(to right top, #f0f8ff, #edf5ff, #ebf2fe, #eaeffd, #e9ebfc, #eee9fb, #f4e8f8, #f9e6f4, #ffe8ee, #ffebe9, #ffefe6, #fff4e6);
+  }
+  h1{
+    align-self: center;
+  }
+  h2 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  #game-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  #scenarios, #dropzones {
+    background: #fff;
+    border: 2px solid #008080;
+    border-radius: 8px;
+    padding: 15px;
+    flex: 1 1 400px;
+    min-width: 350px;
+    max-width: 600px;
+  }
+  #scenarios {
+    max-height: 600px;
+    overflow-y: auto;
+  }
+  .scenario {
+    background: #d1f0f0;
+    border: 1px solid #008080;
+    border-radius: 5px;
+    padding: 8px;
+    margin-bottom: 8px;
+    cursor: grab;
+  }
+  .scenario.dragging {
+    opacity: 0.6;
+  }
+  .dropzone {
+    border: 2px dashed #008080;
+    border-radius: 6px;
+    min-height: 80px;
+    margin-bottom: 15px;
+    padding: 8px;
+    background: #e6f7f7;
+  }
+  .dropzone h3 {
+    margin-top: 0;
+  }
+  .subzone {
+    border: 1px solid #004c4c;
+    background: #ccf2f2;
+    padding: 6px;
+    margin: 6px 0;
+    min-height: 40px;
+  }
+  .subzone.highlight {
+    border-color: #00b3b3;
+    background: #b3ffff;
+  }
+  .scenario.in-dropzone {
+    cursor: default;
+  }
+  #check-btn {
+    background: #008080;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: block;
+    width: fit-content;
+  }
+  #result {
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 1.1em;
+  }
+  .exit-btn{
+      background-color: #e74c3c;
+      display: block;
+      /* margin: 20px auto; */
+      padding: 10px 25px;
+      font-size: 16px;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+  }
+  .exit-btn:hover{
+      background-color: #c0392b;
+  }
+</style>
+</head>
+<body>
+
+<h1>Lesson 2: Plate Boundaries</h1>
+<h3>Drag and Drop: Match the Plate Movement or Fault to its Description</h3>
+
+<div id="game-container">
+  <div id="scenarios">
+    <div class="scenario" draggable="true" data-answer="Earthquake">Earthquake</div>
+    <div class="scenario" draggable="true" data-answer="Fault Plane">Fault Plane</div>
+    <div class="scenario" draggable="true" data-answer="Subduction Zone">Subduction Zone</div>
+    <div class="scenario" draggable="true" data-answer="Mid-ocean Ridge">Mid-ocean Ridge</div>
+    <div class="scenario" draggable="true" data-answer="Oceanic Trench">Oceanic Trench</div>
+    <div class="scenario" draggable="true" data-answer="Normal Fault">Normal Fault</div>
+    <div class="scenario" draggable="true" data-answer="Reverse Fault">Reverse Fault</div>
+    <div class="scenario" draggable="true" data-answer="Divergent Plate Boundary">Divergent Plate Boundary</div>
+    <div class="scenario" draggable="true" data-answer="Transform Plate Boundary">Transform Plate Boundary</div>
+    <div class="scenario" draggable="true" data-answer="Rift Valley">Rift Valley</div>
+    <div class="scenario" draggable="true" data-answer="Volcanic Island Arc">Volcanic Island Arc</div>
+    <div class="scenario" draggable="true" data-answer="Orogenic Belt">Orogenic Belt</div>
+    <div class="scenario" draggable="true" data-answer="Strike-slip Fault">Strike-slip Fault</div>
+    <div class="scenario" draggable="true" data-answer="Oblique-slip Fault">Oblique-slip Fault</div>
+    <div class="scenario" draggable="true" data-answer="Convergent Plate Boundary">Convergent Plate Boundary</div>
+    
+  </div>
+
+  <div id="dropzones">
+      <div class="subzone" data-subzone="Divergent Plate Boundary">1. A region where two tectonic plates are moving away from each other, creating new oceanic crust from rising magma.</div>
+      <div class="subzone" data-subzone="Convergent Plate Boundary">2. A tectonic plate boundary where two plates move toward each other and collide.</div>
+      <div class="subzone" data-subzone="Transform Plate Boundary">3. A boundary where two plates slide past each other horizontally without creating volcanoes or mountains.</div>
+      <div class="subzone" data-subzone="Subduction Zone">4. The zone where one tectonic plate is forced underneath another plate into the mantle.</div>
+      <div class="subzone" data-subzone="Rift Valley">5. A lowland region formed by the separation of Earth’s lithosphere on land, as seen in the East African region.</div>
+      <div class="subzone" data-subzone="Mid-ocean Ridge">6. A continuous underwater mountain range formed at divergent boundaries between oceanic plates.</div>
+      <div class="subzone" data-subzone="Oceanic Trench">7. A long, narrow depression in the ocean floor, usually formed at subduction zones.</div>
+      <div class="subzone" data-subzone="Volcanic Island Arc">8. A chain of volcanic islands formed by rising magma where two oceanic plates converge.</div>
+      <div class="subzone" data-subzone="Orogenic Belt">9. A region of deformed rock layers formed when two continental plates collide, leading to mountain formation.</div>
+      <div class="subzone" data-subzone="Normal Fault">10. A dip-slip fault where the hanging wall moves downward relative to the footwall.</div>
+      <div class="subzone" data-subzone="Reverse Fault">11. A dip-slip fault where the hanging wall is pushed upward relative to the footwall due to compression.</div>
+      <div class="subzone" data-subzone="Strike-slip Fault">12. A fault where blocks of crust move sideways along a nearly vertical fault plane.</div>
+      <div class="subzone" data-subzone="Oblique-slip Fault">13. A fault that exhibits both horizontal and vertical movement, combining strike-slip and dip-slip motion.</div>
+      <div class="subzone" data-subzone="Earthquake">14. A sudden release of energy in the Earth's crust caused by the shifting of tectonic plates.</div>
+      <div class="subzone" data-subzone="Fault Plane">15. The surface along which blocks of the Earth's crust move during faulting.</div>
+  </div>
+</div>
+
+<div style="display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 900px;
+    padding: 10px 40px;">
+  <button type="button" class="exit-btn" onclick="window.location.href='lesson2.html#powerUpYourSkill'">Exit</button>
+  <button id="check-btn">Check Answers</button>
+</div>
+
+<div id="result"></div>
+
+<script>
+  const scenarios = document.querySelectorAll('.scenario');
+  const subzones = document.querySelectorAll('.subzone');
+  let dragged = null;
+
+  scenarios.forEach(scenario => {
+    scenario.addEventListener('dragstart', (e) => {
+      dragged = scenario;
+      setTimeout(() => {
+        scenario.classList.add('dragging');
+      }, 0);
+    });
+    scenario.addEventListener('dragend', (e) => {
+      dragged = null;
+      scenario.classList.remove('dragging');
+    });
+  });
+
+  subzones.forEach(zone => {
+    zone.addEventListener('dragover', e => {
+      e.preventDefault();
+      zone.classList.add('highlight');
+    });
+    zone.addEventListener('dragleave', e => {
+      zone.classList.remove('highlight');
+    });
+    zone.addEventListener('drop', e => {
+      e.preventDefault();
+      zone.classList.remove('highlight');
+      if(dragged) {
+        if(!zone.contains(dragged)) {
+          zone.appendChild(dragged);
+          dragged.classList.add('in-dropzone');
+        }
+      }
+    });
+  });
+
+  document.getElementById('check-btn').addEventListener('click', () => {
+    let total = scenarios.length;
+    let correct = 0;
+
+    scenarios.forEach(scenario => {
+      const correctAnswer = scenario.getAttribute('data-answer');
+      const parentZone = scenario.parentElement.getAttribute('data-subzone');
+      if(parentZone === correctAnswer) {
+        scenario.style.border = "2px solid green";
+        correct++;
+      } else {
+        scenario.style.border = "2px solid red";
+      }
+    });
+
+    document.getElementById('result').textContent = `You got ${correct} out of ${total} correct!`;
+  });
+</script>
+
+</body>
+</html>
