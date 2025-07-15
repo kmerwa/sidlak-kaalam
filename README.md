@@ -15,12 +15,12 @@ Follow the instructions below to set it up and navigate it properly.
 
 2. **Open the Website**
 
-   Double-click or open `sidlak.html` in your browser. This is your homepage.
+   Double-click or open `index.html` in your browser. This is your homepage.
 
 3. **Navigation**
 
    - Use the navigation bar in the header to move between sections and pages.
-   - Some links (like **FAQ**, **About**, and **References**) will scroll to specific sections in `sidlak.html`.
+   - Some links (like **FAQ**, **About**, and **References**) will scroll to specific sections in `index.html`.
    - Clicking a lesson (Lesson 1–5) will load that lesson's dedicated HTML page (e.g., `lesson1.html`).
 
 4. **Smooth Scrolling**
@@ -50,7 +50,7 @@ To use the offline website on a mobile phone:
 
 1. Transfer the entire folder to your mobile device using USB, Bluetooth, or a file-sharing app.
 2. Install a browser that supports local file access (recommended: Firefox).
-3. Install a file manager app to help you locate and open `sidlak.html`.
+3. Install a file manager app to help you locate and open `index.html`.
 
 ### 🔗 Recommended Apps:
 - **Firefox Browser** (for Android):  
